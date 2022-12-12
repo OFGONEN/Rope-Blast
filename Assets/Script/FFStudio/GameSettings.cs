@@ -10,6 +10,11 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Tile Table" ) ]
+		[ LabelText( "Movement Delta" ) ] public float tile_table_movement_delta;
+		[ LabelText( "Movement Delta Direction" ) ] public Vector3 tile_table_movement_delta_direction;
+		[ LabelText( "Movement Duration " ) ] public float tile_table_movement_duration;
+		[ LabelText( "Movement Ease " ) ] public Ease tile_table_movement_ease;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
