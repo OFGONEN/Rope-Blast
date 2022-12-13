@@ -11,12 +11,14 @@ public class RopeData : ScriptableObject
 {
 #region Fields
   [ Title( "Setup" ) ]
+    [ LabelText( "Rope Level" ), SerializeField ] int rope_level;
     [ LabelText( "Rope Reach Length" ), SerializeField ] int rope_length;
     [ LabelText( "Rope Damage" ), SerializeField ] float rope_damage;
     [ LabelText( "Rope Launch Delay" ), SerializeField ] float rope_delay;
     [ LabelText( "Rope Launch Duration" ), SerializeField ] float rope_duration_reach;
     [ LabelText( "Rope Return Duration" ), SerializeField ] float rope_duration_return;
 
+    public int RopeLevel            => rope_level;
     public int RopeLength           => rope_length;
     public float RopeDamage         => rope_damage;
     public float RopeDelay          => rope_delay;
