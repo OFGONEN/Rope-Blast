@@ -26,14 +26,16 @@ public class RopeData : ScriptableObject
     [ LabelText( "Rope Return Speed" ), SerializeField ] float rope_return_speed;
     [ LabelText( "Rope Return Ease" ), SerializeField ] Ease rope_return_ease;
 
-    public int RopeLevel            => rope_level;
-    public int RopeLength           => rope_length;
-    public float RopeDamage         => rope_damage;
-    public float RopeLaunchDelay    => rope_launch_delay;
-    public float RopeLaunchSpeed    => rope_launch_speed;
-    public Ease RopeLaunchEase      => rope_launch_ease;
-    public float RopeReturnDelay    => rope_return_delay;
-    public float RopeReturnSpeed    => rope_return_speed;
-    public Ease RopeReturnEase      => rope_return_ease;
+    public int RopeLevel             => rope_level;
+    public Material RopeMaterial     => rope_material;
+    public Mesh RopeHookMesh         => rope_hook_mesh;
+    public Material RopeHookMaterial => rope_hook_material;
+    public float RopeDamage          => rope_damage;
+    public float RopeLaunchDelay     => rope_launch_delay;
+    public float RopeLaunchSpeed     => rope_launch_speed;
+    public Ease RopeLaunchEase       => rope_launch_ease;
+    public float RopeReturnDelay     => rope_return_delay;
+    public float RopeReturnSpeed     => rope_return_speed;
+    public Ease RopeReturnEase       => rope_return_ease;
 #endregion
 }
