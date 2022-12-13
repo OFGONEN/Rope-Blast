@@ -30,6 +30,7 @@ public class RopeData : ScriptableObject
     public Material RopeMaterial     => rope_material;
     public Mesh RopeHookMesh         => rope_hook_mesh;
     public Material RopeHookMaterial => rope_hook_material;
+    public int RopeLength            => rope_length;
     public float RopeDamage          => rope_damage;
     public float RopeLaunchDelay     => rope_launch_delay;
     public float RopeLaunchSpeed     => rope_launch_speed;
