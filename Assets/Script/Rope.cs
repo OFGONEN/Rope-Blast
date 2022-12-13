@@ -13,8 +13,10 @@ public class Rope : MonoBehaviour
 #region Fields
   [ Title( "Components" ) ]
     [ LabelText( "Rope's End" ), SerializeField ] Transform rope_end;
-    [ LabelText( "Rope Collider" ), SerializeField ] Collider _collider;
-    [ LabelText( "Rope Renderer" ), SerializeField ] Renderer _renderer;
+    [ LabelText( "Rope Collider" ), SerializeField ] Collider rope_collider;
+    [ LabelText( "Rope Renderer" ), SerializeField ] Renderer rope_renderer;
+    [ LabelText( "Rope Hook's Mesh Filter" ), SerializeField ] MeshFilter rope_hook_meshFilter;
+    [ LabelText( "Rope Hook's Renderer" ), SerializeField ] Renderer rope_hook_renderer;
     // [ LabelText( "Particle Spawner" ), SerializeField ] ParticleSpawner particle_spawner; //todo: Enable This ?
 
 	public RopeData RopeData => rope_data;
@@ -42,22 +44,34 @@ public class Rope : MonoBehaviour
 #region API
     public void Spawn( RopeData ropeData )
     {
-		rope_data = ropeData;
+		UpdateRope( ropeData );
 
-		_collider.enabled = true;
-		_renderer.enabled = true;
+		rope_collider.enabled = true;
+		rope_renderer.enabled = true;
 
 		rope_end.position = rope_end_position_default;
 
 		Launch();
 	}
 
+	public void UpdateRope( RopeData ropeData )
+	{
+		rope_data = ropeData;
+
+		//todo: We may need to change collider position and size according to rope hook's mesh size 
+		//todo: But this should not happen, If it does we need to change the mesh of the hook model.
+
+		rope_renderer.sharedMaterial      = ropeData.RopeMaterial;
+		rope_hook_meshFilter.mesh         = ropeData.RopeHookMesh;
+		rope_hook_renderer.sharedMaterial = ropeData.RopeHookMaterial;
+	}
+
 	public void DeSpawn()
 	{
 		recycledSequence.Kill();
 
-		_collider.enabled = false;
-		_renderer.enabled = false;
+		rope_collider.enabled = false;
+		rope_renderer.enabled = false;
 	}
 
     public void OnTileTrigger( Collider tileCollider )
