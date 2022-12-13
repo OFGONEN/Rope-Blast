@@ -15,9 +15,13 @@ public class Rope : MonoBehaviour
     [ LabelText( "Rope's End" ), SerializeField ] Transform rope_end;
     [ LabelText( "Rope Collider" ), SerializeField ] Collider _collider;
     [ LabelText( "Rope Renderer" ), SerializeField ] Renderer _renderer;
+    // [ LabelText( "Particle Spawner" ), SerializeField ] ParticleSpawner particle_spawner; //todo: Enable This ?
 
-// Private 
-    Vector3 rope_end_position_default;
+	public RopeData RopeData => rope_data;
+	public bool IsBusy       => rope_tile_list.Count > 0;
+
+	// Private 
+	Vector3 rope_end_position_default;
     RopeData rope_data;
 
     List< Tile > rope_tile_list = new List< Tile >( 8 );
@@ -48,31 +52,49 @@ public class Rope : MonoBehaviour
 		Launch();
 	}
 
+	public void DeSpawn()
+	{
+		recycledSequence.Kill();
+
+		_collider.enabled = false;
+		_renderer.enabled = false;
+	}
+
     public void OnTileTrigger( Collider tileCollider )
     {
         var tile = tileCollider.GetComponent< TriggerListener >().AttachedComponent as Tile;
+		tile.GetDamage( rope_data.RopeDamage );
 
-        if( rope_data.RopeDamage > tile.Health )
-			AttachTile( tile );
+		if( tile.Health < 0 )
+			PierceTile( tile );
         else
             DamageTile( tile );
-
 	}
 #endregion
 
 #region Implementation
-    void AttachTile( Tile tile )
+    void PierceTile( Tile tile )
     {
-
-    }
+		//todo: spawn pierced pfx ?
+		rope_tile_list.Add( tile );
+	}
 
     void DamageTile( Tile tile )
     {
+		//todo: spawn can't pierce pfx ?
+		Return();
+	}
 
-    }
+	void AttachAllTiles()
+	{
+		for( var i = 0; i < rope_tile_list.Count; i++ )
+			rope_tile_list[ i ].GetAttached( rope_end );
+	}
 
     void Launch()
     {
+		rope_tile_list.Clear();
+
 		var launchDelta = ( rope_data.RopeLength - 1 ) * GameSettings.Instance.rope_launch_length_delta + GameSettings.Instance.rope_launch_delta;
 
 		var launchPosition = transform.position + GameSettings.Instance.game_forward * launchDelta;
@@ -92,6 +114,8 @@ public class Rope : MonoBehaviour
 		sequence.AppendInterval( rope_data.RopeReturnDelay );
 		sequence.Append( rope_end.DOMove( rope_end_position_default, duration )
 		.SetEase( rope_data.RopeLaunchEase ) );
+
+		AttachAllTiles();
 	}
 #endregion
 
