@@ -16,5 +16,11 @@ public class RopeData : ScriptableObject
     [ LabelText( "Rope Launch Delay" ), SerializeField ] float rope_delay;
     [ LabelText( "Rope Launch Duration" ), SerializeField ] float rope_duration_reach;
     [ LabelText( "Rope Return Duration" ), SerializeField ] float rope_duration_return;
+
+    public int RopeLength           => rope_length;
+    public float RopeDamage         => rope_damage;
+    public float RopeDelay          => rope_delay;
+    public float RopeDurationReach  => rope_duration_reach;
+    public float RopeDurationReturn => rope_duration_return;
 #endregion
 }
