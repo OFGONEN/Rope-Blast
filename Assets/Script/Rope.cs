@@ -74,6 +74,7 @@ public class Rope : MonoBehaviour
 		rope_renderer.enabled = false;
 	}
 
+    //Info: Editor Call from TriggerListener_Enter
     public void OnTileTrigger( Collider tileCollider )
     {
         var tile = tileCollider.GetComponent< TriggerListener >().AttachedComponent as Tile;

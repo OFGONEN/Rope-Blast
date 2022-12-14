@@ -22,6 +22,7 @@ public class TileTable : MonoBehaviour
 #endregion
 
 #region API
+	//Info: Editor Call
     public void OnTableMove()
     {
 		movement_count += 1;
