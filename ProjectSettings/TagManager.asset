@@ -34,10 +34,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Slot
+  - LaunchTable
+  - Tile
+  - Rope
   m_SortingLayers:
   - name: Default
     uniqueID: 0
