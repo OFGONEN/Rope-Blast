@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7020005792884670436}
   m_Layer: 0
-  m_Name: gfx_tile_level_two
+  m_Name: gfx_tile_three
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

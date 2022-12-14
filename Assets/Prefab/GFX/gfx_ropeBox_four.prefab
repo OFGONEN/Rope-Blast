@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7667640931940017550}
   m_Layer: 0
-  m_Name: gfx_ropeBox_level_six
+  m_Name: gfx_ropeBox_four
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

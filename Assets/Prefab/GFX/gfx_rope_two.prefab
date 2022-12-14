@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5415279973982102332}
   m_Layer: 0
-  m_Name: gfx_rope_level_three
+  m_Name: gfx_rope_two
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
