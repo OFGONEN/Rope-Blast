@@ -10,11 +10,21 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Rope" ) ]
+		[ LabelText( "Rope Launch Delta" ) ] public float rope_launch_delta;
+		[ LabelText( "Rope Launch Length Delta" ) ] public float rope_launch_length_delta;
+
+    [ Title( "Tile Table" ) ]
+		[ LabelText( "Movement Delta" ) ] public float tile_table_movement_delta;
+		[ LabelText( "Movement Delta Direction" ) ] public Vector3 tile_table_movement_delta_direction;
+		[ LabelText( "Movement Duration " ) ] public float tile_table_movement_duration;
+		[ LabelText( "Movement Ease " ) ] public Ease tile_table_movement_ease;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
+        [ LabelText( "Game's Forward" ) ] public Vector3 game_forward;
         public int maxLevelCount;
         
         // Info: 3 groups below (coming from template project) are foldout by design: They should remain hidden.
