@@ -16,7 +16,7 @@ public class Tile : MonoBehaviour
     [ LabelText( "Currency" ), SerializeField ] Currency notif_currency;
   [ Title( "Components" ) ]
     [ LabelText( "Tile Collider" ), SerializeField ] Collider tile_collider;
-    [ LabelText( "ParticleSpawnner" ), SerializeField ] ParticleSpawner _particleSpawner;
+    // [ LabelText( "ParticleSpawnner" ), SerializeField ] ParticleSpawner _particleSpawner;
     // [ LabelText( "Tile CrackSetter" ), SerializeField ] CrackSetter tile_crackSetter;
 
 // Property
@@ -67,7 +67,7 @@ public class Tile : MonoBehaviour
 
     public void OnLaunchTableCollide()
     {
-		_particleSpawner.Spawn( 0 );
+		// _particleSpawner.Spawn( 0 );
         //todo: Spawn a UI Particle effect ?
 
 		gameObject.SetActive( false );
