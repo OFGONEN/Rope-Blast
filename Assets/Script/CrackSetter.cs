@@ -24,6 +24,12 @@ public class CrackSetter : MonoBehaviour
 #endregion
 
 #region API
+	public void SetCrackProgress( float progress ) // Progress should be between 0 and 1
+	{
+		var index = Mathf.RoundToInt( Mathf.InverseLerp( 0, crack_texture_array.Length - 1, progress ) );
+		ChangeCrackLevel( index );
+	}
+
     [ Button ]
     public void ChangeCrackLevel( int crackIndex )
     {
