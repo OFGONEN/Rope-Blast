@@ -48,7 +48,7 @@ public class Tile : MonoBehaviour
 #region API
     public bool GetDamage( float damage ) // Return true if this Tile is cracked
     {
-		tile_health -= damage;
+		tile_health_current -= damage;
 
 		var crackedProgress = Mathf.InverseLerp( tile_health, 0, tile_health_current );
 		var cracked         = tile_health < 0;
