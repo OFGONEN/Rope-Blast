@@ -12,8 +12,9 @@ public class CrackSetter : MonoBehaviour
 
 	MaterialPropertyBlock materialPropertyBlock;
 	
-	static readonly int SHADER_ID_TEXTURE_CRACK = Shader.PropertyToID( "_Crack_Texture" );
-	static readonly int SHADER_ID_COLOR         = Shader.PropertyToID( "_Crack_Color" );
+	static readonly int SHADER_ID_KEYWORD_APPLY_CRACK = Shader.PropertyToID( "_Apply_Crack" );
+	static readonly int SHADER_ID_TEXTURE_CRACK       = Shader.PropertyToID( "_Crack_Texture" );
+	static readonly int SHADER_ID_COLOR               = Shader.PropertyToID( "_Crack_Color" );
 #endregion
 
 #region Unity API
@@ -35,6 +36,15 @@ public class CrackSetter : MonoBehaviour
     {
 		tileRenderer.GetPropertyBlock( materialPropertyBlock );
 		materialPropertyBlock.SetTexture( SHADER_ID_TEXTURE_CRACK, crack_texture_array[ crackIndex ] );
+		materialPropertyBlock.SetFloat( SHADER_ID_KEYWORD_APPLY_CRACK, 1 );
+		tileRenderer.SetPropertyBlock( materialPropertyBlock );
+	}
+	
+	[ Button ]
+	public void RemoveCrack()
+	{
+		tileRenderer.GetPropertyBlock( materialPropertyBlock );
+		materialPropertyBlock.SetFloat( SHADER_ID_KEYWORD_APPLY_CRACK, 0 );
 		tileRenderer.SetPropertyBlock( materialPropertyBlock );
 	}
 	
