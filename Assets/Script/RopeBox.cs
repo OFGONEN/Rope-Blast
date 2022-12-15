@@ -15,10 +15,9 @@ public class RopeBox : MonoBehaviour
     [ LabelText( "Rope Box Pool" ), SerializeField ] Pool_RopeBox pool_ropeBox;
 
   [ Title( "Components" ) ]
-    [ LabelText( "Rope Box Renderer" ) ] Renderer _renderer;
-    [ LabelText( "Rope Box Mesh Filter" ) ] MeshFilter _meshFilter;
-    // [ LabelText( "Rope Box UI Text" ) ] TextMeshProUGUI _textRenderer;
-    // [ LabelText( "Rope Box UI Image" ) ] Image _imageRenderer;
+    [ LabelText( "Rope Box Renderer" ), SerializeField ] Renderer _renderer;
+    [ LabelText( "Rope Box Mesh Filter" ), SerializeField ] MeshFilter _meshFilter;
+    [ LabelText( "Rope Box UI Image" ), SerializeField ] Image _imageRenderer;
 
     public RopeBoxData RopeBoxData => ropeBox_data;
 // Private
@@ -38,6 +37,8 @@ public class RopeBox : MonoBehaviour
 		transform.position = position;
 
 		ropeBox_data = ropeBoxData;
+
+		ConvertRopeBox();
 	}
 
     public void DeSpawn()
@@ -51,10 +52,7 @@ public class RopeBox : MonoBehaviour
     {
 		_meshFilter.mesh         = ropeBox_data.RopeBoxMesh;
 		_renderer.sharedMaterial = ropeBox_data.RopeBoxMaterial;
-
-        //todo: Enable this after visual design is determined.
-		// _textRenderer.text   = "Lvl " + ropeBox_data.RopeData.RopeLevel;
-		// _imageRenderer.color = ropeBox_data.RopeBoxUIColor;
+		_imageRenderer.sprite    = ropeBox_data.RopeBoxUIImage;
 	}
 #endregion
 
