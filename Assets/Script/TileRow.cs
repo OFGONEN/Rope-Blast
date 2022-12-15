@@ -10,8 +10,8 @@ public class TileRow : MonoBehaviour
 {
 #region Fields
   [ Title( "Setup" ) ]
-    [ LabelText( "Tiles" ) ] Tile[] tile_array;
-    [ LabelText( "Tile Table Move Event" ) ] GameEvent event_tile_table_move;
+    [ LabelText( "Tiles" ), SerializeField ] Tile[] tile_array;
+    [ LabelText( "Tile Table Move Event" ), SerializeField ] GameEvent event_tile_table_move;
 
     int tile_count;
 #endregion
