@@ -16,8 +16,8 @@ public class Tile : MonoBehaviour
     [ LabelText( "Currency" ), SerializeField ] Currency notif_currency;
   [ Title( "Components" ) ]
     [ LabelText( "Tile Collider" ), SerializeField ] Collider tile_collider;
+    [ LabelText( "Tile CrackSetter" ), SerializeField ] CrackSetter tile_crackSetter;
     // [ LabelText( "ParticleSpawnner" ), SerializeField ] ParticleSpawner _particleSpawner;
-    // [ LabelText( "Tile CrackSetter" ), SerializeField ] CrackSetter tile_crackSetter;
 
 // Property
     public float Health => tile_health;
@@ -54,6 +54,7 @@ public class Tile : MonoBehaviour
 		var cracked         = tile_health < 0;
 
 		//todo: Spawn a Particle effect ?
+		tile_crackSetter.SetCrackProgress( crackedProgress );
 		tile_collider.enabled = cracked;
 
 		return cracked;
