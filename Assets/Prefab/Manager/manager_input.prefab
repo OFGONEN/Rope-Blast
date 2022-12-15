@@ -53,7 +53,6 @@ MonoBehaviour:
   event_input_screenPress: {fileID: 11400000, guid: b7d2ab9da272b334fb2a66ca5bcc6fc8, type: 2}
   event_input_tap: {fileID: 11400000, guid: 182cfa2632cfdba49bfaf3471d114d23, type: 2}
   notifier_reference_camera_main: {fileID: 11400000, guid: 488e798dd6f140e4a84fa7485b885dd3, type: 2}
-  shared_input_finger_update: {fileID: 11400000, guid: 116d9e79c7f214e46af811379db05aa6, type: 2}
 --- !u!114 &961601380926824722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +158,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
+        m_TargetAssemblyTypeName: SharedLeanFinger, Assembly-CSharp
+        m_MethodName: SetLeanFinger
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ScreenDepth:
     Conversion: 1
     Camera: {fileID: 0}
@@ -195,6 +206,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
+        m_TargetAssemblyTypeName: SharedLeanFinger, Assembly-CSharp
+        m_MethodName: SetLeanFinger
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -240,9 +263,9 @@ MonoBehaviour:
   onFinger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 961601380926824723}
-        m_TargetAssemblyTypeName: FFStudio.InputManager, Assembly-CSharp
-        m_MethodName: OnLeanFingerUpdate
+      - m_Target: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
+        m_TargetAssemblyTypeName: SharedLeanFinger, Assembly-CSharp
+        m_MethodName: SetLeanFinger
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
