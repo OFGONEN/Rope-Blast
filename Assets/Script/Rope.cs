@@ -46,8 +46,9 @@ public class Rope : MonoBehaviour
     {
 		UpdateRope( ropeData );
 
-		rope_collider.enabled = true;
-		rope_renderer.enabled = true;
+		rope_collider.enabled      = true;
+		rope_renderer.enabled      = true;
+		rope_hook_renderer.enabled = true;
 
 		rope_end.position = rope_end_position_default;
 
@@ -70,8 +71,9 @@ public class Rope : MonoBehaviour
 	{
 		recycledSequence.Kill();
 
-		rope_collider.enabled = false;
-		rope_renderer.enabled = false;
+		rope_collider.enabled      = false;
+		rope_renderer.enabled      = false;
+		rope_hook_renderer.enabled = false;
 	}
 
     //Info: Editor Call from TriggerListener_Enter

@@ -14,11 +14,11 @@ public class RopeBoxData : ScriptableObject
     [ LabelText( "RopeBox Rope Data " ), SerializeField ] RopeData ropeBox_rope;
     [ LabelText( "RopeBox Mesh" ), SerializeField ] Mesh ropeBox_mesh;
     [ LabelText( "RopeBox Material" ), SerializeField ] Material ropeBox_material;
-    [ LabelText( "RopeBox UI Color ( Maybe We Won't Use This )" ), SerializeField ] Color ropeBox_ui_color;
+    [ LabelText( "RopeBox UI Image" ), SerializeField ] Sprite ropeBox_ui_image;
 
     public RopeData RopeData        => ropeBox_rope;
     public Mesh RopeBoxMesh         => ropeBox_mesh;
     public Material RopeBoxMaterial => ropeBox_material;
-    public Color RopeBoxUIColor     => ropeBox_ui_color;
+    public Sprite RopeBoxUIImage    => ropeBox_ui_image;
 #endregion
 }
