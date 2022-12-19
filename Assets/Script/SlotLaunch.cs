@@ -18,30 +18,6 @@ public class SlotLaunch : Slot
 #endregion
 
 #region API
-	public override void OnDropLaunchSlot()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void OnDropMergeSlot()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void OnFingerDown()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void OnFingerUp()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override bool OnSelect()
-	{
-		throw new System.NotImplementedException();
-	}
 #endregion
 
 #region Implementation
@@ -51,4 +27,18 @@ public class SlotLaunch : Slot
 #if UNITY_EDITOR
 #endif
 #endregion
+	public override void OnDeSelect()
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void OnDropLaunchSlot()
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public override void OnDropMergeSlot()
+	{
+		throw new System.NotImplementedException();
+	}
 }

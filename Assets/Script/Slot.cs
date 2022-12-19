@@ -11,7 +11,6 @@ public abstract class Slot : MonoBehaviour
 #region Fields
   [ Title( "Shared" ) ]
     [ SerializeField, LabelText( "Slot List" ) ] List_Slot shared_list_slot_base;
-    [ SerializeField, LabelText( "Finger Position" ) ] SharedLeanFinger shared_finger;
 
   [ Title( "Components" ) ]
     [ SerializeField, LabelText( "Slot's Dragged Transform" ) ] Transform slot_dragged_transform;
@@ -32,7 +31,10 @@ public abstract class Slot : MonoBehaviour
 #endregion
 
 #region API
-    public abstract bool OnSelect();
+    public bool OnSelect()
+    {
+		return !slot_isEmpty && !slot_isBusy;
+	}
 
     public void OnSnatch()
 	{
@@ -45,8 +47,7 @@ public abstract class Slot : MonoBehaviour
 		slot_dragged_transform.position = position;
 	}
 
-    public abstract void OnFingerUp();
-    public abstract void OnFingerDown();
+    public abstract void OnDeSelect();
     public abstract void OnDropLaunchSlot();
     public abstract void OnDropMergeSlot();
 #endregion
