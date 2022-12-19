@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7abcec949654d6459651ee08bf5cb13, type: 3}
   m_Name: pool_ropeBox
   m_EditorClassIdentifier: 
-  stackSize: 6
+  stackSize: 8
   pool_entity: {fileID: 8728206082782136746, guid: c6fbfd3f0bcfcc145a7513c8f440f20c, type: 3}
