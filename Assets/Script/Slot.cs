@@ -29,7 +29,7 @@ public abstract class Slot : MonoBehaviour
 
 #region API
     public abstract bool OnSelect();
-    public abstract void OnDragged();
+    public abstract void OnSnatch();
     public abstract void OnDragUpdate();
     public abstract void OnFingerUp();
     public abstract void OnFingerDown();
