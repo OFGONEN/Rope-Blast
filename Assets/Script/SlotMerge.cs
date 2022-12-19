@@ -18,16 +18,6 @@ public class SlotMerge : Slot
 #endregion
 
 #region API
-	public override void OnDragged()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void OnDragUpdate()
-	{
-		throw new System.NotImplementedException();
-	}
-
 	public override void OnDropLaunchSlot()
 	{
 		throw new System.NotImplementedException();
