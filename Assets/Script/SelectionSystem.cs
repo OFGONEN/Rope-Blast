@@ -13,9 +13,10 @@ public class SelectionSystem : ScriptableObject
   [ Title( "Setup" ) ]
     [ LabelText( "Main Camera Reference" ), SerializeField ] SharedReferenceNotifier notif_camera_reference;
 
-    Camera camera_main;
+    Transform camera_transform;
+	int layer_mask;
 
-    UnityMessage onFingerDown;
+	UnityMessage onFingerDown;
     UnityMessage onFingerUp;
     UnityMessage onUpdate;
 #endregion
@@ -30,7 +31,8 @@ public class SelectionSystem : ScriptableObject
     //Info: EditorCall
     public void OnLevelRevealed()
     {
-        camera_main = ( notif_camera_reference.sharedValue as Transform ).GetComponent< Camera >();
+		layer_mask       = 1 << GameSettings.Instance.selection_layer;
+		camera_transform = notif_camera_reference.sharedValue as Transform;
 
 		onFingerDown = TryToSelectSlot;
 	}
@@ -65,8 +67,13 @@ public class SelectionSystem : ScriptableObject
 #region Implementation
     void TryToSelectSlot()
     {
+		RaycastHit hitInfo;
+		var hit = Physics.Raycast( camera_transform.position, camera_transform.forward, out hitInfo, GameSettings.Instance.selection_distance, layer_mask );
 
-    }
+		if( !hit ) return; // Return if no hit
+
+		var slot = hitInfo.collider.GetComponent< ComponentHost >().HostComponent as Slot;
+	}
 #endregion
 
 #region Editor Only
