@@ -24,6 +24,7 @@ namespace FFStudio
 		[ LabelText( "Selection Layer Slot" ), Layer() ] public int selection_layer_slot;
 		[ LabelText( "Selection Layer Selection Table" ), Layer() ] public int selection_layer_table;
 		[ LabelText( "Selection Distance" ), Min( 0 ) ] public float selection_distance;
+		[ LabelText( "Selection Height" ), Min( 0 ) ] public float selection_height;
 		
     
     [ Title( "Camera" ) ]
