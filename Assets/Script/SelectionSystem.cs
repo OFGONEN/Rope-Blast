@@ -12,8 +12,9 @@ public class SelectionSystem : ScriptableObject
 #region Fields
   [ Title( "Setup" ) ]
     [ LabelText( "Main Camera Reference" ), SerializeField ] SharedReferenceNotifier notif_camera_reference;
+    [ LabelText( "Shared Finger" ), SerializeField ] SharedLeanFinger shared_finger;
 
-    Transform camera_transform;
+    Camera _camera;
 	int layer_mask;
 
 	UnityMessage onFingerDown;
@@ -32,7 +33,7 @@ public class SelectionSystem : ScriptableObject
     public void OnLevelRevealed()
     {
 		layer_mask       = 1 << GameSettings.Instance.selection_layer;
-		camera_transform = notif_camera_reference.sharedValue as Transform;
+		_camera = ( notif_camera_reference.sharedValue as Transform ).GetComponent< Camera >();
 
 		onFingerDown = TryToSelectSlot;
 	}
@@ -67,8 +68,13 @@ public class SelectionSystem : ScriptableObject
 #region Implementation
     void TryToSelectSlot()
     {
+		var worldPosition_Start = _camera.ScreenToWorldPoint( shared_finger.ScreenPosition.ConvertV3( _camera.nearClipPlane ) );
+		var worldPosition_End = _camera.ScreenToWorldPoint( shared_finger.ScreenPosition.ConvertV3( _camera.farClipPlane ) );
+
 		RaycastHit hitInfo;
-		var hit = Physics.Raycast( camera_transform.position, camera_transform.forward, out hitInfo, GameSettings.Instance.selection_distance, layer_mask );
+		var hit = Physics.Raycast( worldPosition_Start, ( worldPosition_End - worldPosition_Start ).normalized, out hitInfo, GameSettings.Instance.selection_distance, layer_mask );
+
+		// Debug.DrawRay( worldPosition_Start, ( worldPosition_End - worldPosition_Start ).normalized * GameSettings.Instance.selection_distance, Color.red, 1 );
 
 		if( !hit ) return; // Return if no hit
 
