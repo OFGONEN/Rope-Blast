@@ -83,6 +83,11 @@ namespace FFStudio
 			return new Vector3( v2.x, v2.y, 0 );
 		}
 
+		public static Vector3 ConvertV3( this Vector2 v2, float z )
+		{
+			return new Vector3( v2.x, v2.y, z );
+		}
+
 		public static Vector3 RandomPointBetween( this Vector3 first, Vector3 second )
 		{
 			return first + Random.Range( 0, 1f ) * ( second - first );

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7abcec949654d6459651ee08bf5cb13, type: 3}
-  m_Name: pool_ropeBox
+  m_Script: {fileID: 11500000, guid: 295fdfeaad1f64932b429f6ee22b190c, type: 3}
+  m_Name: system_selection
   m_EditorClassIdentifier: 
-  stackSize: 8
-  pool_entity: {fileID: 8728206082782136746, guid: c6fbfd3f0bcfcc145a7513c8f440f20c, type: 3}
+  notif_camera_reference: {fileID: 11400000, guid: 488e798dd6f140e4a84fa7485b885dd3, type: 2}
+  shared_finger: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}

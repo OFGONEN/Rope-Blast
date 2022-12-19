@@ -19,6 +19,13 @@ namespace FFStudio
 		[ LabelText( "Movement Delta Direction" ) ] public Vector3 tile_table_movement_delta_direction;
 		[ LabelText( "Movement Duration " ) ] public float tile_table_movement_duration;
 		[ LabelText( "Movement Ease " ) ] public Ease tile_table_movement_ease;
+	
+	[ Title( "Selection System" ) ]
+		[ LabelText( "Selection Layer Slot" ), Layer() ] public int selection_layer_slot;
+		[ LabelText( "Selection Layer Selection Table" ), Layer() ] public int selection_layer_table;
+		[ LabelText( "Selection Distance" ), Min( 0 ) ] public float selection_distance;
+		[ LabelText( "Selection Height" ), Min( 0 ) ] public float selection_height;
+		
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;

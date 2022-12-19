@@ -146,10 +146,10 @@ MonoBehaviour:
   onFinger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 59913477fd6994286978b60049644e94, type: 2}
-        m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
+      - m_Target: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
+        m_TargetAssemblyTypeName: SharedLeanFinger, Assembly-CSharp
+        m_MethodName: SetLeanFinger
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -158,10 +158,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
-        m_TargetAssemblyTypeName: SharedLeanFinger, Assembly-CSharp
-        m_MethodName: SetLeanFinger
-        m_Mode: 0
+      - m_Target: {fileID: 11400000, guid: 59913477fd6994286978b60049644e94, type: 2}
+        m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -202,10 +202,10 @@ MonoBehaviour:
   onFinger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: a83e73038ec7446e4a80e304f9eceb54, type: 2}
-        m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
+      - m_Target: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
+        m_TargetAssemblyTypeName: SharedLeanFinger, Assembly-CSharp
+        m_MethodName: SetLeanFinger
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -214,10 +214,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
-        m_TargetAssemblyTypeName: SharedLeanFinger, Assembly-CSharp
-        m_MethodName: SetLeanFinger
-        m_Mode: 0
+      - m_Target: {fileID: 11400000, guid: a83e73038ec7446e4a80e304f9eceb54, type: 2}
+        m_TargetAssemblyTypeName: FFStudio.GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
