@@ -101,9 +101,10 @@ public class SelectionSystem : ScriptableObject
 	void FingerUp()
 	{
 		EmptyDelegates();
-
-		SetLayerMaskToSlot();
 		onFingerDown = TryToSelectSlot;
+
+		_slot.OnDeSelect();
+		SetLayerMaskToSlot();
 	}
 
 	void DragSlot()
