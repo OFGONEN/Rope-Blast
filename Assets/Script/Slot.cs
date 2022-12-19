@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FFStudio;
 using Sirenix.OdinInspector;
 
 public abstract class Slot : MonoBehaviour
@@ -13,12 +14,14 @@ public abstract class Slot : MonoBehaviour
 
   [ Title( "Components" ) ]
     [ SerializeField, LabelText( "Slot's Dragged Transform" ) ] Transform slot_dragged_transform;
+    [ SerializeField, LabelText( "Slot Selection Collider" ) ] Collider slot_collider;
 
     public bool IsBusy  => slot_isBusy;
     public bool IsEmpty => slot_isEmpty;
 // Private
     bool slot_isBusy;
     bool slot_isEmpty;
+
 #endregion
 
 #region Properties
@@ -28,11 +31,23 @@ public abstract class Slot : MonoBehaviour
 #endregion
 
 #region API
-    public abstract bool OnSelect();
-    public abstract void OnDragged();
-    public abstract void OnDragUpdate();
-    public abstract void OnFingerUp();
-    public abstract void OnFingerDown();
+    public bool OnSelect()
+    {
+		return !slot_isEmpty && !slot_isBusy;
+	}
+
+    public void OnSnatch()
+	{
+		slot_collider.enabled = false;
+		// slot_dragged_transform.position = position;
+	}
+
+    public void OnDragUpdate( Vector3 position )
+	{
+		slot_dragged_transform.position = position;
+	}
+
+    public abstract void OnDeSelect();
     public abstract void OnDropLaunchSlot();
     public abstract void OnDropMergeSlot();
 #endregion
