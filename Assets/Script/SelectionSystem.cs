@@ -35,7 +35,7 @@ public class SelectionSystem : ScriptableObject
     //Info: EditorCall
     public void OnLevelRevealed()
     {
-		layer_mask       = 1 << GameSettings.Instance.selection_layer;
+		SetLayerMaskToSlot();
 		_camera = ( notif_camera_reference.sharedValue as Transform ).GetComponent< Camera >();
 
 		onFingerDown = TryToSelectSlot;
@@ -86,25 +86,37 @@ public class SelectionSystem : ScriptableObject
 
 		if( !hit ) return; // Return if no hit
 
-		_slot    = hitInfo.collider.GetComponent< ComponentHost >().HostComponent as Slot;
+		_slot = hitInfo.collider.GetComponent< ComponentHost >().HostComponent as Slot;
 
 		if( _slot.OnSelect() )
 		{
 			_slot.OnSnatch();
-			onUpdate = DragSlotUpdate;
+
+			SetLayerMaskToSelectionTable();
+			onUpdate = DragSlot;
 		}
-	}
-
-	void DragSlotUpdate()
-	{
-
 	}
 
 	void FingerUp()
 	{
 		EmptyDelegates();
 
+		SetLayerMaskToSlot();
 		onFingerDown = TryToSelectSlot;
+	}
+
+	void DragSlot()
+	{
+	}
+
+	void SetLayerMaskToSlot()
+	{
+		layer_mask = 1 << GameSettings.Instance.selection_layer_slot;
+	}
+	
+	void SetLayerMaskToSelectionTable()
+	{
+		layer_mask = 1 << GameSettings.Instance.selection_layer_table;
 	}
 #endregion
 
