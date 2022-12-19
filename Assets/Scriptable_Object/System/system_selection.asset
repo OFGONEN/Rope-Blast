@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: system_selection
   m_EditorClassIdentifier: 
   notif_camera_reference: {fileID: 11400000, guid: 488e798dd6f140e4a84fa7485b885dd3, type: 2}
+  shared_finger: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
