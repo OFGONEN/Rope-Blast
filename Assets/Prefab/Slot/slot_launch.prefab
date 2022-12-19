@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 7824262912242017581, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: _component
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1842458569579337846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
 --- !u!4 &2167176385993530686 stripped
@@ -85,3 +85,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shared_list_slot_base: {fileID: 0}
   slot_dragged_transform: {fileID: 2167176385993530686}
+  slot_collider: {fileID: 7326506245304151736}
+--- !u!65 &7326506245304151736 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2623721815910743762, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+  m_PrefabInstance: {fileID: 4739387198686990442}
+  m_PrefabAsset: {fileID: 0}
