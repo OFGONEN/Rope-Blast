@@ -93,6 +93,7 @@ public class SelectionSystem : ScriptableObject
 			_slot.OnSnatch();
 
 			SetLayerMaskToSelectionTable();
+			DragSlot();
 			onUpdate = DragSlot;
 		}
 	}
@@ -107,6 +108,17 @@ public class SelectionSystem : ScriptableObject
 
 	void DragSlot()
 	{
+		finger_position = shared_finger.ScreenPosition;
+
+		var worldPosition_Start = _camera.ScreenToWorldPoint( finger_position.ConvertV3( _camera.nearClipPlane ) );
+		var worldPosition_End   = _camera.ScreenToWorldPoint( finger_position.ConvertV3( _camera.farClipPlane ) );
+
+		RaycastHit hitInfo;
+		var hit = Physics.Raycast( worldPosition_Start, ( worldPosition_End - worldPosition_Start ).normalized, out hitInfo, GameSettings.Instance.selection_distance, layer_mask );
+
+		// Debug.DrawRay( worldPosition_Start, ( worldPosition_End - worldPosition_Start ).normalized * GameSettings.Instance.selection_distance, Color.red, 1 );
+
+		_slot.OnDragUpdate( hitInfo.point.SetY( GameSettings.Instance.selection_height ) );
 	}
 
 	void SetLayerMaskToSlot()
