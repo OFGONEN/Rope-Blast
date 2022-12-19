@@ -21,24 +21,25 @@ public class SlotMerge : Slot
 #endregion
 
 #region Implementation
+	protected override void OnDropLaunchSlot()
+	{
+		throw new System.NotImplementedException();
+	}
+
+	protected override void OnDropMergeSlot()
+	{
+		throw new System.NotImplementedException();
+	}
+
+	protected override void OnDropSameSlot()
+	{
+		slot_dragged_transform.position = _position;
+		slot_collider.enabled           = true;
+	}
 #endregion
 
 #region Editor Only
 #if UNITY_EDITOR
 #endif
 #endregion
-	public override void OnDeSelect()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void OnDropLaunchSlot()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public override void OnDropMergeSlot()
-	{
-		throw new System.NotImplementedException();
-	}
 }

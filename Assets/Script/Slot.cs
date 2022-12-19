@@ -10,24 +10,30 @@ public abstract class Slot : MonoBehaviour
 {
 #region Fields
   [ Title( "Shared" ) ]
-    [ SerializeField, LabelText( "Slot List" ) ] List_Slot shared_list_slot_base;
+    [ SerializeField, LabelText( "Slot List" ) ] protected List_Slot shared_list_slot_base;
 
   [ Title( "Components" ) ]
-    [ SerializeField, LabelText( "Slot's Dragged Transform" ) ] Transform slot_dragged_transform;
-    [ SerializeField, LabelText( "Slot Selection Collider" ) ] Collider slot_collider;
+    [ SerializeField, LabelText( "Slot's Dragged Transform" ) ] protected Transform slot_dragged_transform;
+    [ SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
 
     public bool IsBusy  => slot_isBusy;
     public bool IsEmpty => slot_isEmpty;
 // Private
-    bool slot_isBusy;
-    bool slot_isEmpty;
+    protected bool slot_isBusy;
+    protected bool slot_isEmpty;
+	protected Vector3 _position; 
 
+	protected UnityMessage onDeselect;
 #endregion
 
 #region Properties
 #endregion
 
 #region Unity API
+	private void Awake()
+	{
+		onDeselect = ExtensionMethods.EmptyMethod;
+	}
 #endregion
 
 #region API
@@ -39,7 +45,8 @@ public abstract class Slot : MonoBehaviour
     public void OnSnatch()
 	{
 		slot_collider.enabled = false;
-		// slot_dragged_transform.position = position;
+		onDeselect            = OnDropSameSlot;
+		_position             = slot_dragged_transform.position;
 	}
 
     public void OnDragUpdate( Vector3 position )
@@ -47,9 +54,14 @@ public abstract class Slot : MonoBehaviour
 		slot_dragged_transform.position = position;
 	}
 
-    public abstract void OnDeSelect();
-    public abstract void OnDropLaunchSlot();
-    public abstract void OnDropMergeSlot();
+    public void OnDeSelect()
+	{
+		onDeselect();
+		onDeselect = ExtensionMethods.EmptyMethod;
+	}
+    protected abstract void OnDropLaunchSlot();
+    protected abstract void OnDropMergeSlot();
+	protected abstract void OnDropSameSlot();
 #endregion
 
 #region Implementation

@@ -27,17 +27,17 @@ public class SlotLaunch : Slot
 #if UNITY_EDITOR
 #endif
 #endregion
-	public override void OnDeSelect()
+	protected override void OnDropLaunchSlot()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override void OnDropLaunchSlot()
+	protected override void OnDropMergeSlot()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override void OnDropMergeSlot()
+	protected override void OnDropSameSlot()
 	{
 		throw new System.NotImplementedException();
 	}
