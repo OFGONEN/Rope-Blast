@@ -54,10 +54,17 @@ public class RopeBox : MonoBehaviour
 		_renderer.sharedMaterial = ropeBox_data.RopeBoxMaterial;
 		_imageRenderer.sprite    = ropeBox_data.RopeBoxUIImage;
 	}
-#endregion
+	#endregion
 
-#region Editor Only
+	#region Editor Only
 #if UNITY_EDITOR
+	[ Button() ]
+	void ConvertRopeBox( RopeBoxData data )
+	{
+		_meshFilter.mesh         = data.RopeBoxMesh;
+		_renderer.sharedMaterial = data.RopeBoxMaterial;
+		_imageRenderer.sprite    = data.RopeBoxUIImage;
+	}
 #endif
 #endregion
 }
