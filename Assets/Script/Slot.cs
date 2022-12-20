@@ -50,7 +50,7 @@ public abstract class Slot : MonoBehaviour
 #region API
     public bool OnSelect()
     {
-		return !slot_isEmpty && !slot_isBusy;
+		return !IsEmpty && !IsBusy;
 	}
 
     public void OnDeSelect()
