@@ -83,7 +83,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa96c3065c98a9c47b81feda3bb58b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shared_list_slot_base: {fileID: 0}
+  shared_list_slot_all: {fileID: 11400000, guid: 6930fc10b6ee54f7abce87a804f2a060, type: 2}
+  shared_list_slot_custom: {fileID: 11400000, guid: 7b9fdfba8276b49578849242bafa2683, type: 2}
+  pool_ropeBox: {fileID: 11400000, guid: 7c874ef05acfcec4193b3f70e455078e, type: 2}
   slot_dragged_transform: {fileID: 2167176385993530686}
   slot_collider: {fileID: 7326506245304151736}
 --- !u!65 &7326506245304151736 stripped
