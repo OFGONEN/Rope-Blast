@@ -14,6 +14,11 @@ namespace FFStudio
 		[ LabelText( "Rope Launch Delta" ) ] public float rope_launch_delta;
 		[ LabelText( "Rope Launch Length Delta" ) ] public float rope_launch_length_delta;
 
+    [ Title( "RopeBox" ) ]
+		[ LabelText( "Rope Jump Power" ) ] public float ropeBox_jump_power;
+		[ LabelText( "Rope Jump Duration" ) ] public float ropeBox_jump_duration;
+		[ LabelText( "Rope Jump Ease" ) ] public Ease ropeBox_jump_ease;
+
     [ Title( "Tile Table" ) ]
 		[ LabelText( "Movement Delta" ) ] public float tile_table_movement_delta;
 		[ LabelText( "Movement Delta Direction" ) ] public Vector3 tile_table_movement_delta_direction;

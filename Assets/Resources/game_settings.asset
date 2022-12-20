@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rope_launch_delta: 0
   rope_launch_length_delta: 0
+  ropeBox_jump_power: 1
+  ropeBox_jump_duration: 0.65
+  ropeBox_jump_ease: 6
   tile_table_movement_delta: 0
   tile_table_movement_delta_direction: {x: 0, y: 0, z: 0}
   tile_table_movement_duration: 0
@@ -22,6 +25,7 @@ MonoBehaviour:
   selection_layer_table: 27
   selection_distance: 1000
   selection_height: 1
+  selection_pair_distance: 0
   camera_follow_speed_depth: 2.8
   game_forward: {x: 0, y: 0, z: 0}
   maxLevelCount: 1
