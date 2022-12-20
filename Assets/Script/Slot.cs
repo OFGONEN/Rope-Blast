@@ -44,8 +44,6 @@ public abstract class Slot : MonoBehaviour
 	{
 		shared_list_slot_all.RemoveList( this );
 		shared_list_slot_custom.RemoveList( this );	
-
-		pool_ropeBox.ReturnEntity( slot_ropeBox );
 	}
 #endregion
 

@@ -16,6 +16,11 @@ public class SlotMerge : Slot
 #endregion
 
 #region Unity API
+	protected override void OnDisable()
+	{
+		base.OnDisable();
+		pool_ropeBox.ReturnEntity( slot_ropeBox );
+	}
 #endregion
 
 #region API
@@ -24,7 +29,7 @@ public class SlotMerge : Slot
 		slot_ropeBox = pool_ropeBox.GetEntity();
 		slot_ropeBox.transform.SetParent( slot_dragged_transform );
 
-		slot_isEmpty = true;
+		slot_isEmpty = false;
 		slot_ropeBox.Spawn( data, slot_dragged_transform.position );
 	}
 #endregion
