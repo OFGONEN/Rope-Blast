@@ -8,23 +8,40 @@ using Sirenix.OdinInspector;
 
 public class SlotLaunch : Slot
 {
-#region Fields
-#endregion
+	#region Fields
+	#endregion
 
-#region Properties
-#endregion
+	#region Properties
+	#endregion
 
-#region Unity API
-#endregion
+	#region Unity API
+	#endregion
 
-#region API
-	public override void TransferRopeBox( RopeBox incoming )
+	#region API
+	#endregion
+
+	#region Implementation
+	#endregion
+
+	#region Editor Only
+#if UNITY_EDITOR
+#endif
+	#endregion
+	protected override void CacheRopeBox(RopeBox incoming)
 	{
-
+		throw new System.NotImplementedException();
 	}
-#endregion
 
-#region Implementation
+	protected override void MergeRopeBox(RopeBox incoming)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	protected override void OnCacheRopeBoxDone()
+	{
+		throw new System.NotImplementedException();
+	}
+
 	protected override void OnDropDifferentSlot()
 	{
 		throw new System.NotImplementedException();
@@ -34,10 +51,9 @@ public class SlotLaunch : Slot
 	{
 		throw new System.NotImplementedException();
 	}
-#endregion
 
-#region Editor Only
-#if UNITY_EDITOR
-#endif
-#endregion
+	protected override void OnMergeRopeBoxDone()
+	{
+		throw new System.NotImplementedException();
+	}
 }

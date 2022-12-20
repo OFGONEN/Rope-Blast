@@ -27,11 +27,6 @@ public class SlotMerge : Slot
 		slot_isEmpty = true;
 		slot_ropeBox.Spawn( data, slot_dragged_transform.position );
 	}
-
-	public override void TransferRopeBox( RopeBox incoming )
-	{
-		// incoming.transform.parent = ?;
-	}
 #endregion
 
 #region Implementation
@@ -52,6 +47,42 @@ public class SlotMerge : Slot
 			slot_ropeBox = null;
 			slot_pair.TransferRopeBox( slot_ropeBox );
 		}
+	}
+
+	protected override void MergeRopeBox( RopeBox incoming )
+	{
+		var sequence = recycledSequence.Recycle( () => {
+			incoming.DeSpawn();
+			OnMergeRopeBoxDone();
+		} );
+		sequence.Append( incoming.transform.DOLocalJump( Vector3.zero, GameSettings.Instance.ropeBox_jump_power, 1, GameSettings.Instance.ropeBox_jump_duration )
+			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
+	}
+
+	protected override void CacheRopeBox( RopeBox incoming )
+	{
+		slot_ropeBox = incoming;
+
+		var sequence = recycledSequence.Recycle( OnCacheRopeBoxDone );
+		sequence.Append( slot_ropeBox.transform.DOLocalJump( Vector3.zero, GameSettings.Instance.ropeBox_jump_power, 1, GameSettings.Instance.ropeBox_jump_duration )
+			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
+	}
+
+	protected override void OnCacheRopeBoxDone()
+	{
+		slot_collider.enabled = true;
+		slot_isBusy           = false;
+	}
+
+	protected override void OnMergeRopeBoxDone()
+	{
+		slot_collider.enabled = true;
+		slot_isBusy = false;
+
+		var data = slot_ropeBox.RopeBoxData.NextRopeBoxData;
+		slot_ropeBox.DeSpawn();
+
+		SpawnRopeBox( data );
 	}
 #endregion
 

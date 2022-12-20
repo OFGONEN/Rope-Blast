@@ -18,10 +18,12 @@ public abstract class Slot : MonoBehaviour
     [ SerializeField, LabelText( "Slot's Dragged Transform" ) ] protected Transform slot_dragged_transform;
     [ SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
 
-    public bool IsBusy             => slot_isBusy;
+    public virtual bool IsBusy     => slot_isBusy;
     public bool IsEmpty            => slot_isEmpty;
     public RopeBoxData RopeBoxData => slot_ropeBox.RopeBoxData;
 // Private
+	protected RecycledSequence recycledSequence = new RecycledSequence();
+
 	protected bool slot_isBusy;
     protected bool slot_isEmpty;
 	protected Slot slot_pair;
@@ -69,7 +71,7 @@ public abstract class Slot : MonoBehaviour
 		slot_pair             = this;
 	}
 
-    public virtual void OnDragUpdate( Vector3 position )
+    public void OnDragUpdate( Vector3 position )
 	{
 		slot_dragged_transform.position = position;
 
@@ -85,9 +87,25 @@ public abstract class Slot : MonoBehaviour
 		}
 	}
 
-	public abstract void TransferRopeBox( RopeBox incoming );
+	public void TransferRopeBox( RopeBox incoming )
+	{
+		slot_isEmpty = false;
+		slot_isBusy  = true;
+
+		incoming.transform.parent = slot_dragged_transform;
+
+		if( slot_ropeBox == null )
+			CacheRopeBox( incoming );
+		else
+			MergeRopeBox( incoming );
+	}
+
     protected abstract void OnDropDifferentSlot();
 	protected abstract void OnDropSameSlot();
+	protected abstract void MergeRopeBox( RopeBox incoming );
+	protected abstract void CacheRopeBox( RopeBox incoming );
+	protected abstract void OnMergeRopeBoxDone();
+	protected abstract void OnCacheRopeBoxDone();
 #endregion
 
 #region Implementation
