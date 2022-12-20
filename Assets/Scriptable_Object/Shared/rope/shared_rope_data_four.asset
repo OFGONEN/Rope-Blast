@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4c801c24680b0499d6f7b9ba975e78, type: 3}
   m_Name: shared_rope_data_four
   m_EditorClassIdentifier: 
-  rope_level: 1
-  rope_material: {fileID: 0}
-  rope_hook_mesh: {fileID: 0}
-  rope_hook_material: {fileID: 0}
-  rope_length: 1
-  rope_damage: 1
+  rope_level: 4
+  rope_material: {fileID: 2100000, guid: 6e63d07d531b61c4998f0bc5b4327420, type: 2}
+  rope_hook_mesh: {fileID: -1583645086919241157, guid: cdfb8c9485998a24eb24b0b9f8f5f560, type: 3}
+  rope_hook_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  rope_length: 2
+  rope_damage: 4
   rope_launch_delay: 0.2
   rope_launch_speed: 1
   rope_launch_ease: 0
