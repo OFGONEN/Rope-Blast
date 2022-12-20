@@ -25,7 +25,7 @@ namespace FFStudio
 		[ LabelText( "Selection Layer Selection Table" ), Layer() ] public int selection_layer_table;
 		[ LabelText( "Selection Distance" ), Min( 0 ) ] public float selection_distance;
 		[ LabelText( "Selection Height" ), Min( 0 ) ] public float selection_height;
-		
+		[ LabelText( "Selection Pair Distance" ), Min( 0 ) ] public float selection_pair_distance;
     
     [ Title( "Camera" ) ]
         [ LabelText( "Follow Speed (Z)" ), SuffixLabel( "units/seconds" ), Min( 0 ) ] public float camera_follow_speed_depth = 2.8f;
