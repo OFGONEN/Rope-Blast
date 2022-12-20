@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b5c8eafb37d1743879adb3fdd53498, type: 3}
   m_Name: shared_ropeBox_data_six
   m_EditorClassIdentifier: 
-  ropeBox_rope: {fileID: 0}
-  ropeBox_mesh: {fileID: 0}
-  ropeBox_material: {fileID: 0}
-  ropeBox_ui_image: {fileID: 0}
+  ropeBox_rope: {fileID: 11400000, guid: 606d8572d433b6b47ba4320220f2d019, type: 2}
+  ropeBoxData_next: {fileID: 0}
+  ropeBox_mesh: {fileID: -653842670754426082, guid: d97cba977cf29104ea4f08a26c202145, type: 3}
+  ropeBox_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  ropeBox_ui_image: {fileID: 21300000, guid: d4de969c7f6dfee43884078e48e56898, type: 3}
