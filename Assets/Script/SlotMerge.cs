@@ -18,23 +18,31 @@ public class SlotMerge : Slot
 #endregion
 
 #region API
+	public void SpawnRopeBox( RopeBoxData data )
+	{
+		slot_ropeBox = pool_ropeBox.GetEntity();
+		slot_ropeBox.transform.SetParent( slot_dragged_transform );
+
+		slot_isEmpty = true;
+		slot_ropeBox.Spawn( data, slot_dragged_transform.position );
+	}
 #endregion
 
 #region Implementation
-	protected override void OnDropLaunchSlot()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	protected override void OnDropMergeSlot()
-	{
-		throw new System.NotImplementedException();
-	}
-
 	protected override void OnDropSameSlot()
 	{
-		slot_dragged_transform.position = _position;
-		slot_collider.enabled           = true;
+		slot_dragged_transform.localPosition = Vector3.zero;
+		slot_collider.enabled                = true;
+	}
+
+	protected override void OnDropDifferentSlot()
+	{
+		if( slot_pair.RopeBoxData.RopeLevel != slot_ropeBox.RopeBoxData.RopeLevel )
+			OnDropSameSlot();
+		else
+		{
+			slot_ropeBox.DeSpawn();
+		}
 	}
 #endregion
 

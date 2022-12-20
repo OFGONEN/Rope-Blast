@@ -10,21 +10,22 @@ public abstract class Slot : MonoBehaviour
 {
 #region Fields
   [ Title( "Shared" ) ]
-    [ SerializeField, LabelText( "Slot List All" ) ] protected List_Slot shared_list_slot_base;
+    [ SerializeField, LabelText( "Slot List All" ) ] protected List_Slot shared_list_slot_all;
     [ SerializeField, LabelText( "Slot List Custom" ) ] protected List_Slot shared_list_slot_custom;
+    [ SerializeField, LabelText( "RopeBox Pool" ) ] protected Pool_RopeBox pool_ropeBox;
 
   [ Title( "Components" ) ]
     [ SerializeField, LabelText( "Slot's Dragged Transform" ) ] protected Transform slot_dragged_transform;
     [ SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
 
-    public bool IsBusy  => slot_isBusy;
-    public bool IsEmpty => slot_isEmpty;
+    public bool IsBusy             => slot_isBusy;
+    public bool IsEmpty            => slot_isEmpty;
+    public RopeBoxData RopeBoxData => slot_ropeBox.RopeBoxData;
 // Private
-    protected bool slot_isBusy;
+	protected bool slot_isBusy;
     protected bool slot_isEmpty;
-	protected Vector3 _position; 
-
-	protected UnityMessage onDeselect;
+	protected Slot slot_pair;
+	protected RopeBox slot_ropeBox;
 #endregion
 
 #region Properties
@@ -33,19 +34,16 @@ public abstract class Slot : MonoBehaviour
 #region Unity API
 	void OnEnable()
 	{
-		shared_list_slot_base.AddList( this );
+		shared_list_slot_all.AddList( this );
 		shared_list_slot_custom.AddList( this );
 	}
 
-	void OnDisable()
+	protected virtual void OnDisable()
 	{
-		shared_list_slot_base.RemoveList( this );
+		shared_list_slot_all.RemoveList( this );
 		shared_list_slot_custom.RemoveList( this );	
-	}
 
-	private void Awake()
-	{
-		onDeselect = ExtensionMethods.EmptyMethod;
+		pool_ropeBox.ReturnEntity( slot_ropeBox );
 	}
 #endregion
 
@@ -57,24 +55,37 @@ public abstract class Slot : MonoBehaviour
 
     public void OnDeSelect()
 	{
-		onDeselect();
-		onDeselect = ExtensionMethods.EmptyMethod;
+		if( slot_pair == this || 
+			Vector3.Distance( slot_dragged_transform.position.SetY( 0 ), 
+				slot_pair.transform.position ) < GameSettings.Instance.selection_pair_distance   )
+			OnDropSameSlot();
+		else
+			OnDropDifferentSlot();
 	}
 
     public virtual void OnSnatch()
 	{
 		slot_collider.enabled = false;
-		onDeselect            = OnDropSameSlot;
-		_position             = slot_dragged_transform.position;
+		slot_pair             = this;
 	}
 
     public virtual void OnDragUpdate( Vector3 position )
 	{
 		slot_dragged_transform.position = position;
+
+		float closestDistance = float.MaxValue;
+
+		for( var i = 0; i < shared_list_slot_all.itemList.Count; i++ )
+		{
+			//todo SetY( 0 ) is dependent on how we design the layout of the levels
+			var distance = Vector3.Distance( slot_dragged_transform.position.SetY( 0 ), shared_list_slot_all.itemList[ i ].transform.position );
+
+			if( distance < closestDistance )
+				slot_pair = shared_list_slot_all.itemList[ i ];
+		}
 	}
 
-    protected abstract void OnDropLaunchSlot();
-    protected abstract void OnDropMergeSlot();
+    protected abstract void OnDropDifferentSlot();
 	protected abstract void OnDropSameSlot();
 #endregion
 
