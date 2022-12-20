@@ -18,15 +18,13 @@ public class SlotLaunch : Slot
 #endregion
 
 #region API
+	public override void TransferRopeBox( RopeBox incoming )
+	{
+
+	}
 #endregion
 
 #region Implementation
-#endregion
-
-#region Editor Only
-#if UNITY_EDITOR
-#endif
-#endregion
 	protected override void OnDropDifferentSlot()
 	{
 		throw new System.NotImplementedException();
@@ -36,4 +34,10 @@ public class SlotLaunch : Slot
 	{
 		throw new System.NotImplementedException();
 	}
+#endregion
+
+#region Editor Only
+#if UNITY_EDITOR
+#endif
+#endregion
 }

@@ -85,6 +85,7 @@ public abstract class Slot : MonoBehaviour
 		}
 	}
 
+	public abstract void TransferRopeBox( RopeBox incoming );
     protected abstract void OnDropDifferentSlot();
 	protected abstract void OnDropSameSlot();
 #endregion

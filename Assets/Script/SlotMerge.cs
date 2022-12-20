@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 
 public class SlotMerge : Slot
@@ -26,6 +27,11 @@ public class SlotMerge : Slot
 		slot_isEmpty = true;
 		slot_ropeBox.Spawn( data, slot_dragged_transform.position );
 	}
+
+	public override void TransferRopeBox( RopeBox incoming )
+	{
+		// incoming.transform.parent = ?;
+	}
 #endregion
 
 #region Implementation
@@ -37,11 +43,14 @@ public class SlotMerge : Slot
 
 	protected override void OnDropDifferentSlot()
 	{
-		if( slot_pair.RopeBoxData.RopeLevel != slot_ropeBox.RopeBoxData.RopeLevel )
+		// If the paired slot is not empty but it has a maxed level rope box or a rope box with a different leveled rope
+		if( !slot_pair.IsEmpty && slot_pair.RopeBoxData.NextRopeBoxData == null && slot_pair.RopeBoxData.RopeLevel != slot_ropeBox.RopeBoxData.RopeLevel )
 			OnDropSameSlot();
 		else
 		{
-			slot_ropeBox.DeSpawn();
+			slot_isEmpty = true;
+			slot_ropeBox = null;
+			slot_pair.TransferRopeBox( slot_ropeBox );
 		}
 	}
 #endregion
