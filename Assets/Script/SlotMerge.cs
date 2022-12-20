@@ -41,19 +41,6 @@ public class SlotMerge : Slot
 		slot_collider.enabled                = true;
 	}
 
-	protected override void OnDropDifferentSlot()
-	{
-		// If the paired slot is not empty but it has a maxed level rope box or a rope box with a different leveled rope
-		if( !slot_pair.IsEmpty && slot_pair.RopeBoxData.NextRopeBoxData == null && slot_pair.RopeBoxData.RopeLevel != slot_ropeBox.RopeBoxData.RopeLevel )
-			OnDropSameSlot();
-		else
-		{
-			slot_isEmpty = true;
-			slot_ropeBox = null;
-			slot_pair.TransferRopeBox( slot_ropeBox );
-		}
-	}
-
 	protected override void MergeRopeBox( RopeBox incoming )
 	{
 		var sequence = recycledSequence.Recycle( () => {
