@@ -7,6 +7,7 @@ using Obi;
 using FFStudio;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using UnityEditor;
 
 public class Rope : MonoBehaviour
 {
@@ -139,6 +140,18 @@ public class Rope : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
+	private void OnDrawGizmos()
+	{
+		var launchPosition = transform.position + transform.forward * GameSettings.Instance.rope_launch_delta;
+		var secondLaunchPosition = launchPosition + transform.forward * GameSettings.Instance.rope_launch_length_delta;
+
+		Handles.DrawWireCube( launchPosition, Vector3.one * 0.2f );
+		Handles.DrawWireCube( secondLaunchPosition, Vector3.one * 0.2f );
+
+		Handles.DrawDottedLine( launchPosition, secondLaunchPosition, 1f );
+		Handles.Label( ( secondLaunchPosition + launchPosition ) / 2f, "Rope Launch Position" );
+
+	}
 #endif
 #endregion
 }
