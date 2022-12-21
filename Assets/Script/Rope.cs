@@ -80,7 +80,7 @@ public class Rope : MonoBehaviour
     //Info: Editor Call from TriggerListener_Enter
     public void OnTileTrigger( Collider tileCollider )
     {
-        var tile = tileCollider.GetComponent< TriggerListener >().AttachedComponent as Tile;
+        var tile = tileCollider.GetComponent< ComponentHost >().HostComponent as Tile;
 		tile.GetDamage( rope_data.RopeDamage );
 
 		if( tile.Health < 0 )
