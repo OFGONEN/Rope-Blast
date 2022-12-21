@@ -89,15 +89,15 @@ public abstract class Slot : MonoBehaviour
 
 	public void TransferRopeBox( RopeBox incoming )
 	{
-		slot_isEmpty = false;
-		slot_isBusy  = true;
-
 		incoming.transform.parent = slot_dragged_transform;
 
-		if( slot_ropeBox == null )
+		if( slot_isEmpty )
 			CacheRopeBox( incoming );
 		else
 			MergeRopeBox( incoming );
+
+		slot_isEmpty = false;
+		slot_isBusy  = true;
 	}
 
     protected bool CanDropDifferentSlot()
