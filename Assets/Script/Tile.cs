@@ -14,6 +14,7 @@ public class Tile : MonoBehaviour
     [ LabelText( "Tile Health" ), SerializeField ] float tile_health;
     [ LabelText( "Tile Currency" ), SerializeField ] Vector2 tile_currency;
     [ LabelText( "Currency" ), SerializeField ] Currency notif_currency;
+
   [ Title( "Components" ) ]
     [ LabelText( "Tile Collider" ), SerializeField ] Collider tile_collider;
     [ LabelText( "Tile CrackSetter" ), SerializeField ] CrackSetter tile_crackSetter;

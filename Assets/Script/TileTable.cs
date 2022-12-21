@@ -37,7 +37,6 @@ public class TileTable : MonoBehaviour
     {
         if( movement_count > 0 )
 			MoveTable();
-
 	}
 
     void MoveTable()
@@ -49,6 +48,8 @@ public class TileTable : MonoBehaviour
 			.SetEase( GameSettings.Instance.tile_table_movement_ease ),
 			OnTableMoveComplete
 		);
+
+		movement_count = 0;
     }
 #endregion
 
