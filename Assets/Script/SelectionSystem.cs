@@ -119,7 +119,7 @@ public class SelectionSystem : ScriptableObject
 
 		// Debug.DrawRay( worldPosition_Start, ( worldPosition_End - worldPosition_Start ).normalized * GameSettings.Instance.selection_distance, Color.red, 1 );
 
-		_slot.OnDragUpdate( hitInfo.point.SetY( GameSettings.Instance.selection_height ) );
+		_slot.OnDragUpdate( hitInfo.point.OffsetY( GameSettings.Instance.selection_height ) );
 	}
 
 	void SetLayerMaskToSlot()
