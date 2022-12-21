@@ -41,6 +41,7 @@ public class SlotLaunch : Slot
 #region Implementation
 	protected override void OnDropSameSlot()
 	{
+		slot_pair   = null;
 		slot_isBusy = true;
 
 		var sequence = recycledSequence.Recycle( OnDropSameSlotDone );

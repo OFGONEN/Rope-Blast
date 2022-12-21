@@ -42,6 +42,7 @@ public class SlotMerge : Slot
 	{
 		slot_dragged_transform.localPosition = Vector3.zero;
 		slot_collider.enabled                = true;
+		slot_pair                            = null;
 	}
 
 	protected override void MergeRopeBox( RopeBox incoming )
