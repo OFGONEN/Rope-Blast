@@ -160,6 +160,8 @@ namespace FFEditor
 		static private void PasteTransform()
 		{
 			var gameObject = Selection.activeGameObject.transform;
+			EditorUtility.SetDirty( gameObject );
+
 			gameObject.SetTransformData( currentTransformData );
 		}
 
