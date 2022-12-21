@@ -17,7 +17,7 @@ public class RopeData : ScriptableObject
     [ LabelText( "Rope Hook's Mesh" ), SerializeField ] Mesh rope_hook_mesh;
     [ LabelText( "Rope Hook's Material" ), SerializeField ] Material rope_hook_material;
   [ Title( "Launch & Return" ) ]
-    [ LabelText( "Rope Reach Length" ), SerializeField ] int rope_length;
+    [ LabelText( "Rope Reach Length" ), SerializeField, Min( 1 ) ] int rope_length;
     [ LabelText( "Rope Damage" ), SerializeField ] float rope_damage;
     [ LabelText( "Rope Launch Delay" ), SerializeField ] float rope_launch_delay;
     [ LabelText( "Rope Launch Speed" ), SerializeField ] float rope_launch_speed;
