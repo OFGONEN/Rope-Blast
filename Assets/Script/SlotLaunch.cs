@@ -13,7 +13,6 @@ public class SlotLaunch : Slot
   [ Title( "Components" ) ]
 	[ LabelText( "Rope" ), SerializeField ] Rope slot_rope;
 
-
     public override bool IsBusy => slot_isBusy || slot_rope.IsBusy;
 // Private
 	RopeBoxData slot_ropeBoxData;
@@ -28,8 +27,7 @@ public class SlotLaunch : Slot
 #region API
     public override void OnSnatch()
 	{
-		slot_collider.enabled = false;
-		slot_pair             = this;
+		base.OnSnatch();
 
 		slot_rope.DeSpawn();
 
@@ -55,7 +53,44 @@ public class SlotLaunch : Slot
 		slot_isBusy = false;
 		slot_collider.enabled = true;
 
+		slot_rope.Spawn( slot_ropeBoxData.RopeData );
+
 		slot_ropeBox.DeSpawn();
+		slot_ropeBox = null;
+	}
+
+	protected override void MergeRopeBox( RopeBox incoming )
+	{
+		var sequence = recycledSequence.Recycle( () =>
+		{
+			incoming.DeSpawn();
+			OnMergeRopeBoxDone();
+		} );
+		sequence.Append( incoming.transform.DOLocalJump( Vector3.zero, GameSettings.Instance.ropeBox_jump_power, 1, GameSettings.Instance.ropeBox_jump_duration )
+			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
+	}
+
+	protected override void OnMergeRopeBoxDone()
+	{
+		slot_collider.enabled = true;
+		slot_isBusy = false;
+
+		slot_ropeBoxData = slot_ropeBox.RopeBoxData.NextRopeBoxData;
+		slot_rope.UpdateRope( slot_ropeBoxData.RopeData );
+
+		slot_ropeBox.DeSpawn();
+		slot_ropeBox = null;
+	}
+
+	protected override void OnCacheRopeBoxDone()
+	{
+		base.OnCacheRopeBoxDone();
+
+		slot_ropeBoxData = slot_ropeBox.RopeBoxData;
+
+		slot_ropeBox.DeSpawn();
+		slot_ropeBox = null;
+
 		slot_rope.Spawn( slot_ropeBoxData.RopeData );
 	}
 #endregion
@@ -64,28 +99,4 @@ public class SlotLaunch : Slot
 #if UNITY_EDITOR
 #endif
 #endregion
-	protected override void CacheRopeBox(RopeBox incoming)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	protected override void MergeRopeBox(RopeBox incoming)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	protected override void OnCacheRopeBoxDone()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	protected override void OnDropDifferentSlot()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	protected override void OnMergeRopeBoxDone()
-	{
-		throw new System.NotImplementedException();
-	}
 }
