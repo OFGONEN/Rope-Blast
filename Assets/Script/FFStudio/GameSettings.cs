@@ -21,7 +21,6 @@ namespace FFStudio
 
     [ Title( "Tile Table" ) ]
 		[ LabelText( "Movement Delta" ) ] public float tile_table_movement_delta;
-		[ LabelText( "Movement Delta Direction" ) ] public Vector3 tile_table_movement_delta_direction;
 		[ LabelText( "Movement Duration " ) ] public float tile_table_movement_duration;
 		[ LabelText( "Movement Ease " ) ] public Ease tile_table_movement_ease;
 	
