@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 
 public abstract class Slot : MonoBehaviour
@@ -118,11 +119,24 @@ public abstract class Slot : MonoBehaviour
 		}
 	}
 
+	protected virtual void CacheRopeBox( RopeBox incoming )
+	{
+		slot_ropeBox = incoming;
+
+		var sequence = recycledSequence.Recycle( OnCacheRopeBoxDone );
+		sequence.Append( slot_ropeBox.transform.DOLocalJump( Vector3.zero, GameSettings.Instance.ropeBox_jump_power, 1, GameSettings.Instance.ropeBox_jump_duration )
+			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
+	}
+
+	protected virtual void OnCacheRopeBoxDone()
+	{
+		slot_collider.enabled = true;
+		slot_isBusy = false;
+	}
+
 	protected abstract void OnDropSameSlot();
 	protected abstract void MergeRopeBox( RopeBox incoming );
-	protected abstract void CacheRopeBox( RopeBox incoming );
 	protected abstract void OnMergeRopeBoxDone();
-	protected abstract void OnCacheRopeBoxDone();
 #endregion
 
 #region Implementation

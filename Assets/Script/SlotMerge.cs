@@ -51,21 +51,6 @@ public class SlotMerge : Slot
 			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
 	}
 
-	protected override void CacheRopeBox( RopeBox incoming )
-	{
-		slot_ropeBox = incoming;
-
-		var sequence = recycledSequence.Recycle( OnCacheRopeBoxDone );
-		sequence.Append( slot_ropeBox.transform.DOLocalJump( Vector3.zero, GameSettings.Instance.ropeBox_jump_power, 1, GameSettings.Instance.ropeBox_jump_duration )
-			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
-	}
-
-	protected override void OnCacheRopeBoxDone()
-	{
-		slot_collider.enabled = true;
-		slot_isBusy           = false;
-	}
-
 	protected override void OnMergeRopeBoxDone()
 	{
 		slot_collider.enabled = true;
