@@ -54,7 +54,7 @@ public class TileTable : MonoBehaviour
     void MoveTable()
     {
 		recycledTween.Recycle(
-			transform.DOMove( movement_count_current * GameSettings.Instance.tile_table_movement_delta * -transform.forward,
+			transform.DOMove( movement_count_current * GameSettings.Instance.tile_table_movement_delta * -transform.up,
 			GameSettings.Instance.tile_table_movement_duration )
 			.SetRelative()
 			.SetEase( GameSettings.Instance.tile_table_movement_ease ),
