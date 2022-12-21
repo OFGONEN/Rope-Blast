@@ -21,7 +21,7 @@ public class Tile : MonoBehaviour
     // [ LabelText( "ParticleSpawnner" ), SerializeField ] ParticleSpawner _particleSpawner;
 
 // Property
-    public float Health => tile_health;
+    public float Health => tile_health_current;
     public UnityMessage Cracked 
     {
         set
@@ -31,7 +31,7 @@ public class Tile : MonoBehaviour
     }
 
 // Private
-    float tile_health_current;
+    [ ShowInInspector, ReadOnly ] float tile_health_current;
     UnityMessage onCracked;
 #endregion
 
@@ -56,7 +56,6 @@ public class Tile : MonoBehaviour
 
 		//todo: Spawn a Particle effect ?
 		tile_crackSetter.SetCrackProgress( crackedProgress );
-		tile_collider.enabled = cracked;
 
 		return cracked;
 	}
@@ -64,6 +63,7 @@ public class Tile : MonoBehaviour
     public void GetAttached( Transform parent )
     {
 		onCracked();
+		tile_collider.enabled = false;
 		transform.SetParent( parent );
 	}
 
