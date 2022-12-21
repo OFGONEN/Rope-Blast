@@ -38,6 +38,7 @@ public class Rope : MonoBehaviour
     private void Awake()
     {
 		rope_end_position_default = rope_end.position;
+		DeSpawn();
 	}
 #endregion
 
