@@ -62,6 +62,8 @@ public abstract class Slot : MonoBehaviour
 			OnDropSameSlot();
 		else
 			OnDropDifferentSlot();
+		
+		slot_pair = null;
 	}
 
     public virtual void OnSnatch()
