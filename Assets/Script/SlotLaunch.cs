@@ -61,11 +61,10 @@ public class SlotLaunch : Slot
 
 	protected override void MergeRopeBox( RopeBox incoming )
 	{
-		var sequence = recycledSequence.Recycle( () =>
-		{
-			incoming.DeSpawn();
-			OnMergeRopeBoxDone();
-		} );
+		slot_ropeBox = incoming;
+
+		var sequence = recycledSequence.Recycle( OnMergeRopeBoxDone );
+
 		sequence.Append( incoming.transform.DOLocalJump( Vector3.zero, GameSettings.Instance.ropeBox_jump_power, 1, GameSettings.Instance.ropeBox_jump_duration )
 			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
 	}
