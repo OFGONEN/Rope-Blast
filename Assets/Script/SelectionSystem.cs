@@ -71,9 +71,6 @@ public class SelectionSystem : ScriptableObject
 #region Implementation
     void TryToSelectSlot()
     {
-		onFingerDown = ExtensionMethods.EmptyMethod;
-		onFingerUp   = FingerUp;
-
 		finger_position = shared_finger.ScreenPosition;
 
 		var worldPosition_Start = _camera.ScreenToWorldPoint( finger_position.ConvertV3( _camera.nearClipPlane ) );
@@ -94,7 +91,10 @@ public class SelectionSystem : ScriptableObject
 
 			SetLayerMaskToSelectionTable();
 			DragSlot();
-			onUpdate = DragSlot;
+
+			onFingerDown = ExtensionMethods.EmptyMethod;
+			onFingerUp   = FingerUp;
+			onUpdate     = DragSlot;
 		}
 	}
 
