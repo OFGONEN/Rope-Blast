@@ -13,8 +13,9 @@ public class SlotLaunch : Slot
 	[ BoxGroup( "Components" ), LabelText( "Rope" ), SerializeField ] Rope slot_rope;
 
     public override bool IsBusy => slot_isBusy || slot_rope.IsBusy;
+    public override RopeBoxData RopeBoxData => slot_ropeBoxData;
 // Private
-	RopeBoxData slot_ropeBoxData;
+	[ ShowInInspector, ReadOnly ] RopeBoxData slot_ropeBoxData;
 #endregion
 
 #region Properties
