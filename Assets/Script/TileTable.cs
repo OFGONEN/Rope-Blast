@@ -67,6 +67,16 @@ public class TileTable : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
+	[ Button() ]
+	void AddSpaceBetweenTileRows( float space )
+	{
+		UnityEditor.EditorUtility.SetDirty( gameObject );
+
+		for( var i = 1; i < transform.childCount; i++ )
+		{
+			transform.GetChild( i ).localPosition = Vector3.up * ( i - 1 ) * space;
+		}
+	}
 #endif
 #endregion
 }

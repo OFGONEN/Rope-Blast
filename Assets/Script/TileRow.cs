@@ -42,6 +42,18 @@ public class TileRow : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
+	[ Button() ]
+	void CacheTiles()
+	{
+		UnityEditor.EditorUtility.SetDirty( gameObject );
+
+		tile_array = new Tile[ transform.childCount ];
+
+		for( var i = 0; i < tile_array.Length; i++ )
+		{
+			tile_array[ i ] = transform.GetChild( i ).GetComponent< Tile >();
+		}
+	}
 #endif
 #endregion
 }
