@@ -19,11 +19,14 @@ public class SlotMerge : Slot
 	protected override void OnDisable()
 	{
 		base.OnDisable();
-		pool_ropeBox.ReturnEntity( slot_ropeBox );
+
+		if( slot_ropeBox != null )
+			pool_ropeBox.ReturnEntity( slot_ropeBox );
 	}
 #endregion
 
 #region API
+	[ Button() ]
 	public void SpawnRopeBox( RopeBoxData data )
 	{
 		slot_ropeBox = pool_ropeBox.GetEntity();
