@@ -81,7 +81,7 @@ public abstract class Slot : MonoBehaviour
 
 		for( var i = 0; i < shared_list_slot_all.itemList.Count; i++ )
 		{
-			var distance = Vector3.Distance( slot_dragged_transform.position, shared_list_slot_all.itemList[ i ].transform.position );
+			var distance = Vector3.Distance( slot_dragged_transform.position.SetZ( 0 ), shared_list_slot_all.itemList[ i ].transform.position.SetZ( 0 ) );
 
 			if( distance < closestDistance )
 			{
