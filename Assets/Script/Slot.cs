@@ -10,14 +10,12 @@ using Sirenix.OdinInspector;
 public abstract class Slot : MonoBehaviour
 {
 #region Fields
-  [ Title( "Shared" ) ]
-    [ SerializeField, LabelText( "Slot List All" ) ] protected List_Slot shared_list_slot_all;
-    [ SerializeField, LabelText( "Slot List Custom" ) ] protected List_Slot shared_list_slot_custom;
-    [ SerializeField, LabelText( "RopeBox Pool" ) ] protected Pool_RopeBox pool_ropeBox;
+    [ BoxGroup( "Shared" ), SerializeField, LabelText( "Slot List All" ) ] protected List_Slot shared_list_slot_all;
+    [ BoxGroup( "Shared" ), SerializeField, LabelText( "Slot List Custom" ) ] protected List_Slot shared_list_slot_custom;
+    [ BoxGroup( "Shared" ), SerializeField, LabelText( "RopeBox Pool" ) ] protected Pool_RopeBox pool_ropeBox;
 
-  [ Title( "Components" ) ]
-    [ SerializeField, LabelText( "Slot's Dragged Transform" ) ] protected Transform slot_dragged_transform;
-    [ SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
+    [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot's Dragged Transform" ) ] protected Transform slot_dragged_transform;
+    [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
 
     public virtual bool IsBusy     => slot_isBusy;
     public bool IsEmpty            => slot_isEmpty;
@@ -150,6 +148,13 @@ public abstract class Slot : MonoBehaviour
 
 #region Editor Only
 #if UNITY_EDITOR
+	private void OnDrawGizmos()
+	{
+		if( slot_pair != null )
+		{
+			Gizmos.DrawLine( slot_dragged_transform.position, slot_pair.transform.position );
+		}
+	}
 #endif
 #endregion
 }

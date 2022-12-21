@@ -10,8 +10,7 @@ using Sirenix.OdinInspector;
 public class SlotLaunch : Slot
 {
 #region Fields
-  [ Title( "Components" ) ]
-	[ LabelText( "Rope" ), SerializeField ] Rope slot_rope;
+	[ BoxGroup( "Components" ), LabelText( "Rope" ), SerializeField ] Rope slot_rope;
 
     public override bool IsBusy => slot_isBusy || slot_rope.IsBusy;
 // Private
