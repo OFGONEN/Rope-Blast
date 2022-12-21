@@ -2,18 +2,22 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Sirenix.OdinInspector;
 
 namespace FFStudio
 {
     public class LevelManager : MonoBehaviour
     {
 #region Fields
-        [ Header( "Fired Events" ) ]
+      [ Title( "Fired Events" ) ]
         public GameEvent levelFailedEvent;
         public GameEvent levelCompleted;
 
-        [ Header( "Level Releated" ) ]
+      [ Title( "Level Releated" ) ]
         public SharedProgressNotifier notifier_progress;
+        public PurchaseSystem system_purchase;
+        public List_Slot shared_list_slot_merge;
+        public RopeBoxData[] ropeBoxData_array;
 #endregion
 
 #region UnityAPI
@@ -42,6 +46,23 @@ namespace FFStudio
         {
 
         }
+
+        public void OnPurchase()
+        {
+			var index = system_purchase.PurchaseIndex;
+			system_purchase.IncreasePurchaseCount();
+
+			for( var i = 0; i < shared_list_slot_merge.itemList.Count; i++ )
+            {
+				var slot = shared_list_slot_merge.itemList[ i ];
+
+                if( slot.IsEmpty )
+                {
+					( slot as SlotMerge ).SpawnRopeBox( ropeBoxData_array[ index ] );
+					break;
+				}
+			}
+		}
 #endregion
 
 #region Implementation
