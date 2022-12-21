@@ -106,15 +106,13 @@ public abstract class Slot : MonoBehaviour
 
     protected bool CanDropDifferentSlot()
 	{
-		return !slot_pair.IsEmpty && slot_pair.RopeBoxData.NextRopeBoxData == null && slot_pair.RopeBoxData.RopeLevel != slot_ropeBox.RopeBoxData.RopeLevel;
+		return slot_pair.IsEmpty || ( slot_pair.RopeBoxData.NextRopeBoxData != null && slot_ropeBox.RopeBoxData.RopeLevel == slot_pair.RopeBoxData.RopeLevel );
 	}
 
 	protected void OnDropDifferentSlot()
 	{
 		// If the paired slot is not empty but it has a maxed level rope box or a rope box with a different leveled rope
 		if( CanDropDifferentSlot() )
-			OnDropSameSlot();
-		else
 		{
 			slot_pair.TransferRopeBox( slot_ropeBox );
 
@@ -122,6 +120,9 @@ public abstract class Slot : MonoBehaviour
 			slot_isEmpty = true;
 			slot_ropeBox = null;
 		}
+		else
+			OnDropSameSlot();
+
 	}
 
 	protected virtual void CacheRopeBox( RopeBox incoming )
