@@ -114,7 +114,7 @@ public class Rope : MonoBehaviour
 
 		var launchDelta = ( rope_data.RopeLength - 1 ) * GameSettings.Instance.rope_launch_length_delta + GameSettings.Instance.rope_launch_delta;
 
-		var launchPosition = transform.position + GameSettings.Instance.game_forward * launchDelta;
+		var launchPosition = transform.position + transform.forward * launchDelta;
 		var duration = Vector3.Distance( rope_end.position, launchPosition ) / rope_data.RopeLaunchSpeed;
 
 		var sequence = recycledSequence.Recycle( Return );
