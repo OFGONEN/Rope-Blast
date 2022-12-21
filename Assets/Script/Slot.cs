@@ -25,10 +25,10 @@ public abstract class Slot : MonoBehaviour
 // Private
 	protected RecycledSequence recycledSequence = new RecycledSequence();
 
-	protected bool slot_isBusy;
-    protected bool slot_isEmpty;
-	protected Slot slot_pair;
-	protected RopeBox slot_ropeBox;
+	[ ShowInInspector, ReadOnly ] protected bool slot_isBusy;
+    [ ShowInInspector, ReadOnly ] protected bool slot_isEmpty = true;
+	[ ShowInInspector, ReadOnly ] protected Slot slot_pair;
+	[ ShowInInspector, ReadOnly ] protected RopeBox slot_ropeBox;
 #endregion
 
 #region Properties
