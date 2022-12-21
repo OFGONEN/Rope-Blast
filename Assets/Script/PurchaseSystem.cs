@@ -73,6 +73,11 @@ public class PurchaseSystem : ScriptableObject
 
 #region Editor Only
 #if UNITY_EDITOR
+	[ Button() ]
+	void LogPurchaseCost()
+	{
+		FFLogger.Log( "Cost: " + GetPurchaseCost() );
+	}
 #endif
 #endregion
 }
