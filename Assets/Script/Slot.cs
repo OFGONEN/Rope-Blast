@@ -19,7 +19,7 @@ public abstract class Slot : MonoBehaviour
 
     public virtual bool IsBusy     => slot_isBusy;
     public bool IsEmpty            => slot_isEmpty;
-    public RopeBoxData RopeBoxData => slot_ropeBox.RopeBoxData;
+    public virtual RopeBoxData RopeBoxData => slot_ropeBox.RopeBoxData;
 // Private
 	protected RecycledSequence recycledSequence = new RecycledSequence();
 
