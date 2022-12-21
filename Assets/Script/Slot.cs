@@ -61,8 +61,6 @@ public abstract class Slot : MonoBehaviour
 		else
 			OnDropDifferentSlot();
 		
-		slot_pair = null;
-		slot_dragged_transform.localPosition = Vector3.zero;
 	}
 
     public virtual void OnSnatch()
@@ -117,10 +115,13 @@ public abstract class Slot : MonoBehaviour
 			slot_isBusy  = false;
 			slot_isEmpty = true;
 			slot_ropeBox = null;
+			slot_pair    = null;
+
+			slot_dragged_transform.localPosition = Vector3.zero;
+			slot_collider.enabled = true;
 		}
 		else
 			OnDropSameSlot();
-
 	}
 
 	protected virtual void CacheRopeBox( RopeBox incoming )
