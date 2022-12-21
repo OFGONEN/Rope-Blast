@@ -81,11 +81,13 @@ public abstract class Slot : MonoBehaviour
 
 		for( var i = 0; i < shared_list_slot_all.itemList.Count; i++ )
 		{
-			//todo SetY( 0 ) is dependent on how we design the layout of the levels
-			var distance = Vector3.Distance( slot_dragged_transform.position.SetY( 0 ), shared_list_slot_all.itemList[ i ].transform.position );
+			var distance = Vector3.Distance( slot_dragged_transform.position, shared_list_slot_all.itemList[ i ].transform.position );
 
 			if( distance < closestDistance )
+			{
 				slot_pair = shared_list_slot_all.itemList[ i ];
+				closestDistance = distance;
+			}
 		}
 	}
 
