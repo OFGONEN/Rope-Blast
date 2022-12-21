@@ -11,7 +11,8 @@ namespace FFStudio
 {
 	public static class ExtensionMethods
 	{
-		public static readonly string SAVE_PATH = Application.persistentDataPath + "/Saves/";
+		public static readonly string SAVE_PATH    = Application.persistentDataPath + "/Saves/";
+		public static readonly string Key_Currency = "Currency";
 
 		static List< Transform > baseModelBones   = new List< Transform >( 96 );
 		static List< Transform > targetModelBones = new List< Transform >( 96 );
@@ -80,6 +81,11 @@ namespace FFStudio
 		public static Vector3 ConvertV3( this Vector2 v2 )
 		{
 			return new Vector3( v2.x, v2.y, 0 );
+		}
+
+		public static Vector3 ConvertV3( this Vector2 v2, float z )
+		{
+			return new Vector3( v2.x, v2.y, z );
 		}
 
 		public static Vector3 RandomPointBetween( this Vector3 first, Vector3 second )
