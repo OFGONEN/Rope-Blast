@@ -64,6 +64,7 @@ public abstract class Slot : MonoBehaviour
 			OnDropDifferentSlot();
 		
 		slot_pair = null;
+		slot_dragged_transform.localPosition = Vector3.zero;
 	}
 
     public virtual void OnSnatch()
