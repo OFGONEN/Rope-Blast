@@ -31,7 +31,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6262541588891894469}
-  - {fileID: 4807650523889865328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,7 +83,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7011120579996577406}
+    m_TransformParent: {fileID: 6262541588891894469}
     m_Modifications:
     - target: {fileID: 140474, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
       propertyPath: m_Name
@@ -108,11 +107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 401496, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 401496, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 401496, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
       propertyPath: m_LocalRotation.y
@@ -135,6 +134,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19802098, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: stopAction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802098, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802098, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802098, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.8
       objectReference: {fileID: 0}
@@ -142,13 +153,40 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.minScalar
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 19803582, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19803582, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19815536, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19815536, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19882812, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19882812, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19898990, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19898990, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
---- !u!4 &4807650523889865328 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 401496, guid: 56e3e0c71ef4cbe4dbda074c547d7bd4, type: 3}
-  m_PrefabInstance: {fileID: 4807650523889742376}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6262541588891963243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -203,6 +241,34 @@ PrefabInstance:
     - target: {fileID: 462254, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19882686, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
+      propertyPath: stopAction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19882686, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19882686, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 19896308, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19896308, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19896308, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19896308, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19927624, guid: 491da4be801efb948b57d5aa03918aa6, type: 3}
       propertyPath: m_Materials.Array.size

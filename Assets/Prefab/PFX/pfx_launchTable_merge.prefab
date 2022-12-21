@@ -133,6 +133,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19804050, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804050, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 19831716, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+      propertyPath: stopAction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19831716, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19831716, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 198301761303766644, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198301761303766644, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adcaf72630a20de41aca35592fc820e6, type: 3}
 --- !u!4 &7615924496682723791 stripped

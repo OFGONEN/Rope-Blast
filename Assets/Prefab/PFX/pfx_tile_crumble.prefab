@@ -85,6 +85,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3476621870426351205}
     m_Modifications:
+    - target: {fileID: -2555126519565639177, guid: 3d28041fb7baf0b408a4c2ede0fab67b, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2555126519565639177, guid: 3d28041fb7baf0b408a4c2ede0fab67b, type: 3}
+      propertyPath: stopAction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2555126519565639177, guid: 3d28041fb7baf0b408a4c2ede0fab67b, type: 3}
+      propertyPath: emitterVelocityMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2555126519565639177, guid: 3d28041fb7baf0b408a4c2ede0fab67b, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3485767453256985451, guid: 3d28041fb7baf0b408a4c2ede0fab67b, type: 3}
       propertyPath: m_RootOrder
       value: 0
