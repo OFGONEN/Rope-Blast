@@ -89,6 +89,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConfettiFountainMagic
       objectReference: {fileID: 0}
+    - target: {fileID: 1381480182204010, guid: 7e5fda3f2fc8cd84fa0814e5537b8142, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4743691942952480, guid: 7e5fda3f2fc8cd84fa0814e5537b8142, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -132,6 +136,10 @@ PrefabInstance:
     - target: {fileID: 4743691942952480, guid: 7e5fda3f2fc8cd84fa0814e5537b8142, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198206202186760472, guid: 7e5fda3f2fc8cd84fa0814e5537b8142, type: 3}
+      propertyPath: stopAction
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e5fda3f2fc8cd84fa0814e5537b8142, type: 3}
