@@ -63,7 +63,7 @@ public class Tile : MonoBehaviour
     public void GetAttached( Transform parent )
     {
 		onCracked();
-		tile_collider.enabled = false;
+		// tile_collider.enabled = false;
 		transform.SetParent( parent );
 	}
 
