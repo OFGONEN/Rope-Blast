@@ -57,6 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127a643e9a167c24d86bdc9a05d30130, type: 3}
+--- !u!23 &5643189117982155633 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6476067528524464206, guid: 127a643e9a167c24d86bdc9a05d30130, type: 3}
+  m_PrefabInstance: {fileID: 1697645410418008895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8754756043061598195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,6 +113,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: renderer_
+      value: 
+      objectReference: {fileID: 5643189117982155633}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_health
       value: 4
@@ -124,6 +133,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile_four
       objectReference: {fileID: 0}
+    - target: {fileID: 8823102362757290823, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tileRenderer
+      value: 
+      objectReference: {fileID: 5643189117982155633}
+    - target: {fileID: 8823102362757290823, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: crack_texture_array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823102362757290823, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: crack_texture_array.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 3aab7534bf94e9f498169a66b616cb56, type: 3}
+    - target: {fileID: 8823102362757290823, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: crack_texture_array.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: c7ff3477a26879d45b08dc34a37b3c6c, type: 3}
+    - target: {fileID: 8823102362757290823, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: crack_texture_array.Array.data[2]
+      value: 
+      objectReference: {fileID: 2800000, guid: 0d733b580f9606348b99aef3df348dab, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
 --- !u!4 &1520073576270209349 stripped

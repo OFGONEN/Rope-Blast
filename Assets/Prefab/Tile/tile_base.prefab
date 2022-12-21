@@ -70,7 +70,7 @@ MonoBehaviour:
       type: {class: MaterialUpdateData_Color, ns: , asm: Assembly-CSharp}
       data:
         name: _Crack_Color
-        id: 1556
+        id: 1059
         data: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &5109631380513755857
 MonoBehaviour:
@@ -92,6 +92,9 @@ MonoBehaviour:
       m_Calls: []
   onAwakeEvent:
     m_PersistentCalls:
+      m_Calls: []
+  onStartEvent:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7644684444650539560}
         m_TargetAssemblyTypeName: MaterialUpdate, Assembly-CSharp
@@ -105,9 +108,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onStartEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &2678501485014001723
 GameObject:
   m_ObjectHideFlags: 0

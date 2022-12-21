@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: shared_rope_data_one
   m_EditorClassIdentifier: 
   rope_level: 1
-  rope_material: {fileID: 0}
-  rope_hook_mesh: {fileID: 0}
-  rope_hook_material: {fileID: 0}
+  rope_material: {fileID: 2100000, guid: 6e63d07d531b61c4998f0bc5b4327420, type: 2}
+  rope_hook_mesh: {fileID: 5082457043955922070, guid: 33a74a8b8bf195846aedc1e0abe16c41, type: 3}
+  rope_hook_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
   rope_length: 1
   rope_damage: 1
   rope_launch_delay: 0.2
