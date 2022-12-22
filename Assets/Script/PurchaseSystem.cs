@@ -17,6 +17,7 @@ public class PurchaseSystem : ScriptableObject
 
 	public int PurchaseCount => purchase_count;
 	public int PurchaseIndex => purchase_index;
+	public int PurchaseCeil => purchase_level_range[ purchase_index ];
 
 	int purchase_count;
     int purchase_index;
