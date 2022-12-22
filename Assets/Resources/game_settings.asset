@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a385bd3b4416492409284c9a366cb52a, type: 3}
   m_Name: game_settings
   m_EditorClassIdentifier: 
-  rope_launch_delta: 5
-  rope_launch_length_delta: 0.65
+  rope_launch_delta: 3
+  rope_launch_length_delta: 1.5
   ropeBox_jump_power: 1
   ropeBox_jump_duration: 0.65
   ropeBox_jump_ease: 6
-  tile_table_movement_delta: 1
+  tile_table_movement_delta: 1.5
   tile_table_movement_duration: 0.15
   tile_table_movement_ease: 6
   selection_layer_slot: 28
