@@ -109,19 +109,22 @@ public abstract class Slot : MonoBehaviour
 	{
 		// If the paired slot is not empty but it has a maxed level rope box or a rope box with a different leveled rope
 		if( CanDropDifferentSlot() )
-		{
-			slot_pair.TransferRopeBox( slot_ropeBox );
-
-			slot_isBusy  = false;
-			slot_isEmpty = true;
-			slot_ropeBox = null;
-			slot_pair    = null;
-
-			slot_dragged_transform.localPosition = Vector3.zero;
-			slot_collider.enabled = true;
-		}
+			DropDifferentSlot();
 		else
 			OnDropSameSlot();
+	}
+
+	protected virtual void DropDifferentSlot()
+	{
+		slot_pair.TransferRopeBox( slot_ropeBox );
+
+		slot_isBusy  = false;
+		slot_isEmpty = true;
+		slot_ropeBox = null;
+		slot_pair    = null;
+
+		slot_dragged_transform.localPosition = Vector3.zero;
+		slot_collider.enabled = true;
 	}
 
 	protected virtual void CacheRopeBox( RopeBox incoming )
