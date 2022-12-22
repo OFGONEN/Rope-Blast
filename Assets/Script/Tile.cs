@@ -12,7 +12,8 @@ public class Tile : MonoBehaviour
 #region Fields
   [ Title( "Setup" ) ]
     [ LabelText( "Tile Health" ), SerializeField ] float tile_health;
-    [ LabelText( "Tile Currency" ), SerializeField ] Vector2 tile_currency;
+    [ LabelText( "Tile Destory Currency" ), SerializeField ] Vector2 tile_currency;
+    [ LabelText( "Tile Hit Currency" ), SerializeField ] Vector2 tile_currency_hit;
     [ LabelText( "Currency" ), SerializeField ] Currency notif_currency;
 
   [ Title( "Components" ) ]
@@ -53,6 +54,8 @@ public class Tile : MonoBehaviour
 
 		var crackedProgress = Mathf.InverseLerp( tile_health, 0, tile_health_current );
 		var cracked         = tile_health < 0;
+
+		notif_currency.SharedValue += tile_currency_hit.ReturnRandom();
 
 		//todo: Spawn a Particle effect ?
 		tile_crackSetter.SetCrackProgress( crackedProgress );
