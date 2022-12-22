@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8daecb1f9a591344c9a374e02053996d, type: 3}
+  m_Name: level_creator
+  m_EditorClassIdentifier: 
+  level_code: 11112222333
+  tile_row: {fileID: 5369293516975765795, guid: 36660b527610cd24284dea227d1d5a06, type: 3}
+  tile_array:
+  - {fileID: 7665597464970108071, guid: e7bf6fcbc1327424d82e6bfd87c69598, type: 3}
+  - {fileID: 6658172822106917665, guid: a5a044f06bb40c74b9d6b8b18c5da719, type: 3}
+  - {fileID: 7984105090024619601, guid: ce3add697d03a3146a34ce9caac1a1a7, type: 3}
+  - {fileID: 221907936604609778, guid: a7852b87e0e05fc48bae0a7b37d798b5, type: 3}
+  - {fileID: 2806875768792783301, guid: bdbcee838a8aa1e47bcdfad4256c695c, type: 3}
+  - {fileID: 5679023854509443040, guid: 779f727cf2b71c6419e4cf68857790c5, type: 3}
+  tile_row_height: 1.5
+  tile_row_count: 4
+  tile_start: -2.25
+  tile_gap: 1.5
