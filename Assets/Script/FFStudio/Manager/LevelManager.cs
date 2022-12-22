@@ -53,7 +53,6 @@ namespace FFStudio
         public void OnPurchase()
         {
 			var index = system_purchase.PurchaseIndex;
-			system_purchase.IncreasePurchaseCount();
 
 			slot_list.Clear();
 
