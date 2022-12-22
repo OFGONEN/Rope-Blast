@@ -13,6 +13,7 @@ public class PurchaseSystem : ScriptableObject
   [ Title( "Setup" ) ]
     [ SerializeField, LabelText( "Base Purchase Cost" ) ] float purchase_cost_base;
     [ SerializeField, LabelText( "Purchase Level Range" ) ] int[] purchase_level_range; //Info: This array's length must be 1 less then total RopeBoxData count
+    [ SerializeField, LabelText( "Purchase Context" ) ] Sprite[] purchase_context_array; 
 
 	public int PurchaseCount => purchase_count;
 	public int PurchaseIndex => purchase_index;
@@ -44,6 +45,11 @@ public class PurchaseSystem : ScriptableObject
     public float GetPurchaseCost()
     {
 		return purchase_cost_base + Mathf.Pow( purchase_count, 1.25f ) - purchase_count;
+	}
+
+	public Sprite GetPurchaseContext()
+	{
+		return purchase_context_array[ purchase_index ];
 	}
 
     public void IncreasePurchaseCount()
