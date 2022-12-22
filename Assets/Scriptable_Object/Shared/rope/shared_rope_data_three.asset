@@ -19,8 +19,8 @@ MonoBehaviour:
   rope_length: 2
   rope_damage: 3
   rope_launch_delay: 0.2
-  rope_launch_speed: 1
-  rope_launch_ease: 0
+  rope_launch_speed: 10
+  rope_launch_ease: 11
   rope_return_delay: 0.1
-  rope_return_speed: 1
+  rope_return_speed: 2
   rope_return_ease: 0
