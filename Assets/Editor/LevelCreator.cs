@@ -57,7 +57,7 @@ public class LevelCreator : ScriptableObject
 			var tileCount = 0;
 			for( ; i < level_code.Length && tileCount < tile_row_count; i++ )
             {
-			    var tile = PrefabUtility.InstantiatePrefab( tile_array[ int.Parse( level_code[ i ].ToString() ) ] ) as GameObject;
+			    var tile = PrefabUtility.InstantiatePrefab( tile_array[ int.Parse( level_code[ i ].ToString() ) - 1 /* NOTE: Due to array index and tile level name difference */] ) as GameObject;
 			    tile.name = "tile_" + i;
 
 				tile.transform.SetParent( tileRow.transform );
