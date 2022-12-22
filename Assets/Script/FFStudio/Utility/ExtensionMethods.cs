@@ -516,6 +516,18 @@ namespace FFStudio
 				GameObject.DestroyImmediate( childs[ i ].gameObject );
 		}
 
+		public static void DestroyAllChildren( this Transform transform, int startIndex )
+		{
+			var childCount = transform.childCount;
+			var childs = new List< Transform >( transform.childCount );
+
+			for( var i = 0; i < childCount; i++ )
+				childs.Add( transform.GetChild( i ) );
+
+			for( var i = startIndex; i < childCount; i++ )
+				GameObject.DestroyImmediate( childs[ i ].gameObject );
+		}
+
 		public static void ToggleKinematic( this Rigidbody rigidbody, bool value )
 		{
 			rigidbody.isKinematic = value;
