@@ -3,6 +3,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 
 namespace FFStudio
 {
@@ -18,6 +19,8 @@ namespace FFStudio
         public PurchaseSystem system_purchase;
         public List_Slot shared_list_slot_merge;
         public RopeBoxData[] ropeBoxData_array;
+
+        List< Slot > slot_list = new List< Slot >(9); 
 #endregion
 
 #region UnityAPI
@@ -52,16 +55,20 @@ namespace FFStudio
 			var index = system_purchase.PurchaseIndex;
 			system_purchase.IncreasePurchaseCount();
 
+			slot_list.Clear();
+
 			for( var i = 0; i < shared_list_slot_merge.itemList.Count; i++ )
             {
 				var slot = shared_list_slot_merge.itemList[ i ];
 
                 if( slot.IsEmpty )
                 {
-					( slot as SlotMerge ).SpawnRopeBox( ropeBoxData_array[ index ] );
-					break;
+					slot_list.Add( slot );
 				}
 			}
+
+            if( slot_list.Count > 0 )
+                ( slot_list.ReturnRandom() as SlotMerge ).SpawnRopeBox( ropeBoxData_array[ index ] );
 		}
 #endregion
 
