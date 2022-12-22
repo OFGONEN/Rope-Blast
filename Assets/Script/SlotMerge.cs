@@ -10,6 +10,7 @@ using Sirenix.OdinInspector;
 public class SlotMerge : Slot
 {
 #region Fields
+    [ BoxGroup( "Shared" ), SerializeField, LabelText( "Merge Table Is Empty" ) ] protected SharedBoolNotifier notif_table_empty;
 #endregion
 
 #region Properties
@@ -34,10 +35,17 @@ public class SlotMerge : Slot
 
 		slot_isEmpty = false;
 		slot_ropeBox.Spawn( data, slot_dragged_transform.position );
-	}
-#endregion
 
-#region Implementation
+		CheckIfTableIsFull();
+	}
+	#endregion
+
+	#region Implementation
+	protected override void DropDifferentSlot()
+	{
+		base.DropDifferentSlot();
+		notif_table_empty.SharedValue = true;
+	}
 	protected override void OnDropSameSlot()
 	{
 		slot_dragged_transform.localPosition = Vector3.zero;
@@ -51,8 +59,11 @@ public class SlotMerge : Slot
 			incoming.DeSpawn();
 			OnMergeRopeBoxDone();
 		} );
+
 		sequence.Append( incoming.transform.DOLocalJump( Vector3.zero, GameSettings.Instance.ropeBox_jump_power, 1, GameSettings.Instance.ropeBox_jump_duration )
 			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
+
+		notif_table_empty.SharedValue = true;
 	}
 
 	protected override void OnMergeRopeBoxDone()
@@ -64,6 +75,18 @@ public class SlotMerge : Slot
 		slot_ropeBox.DeSpawn();
 
 		SpawnRopeBox( data );
+	}
+
+	void CheckIfTableIsFull()
+	{
+		var tableIsEmpty = false;
+
+		for( var i = 0; i < shared_list_slot_custom.itemList.Count; i++ )
+		{
+			tableIsEmpty = tableIsEmpty || shared_list_slot_custom.itemList[ i ].IsEmpty;
+		}
+
+		notif_table_empty.SharedValue = tableIsEmpty;
 	}
 #endregion
 

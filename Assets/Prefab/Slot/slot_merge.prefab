@@ -88,6 +88,7 @@ MonoBehaviour:
   pool_ropeBox: {fileID: 11400000, guid: 7c874ef05acfcec4193b3f70e455078e, type: 2}
   slot_dragged_transform: {fileID: 2167176385993530686}
   slot_collider: {fileID: 7326506245304151736}
+  notif_table_empty: {fileID: 11400000, guid: 621d7cad185950f4796d3eb574182f6c, type: 2}
 --- !u!65 &7326506245304151736 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 2623721815910743762, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
