@@ -43,7 +43,7 @@ public class TileRow : MonoBehaviour
 #region Editor Only
 #if UNITY_EDITOR
 	[ Button() ]
-	void CacheTiles()
+	public void CacheTiles()
 	{
 		UnityEditor.EditorUtility.SetDirty( gameObject );
 
