@@ -70,7 +70,7 @@ MonoBehaviour:
       type: {class: MaterialUpdateData_Color, ns: , asm: Assembly-CSharp}
       data:
         name: _Crack_Color
-        id: 1560
+        id: 860
         data: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &5109631380513755857
 MonoBehaviour:
@@ -247,6 +247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile_health: 0
   tile_currency: {x: 0, y: 0}
+  tile_currency_hit: {x: 0, y: 0}
+  notif_tile_count: {fileID: 11400000, guid: ce3c21e1f839d214d97239bab627c762, type: 2}
   notif_currency: {fileID: 11400000, guid: 536e5f6e9f5d41446b6afa66af635385, type: 2}
   tile_collider: {fileID: 1100584728326599429}
   tile_crackSetter: {fileID: 8823102362757290823}
