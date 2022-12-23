@@ -11,11 +11,7 @@ public class TileTable : MonoBehaviour
 {
 #region Fields
 	[ SerializeField ] GameEvent event_level_complete;
-
-    int movement_count_total;
-    int movement_count_current;
-
-	int tileRow_count;
+    [ ShowInInspector, ReadOnly ] int movement_count;
 
 	RecycledTween recycledTween = new RecycledTween();
 #endregion
@@ -24,18 +20,13 @@ public class TileTable : MonoBehaviour
 #endregion
 
 #region Unity API
-	private void Awake()
-	{
-		tileRow_count = transform.childCount;
-	}
 #endregion
 
 #region API
 	//Info: Editor Call
     public void OnTableMove()
     {
-		movement_count_total   += 1;
-		movement_count_current += 1;
+		movement_count += 1;
 
         if( !recycledTween.IsPlaying() )
 			MoveTable();
@@ -45,23 +36,21 @@ public class TileTable : MonoBehaviour
 #region Implementation
     void OnTableMoveComplete()
     {
-        if( movement_count_current > 0 )
+        if( movement_count > 0 )
 			MoveTable();
-		else if( movement_count_total == tileRow_count )
-			event_level_complete.Raise();
 	}
 
     void MoveTable()
     {
 		recycledTween.Recycle(
-			transform.DOMove( movement_count_current * GameSettings.Instance.tile_table_movement_delta * -transform.up,
+			transform.DOMove( movement_count * GameSettings.Instance.tile_table_movement_delta * -transform.up,
 			GameSettings.Instance.tile_table_movement_duration )
 			.SetRelative()
 			.SetEase( GameSettings.Instance.tile_table_movement_ease ),
 			OnTableMoveComplete
 		);
 
-		movement_count_current = 0;
+		movement_count = 0;
     }
 #endregion
 
