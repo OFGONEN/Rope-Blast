@@ -118,6 +118,7 @@ public class Rope : MonoBehaviour
     void Launch()
     {
 		rope_tile_list.Clear();
+		rope_collider.enabled = true;
 
 		var launchDelta = ( rope_data.RopeLength - 1 ) * GameSettings.Instance.rope_launch_length_delta + GameSettings.Instance.rope_launch_delta;
 
@@ -132,6 +133,8 @@ public class Rope : MonoBehaviour
 
     void Return()
     {
+		rope_collider.enabled = false;
+
 		var duration = Vector3.Distance( rope_end.position, rope_end_position_default ) / rope_data.RopeReturnSpeed;
 
 		var sequence = recycledSequence.Recycle( Launch );
