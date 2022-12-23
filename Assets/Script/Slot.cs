@@ -16,6 +16,7 @@ public abstract class Slot : MonoBehaviour
 
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot's Dragged Transform" ) ] protected Transform slot_dragged_transform;
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
+    [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Index" ) ] protected int slot_index;
 
     public virtual bool IsBusy     => slot_isBusy;
     public bool IsEmpty            => slot_isEmpty;
@@ -37,12 +38,18 @@ public abstract class Slot : MonoBehaviour
 	{
 		shared_list_slot_all.AddList( this );
 		shared_list_slot_custom.AddList( this );
+
+		shared_list_slot_all.AddDictionary( slot_index, this );
+		shared_list_slot_custom.AddDictionary( slot_index, this );
 	}
 
 	protected virtual void OnDisable()
 	{
 		shared_list_slot_all.RemoveList( this );
-		shared_list_slot_custom.RemoveList( this );	
+		shared_list_slot_custom.RemoveList( this );
+
+		shared_list_slot_all.RemoveDictionary( slot_index );
+		shared_list_slot_custom.RemoveDictionary( slot_index );
 	}
 #endregion
 
