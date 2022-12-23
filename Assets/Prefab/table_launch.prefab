@@ -135,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5532954175434603495}
     m_Modifications:
+    - target: {fileID: 1842458569579337846, guid: 85670bed872006643b52b72fd745a091, type: 3}
+      propertyPath: slot_index
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7079921749678946333, guid: 85670bed872006643b52b72fd745a091, type: 3}
       propertyPath: m_Name
       value: slot_launch_4
@@ -263,6 +267,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5532954175434603495}
     m_Modifications:
+    - target: {fileID: 1842458569579337846, guid: 85670bed872006643b52b72fd745a091, type: 3}
+      propertyPath: slot_index
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7079921749678946333, guid: 85670bed872006643b52b72fd745a091, type: 3}
       propertyPath: m_Name
       value: slot_launch_2
@@ -325,6 +333,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5532954175434603495}
     m_Modifications:
+    - target: {fileID: 1842458569579337846, guid: 85670bed872006643b52b72fd745a091, type: 3}
+      propertyPath: slot_index
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7079921749678946333, guid: 85670bed872006643b52b72fd745a091, type: 3}
       propertyPath: m_Name
       value: slot_launch_3

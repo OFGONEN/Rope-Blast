@@ -1,6 +1,7 @@
 /* Created by and for usage of FF Studios (2021). */
 
 using System.IO;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace FFStudio
@@ -57,12 +58,17 @@ namespace FFStudio
 		public void LoadSave_ToSharedString()
 		{
 			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) == false )
+			{
+				FFLogger.Log( "SaveSystem: Loaded NULL" );
+				save_string.sharedValue = string.Empty;
 				return;
+			}
 
 			save_string.SharedValue = File.ReadAllText( ExtensionMethods.SAVE_PATH + "save.txt" );
 			FFStudio.FFLogger.Log( "SaveSystem: Loaded Succesfully. Data read: " + save_string.sharedValue );
 		}
 
+		[ Button() ]
 		public void DeleteSave()
 		{
 			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) )

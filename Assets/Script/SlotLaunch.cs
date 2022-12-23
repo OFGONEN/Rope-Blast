@@ -36,6 +36,17 @@ public class SlotLaunch : Slot
 
 		slot_ropeBox.Spawn( slot_ropeBoxData, slot_dragged_transform.position );
 	}
+
+	public void SpawnRope( RopeBoxData ropeBoxData )
+	{
+		slot_collider.enabled = true;
+		slot_isBusy = false;
+
+		slot_ropeBoxData = ropeBoxData;
+		slot_ropeBox = null;
+
+		slot_rope.Spawn( slot_ropeBoxData.RopeData );
+	}
 #endregion
 
 #region Implementation

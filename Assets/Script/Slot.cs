@@ -16,9 +16,11 @@ public abstract class Slot : MonoBehaviour
 
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot's Dragged Transform" ) ] protected Transform slot_dragged_transform;
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
+    [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Index" ) ] protected int slot_index;
 
-    public virtual bool IsBusy     => slot_isBusy;
-    public bool IsEmpty            => slot_isEmpty;
+    public int SlotIndex                   => slot_index;
+    public virtual bool IsBusy             => slot_isBusy;
+    public bool IsEmpty                    => slot_isEmpty;
     public virtual RopeBoxData RopeBoxData => slot_ropeBox.RopeBoxData;
 // Private
 	protected RecycledSequence recycledSequence = new RecycledSequence();
@@ -37,12 +39,16 @@ public abstract class Slot : MonoBehaviour
 	{
 		shared_list_slot_all.AddList( this );
 		shared_list_slot_custom.AddList( this );
+
+		shared_list_slot_custom.AddDictionary( slot_index, this );
 	}
 
 	protected virtual void OnDisable()
 	{
 		shared_list_slot_all.RemoveList( this );
-		shared_list_slot_custom.RemoveList( this );	
+		shared_list_slot_custom.RemoveList( this );
+
+		shared_list_slot_custom.RemoveDictionary( slot_index );
 	}
 #endregion
 
@@ -98,6 +104,14 @@ public abstract class Slot : MonoBehaviour
 
 		slot_isEmpty = false;
 		slot_isBusy  = true;
+	}
+
+	public int GetRopeLevel()
+	{
+		if( slot_isEmpty )
+			return 0;
+		else
+			return RopeBoxData.RopeLevel;
 	}
 
     protected bool CanDropDifferentSlot()
