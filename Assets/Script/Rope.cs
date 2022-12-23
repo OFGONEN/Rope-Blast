@@ -36,6 +36,11 @@ public class Rope : MonoBehaviour
 #endregion
 
 #region Unity API
+	private void OnDisable()
+	{
+		recycledSequence.Kill();
+		rope_tile_list.Clear();
+	}
     private void Awake()
     {
 		rope_end_position_default = rope_end.position;
