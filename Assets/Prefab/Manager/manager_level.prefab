@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 545607841950496312}
   - component: {fileID: 3087407567312676473}
   - component: {fileID: 6253295288017648143}
+  - component: {fileID: 5269984826123999043}
   m_Layer: 0
   m_Name: manager_level
   m_TagString: Untagged
@@ -154,3 +155,31 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &5269984826123999043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333294110489974212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c58e017d4d0ef47a9acad9ee75b31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedDataNotifier: {fileID: 11400000, guid: ce3c21e1f839d214d97239bab627c762, type: 2}
+  notify_event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3087407567312676473}
+        m_TargetAssemblyTypeName: FFStudio.LevelManager, Assembly-CSharp
+        m_MethodName: OnTileCountChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

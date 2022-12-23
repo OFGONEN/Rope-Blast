@@ -50,6 +50,12 @@ namespace FFStudio
 
         }
 
+        public void OnTileCountChanged( int count )
+        {
+            if( count == 0 )
+				levelCompleted.Raise();
+		}
+
         public void OnPurchase()
         {
 			var index = system_purchase.PurchaseIndex;
