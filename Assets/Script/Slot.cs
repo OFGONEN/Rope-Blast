@@ -40,7 +40,6 @@ public abstract class Slot : MonoBehaviour
 		shared_list_slot_all.AddList( this );
 		shared_list_slot_custom.AddList( this );
 
-		shared_list_slot_all.AddDictionary( slot_index, this );
 		shared_list_slot_custom.AddDictionary( slot_index, this );
 	}
 
@@ -49,7 +48,6 @@ public abstract class Slot : MonoBehaviour
 		shared_list_slot_all.RemoveList( this );
 		shared_list_slot_custom.RemoveList( this );
 
-		shared_list_slot_all.RemoveDictionary( slot_index );
 		shared_list_slot_custom.RemoveDictionary( slot_index );
 	}
 #endregion
