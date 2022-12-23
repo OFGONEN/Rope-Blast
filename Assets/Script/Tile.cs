@@ -14,7 +14,6 @@ public class Tile : MonoBehaviour
     [ LabelText( "Tile Health" ), SerializeField ] float tile_health;
     [ LabelText( "Tile Destory Currency" ), SerializeField ] Vector2 tile_currency;
     [ LabelText( "Tile Hit Currency" ), SerializeField ] Vector2 tile_currency_hit;
-    [ LabelText( "Tile Count" ), SerializeField ] SharedIntNotifier notif_tile_count;
     [ LabelText( "Currency" ), SerializeField ] Currency notif_currency;
 
   [ Title( "Components" ) ]
@@ -41,16 +40,6 @@ public class Tile : MonoBehaviour
 #endregion
 
 #region Unity API
-	private void OnEnable()
-	{
-		notif_tile_count.SharedValue += 1;
-	}
-
-	private void OnDisable()
-	{
-		notif_tile_count.SharedValue -= 1;
-	}
-
     private void Awake()
     {
 		tile_health_current = tile_health;
