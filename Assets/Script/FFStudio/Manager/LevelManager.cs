@@ -20,6 +20,7 @@ namespace FFStudio
         public RopeBoxData[] ropeBoxData_array;
         public List_Slot shared_list_slot_merge;
         public List_Slot shared_list_slot_launch;
+		public SharedStringNotifier notif_save;
 
 		List< Slot > slot_list = new List< Slot >(9); 
 #endregion
@@ -54,7 +55,10 @@ namespace FFStudio
         public void OnTileCountChanged( int count )
         {
             if( count == 0 )
+            {
+				SerializeSaveData();
 				levelCompleted.Raise();
+            }
 		}
 
         public void OnPurchase()
@@ -79,6 +83,38 @@ namespace FFStudio
 #endregion
 
 #region Implementation
+        void SerializeSaveData()
+        {
+			notif_save.SharedValue = JsonUtility.ToJson( new SaveData( shared_list_slot_merge, shared_list_slot_launch ) );
+		}
 #endregion
     }
+}
+
+[ System.Serializable ]
+public struct SaveData
+{
+	public int[] slot_merge_data;
+	public int[] slot_launch_data;
+
+    public SaveData( List_Slot list_slot_merge, List_Slot list_slot_launch )
+    {
+		slot_merge_data  = new int[ list_slot_merge.itemDictionary.Count ];
+		slot_launch_data = new int[ list_slot_launch.itemDictionary.Count ];
+
+		int counter = 0;
+
+		foreach( var slot in list_slot_merge.itemDictionary.Values )
+        {
+			slot_merge_data[ counter ] = slot.GetRopeLevel();
+			counter++;
+		}
+
+		counter = 0;
+		foreach( var slot in list_slot_launch.itemDictionary.Values )
+		{
+			slot_launch_data[ counter ] = slot.GetRopeLevel();
+			counter++;
+		}
+	}
 }

@@ -59,6 +59,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e6a2a4fabebc054883cffb23a890c75, type: 2}
   shared_list_slot_merge: {fileID: 11400000, guid: 7b9fdfba8276b49578849242bafa2683, type: 2}
   shared_list_slot_launch: {fileID: 11400000, guid: f8ecc8343cd2f4113b06bb3c54ee1aa2, type: 2}
+  notif_save: {fileID: 11400000, guid: 7a7ff5daa44de4fc3b72d51603cc7641, type: 2}
 --- !u!114 &6253295288017648143
 MonoBehaviour:
   m_ObjectHideFlags: 0
