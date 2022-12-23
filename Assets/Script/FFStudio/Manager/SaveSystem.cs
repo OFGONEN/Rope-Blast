@@ -77,6 +77,18 @@ namespace FFStudio
 				File.Delete( ExtensionMethods.SAVE_PATH + "save.txt" );
 			}
 		}
+
+		[ Button() ]
+		public void DeleteAllSave()
+		{
+			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) )
+			{
+				FFStudio.FFLogger.Log( "SaveSystem: Found save file. Deleting it." );
+				File.Delete( ExtensionMethods.SAVE_PATH + "save.txt" );
+			}
+
+			PlayerPrefsUtility.Instance.DeleteAll();
+		}
 #endregion
 
 #region Implementation
