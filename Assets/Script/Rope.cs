@@ -127,7 +127,7 @@ public class Rope : MonoBehaviour
 
     void Return()
     {
-		var duration = Vector3.Distance( rope_end.position, rope_end_position_default );
+		var duration = Vector3.Distance( rope_end.position, rope_end_position_default ) / rope_data.RopeReturnSpeed;
 
 		var sequence = recycledSequence.Recycle( Launch );
 		sequence.AppendInterval( rope_data.RopeReturnDelay );
