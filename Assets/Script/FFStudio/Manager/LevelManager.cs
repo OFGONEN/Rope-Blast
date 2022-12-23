@@ -87,6 +87,36 @@ namespace FFStudio
         {
 			notif_save.SharedValue = JsonUtility.ToJson( new SaveData( shared_list_slot_merge, shared_list_slot_launch ) );
 		}
+
+        void DeserializeSaveData()
+        {
+			if( notif_save.sharedValue == string.Empty ) return;
+
+			var data = JsonUtility.FromJson< SaveData >( notif_save.sharedValue );
+
+			FFLogger.Log( "SaveData Loaded: " + data );
+			FFLogger.Log( "Merge List: " + shared_list_slot_merge.itemList.Count );
+
+			int counter = 0;
+			foreach( var slot in shared_list_slot_merge.itemList )
+            {
+				var ropeLevel = data.slot_merge_data[ counter ];
+                if( ropeLevel != 0 )
+				    ( slot as SlotMerge ).SpawnRopeBox( ropeBoxData_array[ ropeLevel - 1 ] );
+
+				counter++;
+			}
+
+			counter = 0;
+			foreach( var slot in shared_list_slot_launch.itemList )
+			{
+				var ropeLevel = data.slot_launch_data[ counter ];
+				if( ropeLevel != 0 )
+					( slot as SlotLaunch ).SpawnRope( ropeBoxData_array[ ropeLevel - 1 ] );
+
+				counter++;
+			}
+        }
 #endregion
     }
 }
