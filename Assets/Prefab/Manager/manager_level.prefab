@@ -50,7 +50,6 @@ MonoBehaviour:
   levelCompleted: {fileID: 11400000, guid: 28d976b368abc004a924d98b1751a17d, type: 2}
   notifier_progress: {fileID: 11400000, guid: 43438d720c16f2e4aa5a19d520e1e15f, type: 2}
   system_purchase: {fileID: 11400000, guid: 3267c7088c4305e409b80108ed0170cf, type: 2}
-  shared_list_slot_merge: {fileID: 11400000, guid: 7b9fdfba8276b49578849242bafa2683, type: 2}
   ropeBoxData_array:
   - {fileID: 11400000, guid: 02920f9177666c041a677fa9ca4e8a02, type: 2}
   - {fileID: 11400000, guid: 1f55d2379d657d14f83a2020bb490f02, type: 2}
@@ -58,6 +57,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df5d74ce8466ced4ba7f73fbd708c6c1, type: 2}
   - {fileID: 11400000, guid: ab1d416731b9ca14cb817afa4e10890d, type: 2}
   - {fileID: 11400000, guid: 0e6a2a4fabebc054883cffb23a890c75, type: 2}
+  shared_list_slot_merge: {fileID: 11400000, guid: 7b9fdfba8276b49578849242bafa2683, type: 2}
+  shared_list_slot_launch: {fileID: 11400000, guid: f8ecc8343cd2f4113b06bb3c54ee1aa2, type: 2}
 --- !u!114 &6253295288017648143
 MonoBehaviour:
   m_ObjectHideFlags: 0

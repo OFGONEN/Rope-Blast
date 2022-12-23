@@ -17,10 +17,11 @@ namespace FFStudio
       [ Title( "Level Releated" ) ]
         public SharedProgressNotifier notifier_progress;
         public PurchaseSystem system_purchase;
-        public List_Slot shared_list_slot_merge;
         public RopeBoxData[] ropeBoxData_array;
+        public List_Slot shared_list_slot_merge;
+        public List_Slot shared_list_slot_launch;
 
-        List< Slot > slot_list = new List< Slot >(9); 
+		List< Slot > slot_list = new List< Slot >(9); 
 #endregion
 
 #region UnityAPI

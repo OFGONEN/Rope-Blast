@@ -18,8 +18,9 @@ public abstract class Slot : MonoBehaviour
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Index" ) ] protected int slot_index;
 
-    public virtual bool IsBusy     => slot_isBusy;
-    public bool IsEmpty            => slot_isEmpty;
+    public int SlotIndex                   => slot_index;
+    public virtual bool IsBusy             => slot_isBusy;
+    public bool IsEmpty                    => slot_isEmpty;
     public virtual RopeBoxData RopeBoxData => slot_ropeBox.RopeBoxData;
 // Private
 	protected RecycledSequence recycledSequence = new RecycledSequence();
