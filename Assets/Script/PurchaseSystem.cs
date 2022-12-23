@@ -19,8 +19,8 @@ public class PurchaseSystem : ScriptableObject
 	public int PurchaseIndex => purchase_index;
 	public int PurchaseCeil => purchase_level_range[ Mathf.Min( purchase_index, purchase_level_range.Length - 1 ) ];
 
-	int purchase_count;
-    int purchase_index;
+	[ ShowInInspector ] int purchase_count;
+    [ ShowInInspector ] int purchase_index;
 #endregion
 
 #region Properties
