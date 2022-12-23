@@ -38,6 +38,8 @@ namespace FFStudio
 				SceneManager.SetActiveScene( SceneManager.GetSceneAt( 1 ) );
             else
 				SceneManager.SetActiveScene( SceneManager.GetSceneAt( 0 ) );
+
+			DeserializeSaveData();
 		}
 
         // Info: Called from Editor.
