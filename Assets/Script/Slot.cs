@@ -106,6 +106,14 @@ public abstract class Slot : MonoBehaviour
 		slot_isBusy  = true;
 	}
 
+	public int GetRopeLevel()
+	{
+		if( slot_isEmpty )
+			return 0;
+		else
+			return RopeBoxData.RopeLevel;
+	}
+
     protected bool CanDropDifferentSlot()
 	{
 		return slot_pair.IsEmpty || ( slot_pair.RopeBoxData.NextRopeBoxData != null && slot_ropeBox.RopeBoxData.RopeLevel == slot_pair.RopeBoxData.RopeLevel );
