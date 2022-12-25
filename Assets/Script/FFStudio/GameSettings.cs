@@ -10,6 +10,9 @@ namespace FFStudio
     {
 #region Fields (Settings)
     // Info: You can use Title() attribute ONCE for every game-specific group of settings.
+    [ Title( "Sky Color" ) ]
+		[ LabelText( "Sky Random Gradient Color" ) ] public Gradient[] sky_gradient_array;
+
     [ Title( "Rope" ) ]
 		[ LabelText( "Rope Launch Delta" ) ] public float rope_launch_delta;
 		[ LabelText( "Rope Launch Length Delta" ) ] public float rope_launch_length_delta;
