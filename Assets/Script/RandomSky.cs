@@ -9,7 +9,7 @@ using Imphenzia;
 public class RandomSky : MonoBehaviour
 {
 #region Fields
-    [ SerializeField ] GradientSkyObject gradientSkyObject;
+    [ SerializeField ] GradientSkyCamera gradientSkyObject;
 #endregion
 
 #region Properties
@@ -19,6 +19,7 @@ public class RandomSky : MonoBehaviour
     void Start()
     {
 		gradientSkyObject.gradient = GameSettings.Instance.sky_gradient_array.ReturnRandom();
+		gradientSkyObject.CreateOrGetChildObject();
 	}
 #endregion
 
