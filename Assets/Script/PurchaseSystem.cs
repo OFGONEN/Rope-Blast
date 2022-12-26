@@ -53,6 +53,11 @@ public class PurchaseSystem : ScriptableObject
 		return purchase_context_array[ purchase_index ];
 	}
 
+	public Sprite GetPurchaseContext( int index )
+	{
+		return purchase_context_array[ index ];
+	}
+
     public void IncreasePurchaseCount()
     {
 		purchase_count++;
