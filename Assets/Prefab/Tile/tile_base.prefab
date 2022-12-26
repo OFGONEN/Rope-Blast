@@ -46,7 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d914e5041e3c0a4b8a4d7d8407912d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crack_texture_array: []
+  crack_texture_array:
+  - {fileID: 2800000, guid: 3aab7534bf94e9f498169a66b616cb56, type: 3}
+  - {fileID: 2800000, guid: c7ff3477a26879d45b08dc34a37b3c6c, type: 3}
+  - {fileID: 2800000, guid: 0d733b580f9606348b99aef3df348dab, type: 3}
   tileRenderer: {fileID: 0}
 --- !u!114 &7644684444650539560
 MonoBehaviour:

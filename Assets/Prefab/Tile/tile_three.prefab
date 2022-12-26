@@ -55,18 +55,46 @@ PrefabInstance:
       propertyPath: renderer_
       value: 
       objectReference: {fileID: 362871155775089676}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.b
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.g
+      value: 0.3647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_health
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tile_material
+      value: 
+      objectReference: {fileID: 2100000, guid: 018652a2c2dfd9f429cb054014a6408d, type: 2}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_currency.x
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_currency.y
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tile_currency_hit.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tile_currency_hit.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: pool_particle_tile_crumble
+      value: 
+      objectReference: {fileID: 11400000, guid: 7867365624c465945b9cbb40b780f544, type: 2}
     - target: {fileID: 8821219247679884033, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: m_Name
       value: tile_three
