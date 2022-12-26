@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a385bd3b4416492409284c9a366cb52a, type: 3}
   m_Name: game_settings
   m_EditorClassIdentifier: 
+  sky_gradient_size: 1.1
   sky_gradient_array:
   - serializedVersion: 2
     key0: {r: 0.9139327, g: 0.9647059, b: 0.8156863, a: 1}
