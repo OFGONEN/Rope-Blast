@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1657132517293281009, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: particleDatas.Array.data[0].size
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657132517293281009, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: particleDatas.Array.data[0].alias
       value: mergeTable_merge
       objectReference: {fileID: 0}
