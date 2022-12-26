@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: system_purchase
   m_EditorClassIdentifier: 
   purchase_cost_base: 5
-  purchase_level_range: 29000000
+  purchase_level_range: 280000002c010000f4010000bc020000
   purchase_context_array:
   - {fileID: 21300000, guid: 8835ada347b2cad468093e3955b3bba8, type: 3}
   - {fileID: 21300000, guid: 56aeb56ea2b608744aad1f3c9f1289fe, type: 3}
