@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4c801c24680b0499d6f7b9ba975e78, type: 3}
+  m_Name: shared_rope_data_two
+  m_EditorClassIdentifier: 
+  rope_level: 2
+  rope_material: {fileID: 2100000, guid: 0dedd563b8160bc48a5d9f6c79307445, type: 2}
+  rope_hook_mesh: {fileID: -1401307434828405694, guid: b8c70e59b8518ab45a19cbcc4cb9da28, type: 3}
+  rope_hook_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  rope_length: 1
+  rope_damage: 3
+  rope_launch_delay: 0.2
+  rope_launch_speed: 3
+  rope_launch_ease: 11
+  rope_return_delay: 0.1
+  rope_return_speed: 6
+  rope_return_ease: 15

@@ -22,6 +22,7 @@ namespace FFStudio
 
 	[ Title( "Pool" ) ]
 		[ SerializeField ] Pool_UIPopUpText pool_UIPopUpText;
+		[ LabelText( "Rope Box Pool" ), SerializeField ] Pool_RopeBox pool_ropeBox;
 #endregion
 
 #region UnityAPI
@@ -34,6 +35,7 @@ namespace FFStudio
 		{
 			Vibration.Init();
 
+			pool_ropeBox.InitPool( transform, false );
 			pool_UIPopUpText.InitPool( transform, false );
 			onAwakeEvent.Invoke();
 		}

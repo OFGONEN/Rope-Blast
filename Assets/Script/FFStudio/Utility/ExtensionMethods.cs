@@ -11,7 +11,9 @@ namespace FFStudio
 {
 	public static class ExtensionMethods
 	{
-		public static readonly string SAVE_PATH = Application.persistentDataPath + "/Saves/";
+		public static readonly string SAVE_PATH    = Application.persistentDataPath + "/Saves/";
+		public static readonly string Key_Currency = "currency";
+		public static readonly string Key_Purchase_Count = "purchase_count";
 
 		static List< Transform > baseModelBones   = new List< Transform >( 96 );
 		static List< Transform > targetModelBones = new List< Transform >( 96 );
@@ -80,6 +82,11 @@ namespace FFStudio
 		public static Vector3 ConvertV3( this Vector2 v2 )
 		{
 			return new Vector3( v2.x, v2.y, 0 );
+		}
+
+		public static Vector3 ConvertV3( this Vector2 v2, float z )
+		{
+			return new Vector3( v2.x, v2.y, z );
 		}
 
 		public static Vector3 RandomPointBetween( this Vector3 first, Vector3 second )
@@ -152,6 +159,11 @@ namespace FFStudio
 		}
 
 		public static void EmptyMethod()
+		{
+			/* Intentionally empty, by definition. */
+		}
+
+		public static void EmptyMethod( Collider collider )
 		{
 			/* Intentionally empty, by definition. */
 		}
@@ -477,6 +489,11 @@ namespace FFStudio
 			return array[ Random.Range( 0, array.Length ) ];
 		}
 
+		public static T ReturnRandom<T>( this List< T > list )
+		{
+			return list[ Random.Range( 0, list.Count ) ];
+		}
+
 		public static float ReturnRandom( this Vector2 vector )
 		{
 			return Random.Range( vector.x, vector.y );
@@ -501,6 +518,18 @@ namespace FFStudio
 				childs.Add( transform.GetChild( i ) );
 			
 			for( var i = 0; i < childCount; i++ )
+				GameObject.DestroyImmediate( childs[ i ].gameObject );
+		}
+
+		public static void DestroyAllChildren( this Transform transform, int startIndex )
+		{
+			var childCount = transform.childCount;
+			var childs = new List< Transform >( transform.childCount );
+
+			for( var i = 0; i < childCount; i++ )
+				childs.Add( transform.GetChild( i ) );
+
+			for( var i = startIndex; i < childCount; i++ )
 				GameObject.DestroyImmediate( childs[ i ].gameObject );
 		}
 

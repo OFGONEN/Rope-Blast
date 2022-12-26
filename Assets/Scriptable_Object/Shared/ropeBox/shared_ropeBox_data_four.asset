@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b5c8eafb37d1743879adb3fdd53498, type: 3}
+  m_Name: shared_ropeBox_data_four
+  m_EditorClassIdentifier: 
+  ropeBox_rope: {fileID: 11400000, guid: 1223fdba092fbb3449bfdd9f4c919ce7, type: 2}
+  ropeBoxData_next: {fileID: 11400000, guid: ab1d416731b9ca14cb817afa4e10890d, type: 2}
+  ropeBox_mesh: {fileID: -4832954246447430179, guid: 2660dbccab302af4e8cb1bb1ceeb1856, type: 3}
+  ropeBox_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
+  ropeBox_ui_image: {fileID: 21300000, guid: de366014e079cee46aabe5b1ed6d273d, type: 3}
