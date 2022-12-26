@@ -47,7 +47,6 @@ public class SlotLaunch : Slot
 		slot_ropeBoxData = ropeBoxData;
 		slot_ropeBox = null;
 
-		FFLogger.Log( "Spawn Without Launch" );
 		slot_rope.SpawnWithoutLaunch( slot_ropeBoxData.RopeData );
 	}
 

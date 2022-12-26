@@ -249,14 +249,14 @@ MonoBehaviour:
     offset: {x: 0, y: -0.75, z: 0}
     size: 1
   - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: pierce_success
+    parent: 0
+    offset: {x: 0, y: 0, z: -1.5}
+    size: 1
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
     alias: tile_crumble
     parent: 0
     offset: {x: 0, y: 0, z: 0}
-    size: 1
-  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
-    alias: pierce_success
-    parent: 0
-    offset: {x: 0, y: -0.75, z: 0}
     size: 1
 --- !u!1 &8821219247679884033
 GameObject:
@@ -311,6 +311,8 @@ MonoBehaviour:
   tile_currency_hit: {x: 0, y: 0}
   notif_tile_count: {fileID: 11400000, guid: ce3c21e1f839d214d97239bab627c762, type: 2}
   notif_currency: {fileID: 11400000, guid: 536e5f6e9f5d41446b6afa66af635385, type: 2}
+  pool_particle_tile_crumble: {fileID: 11400000, guid: 7867365624c465945b9cbb40b780f544, type: 2}
+  tile_material: {fileID: 2100000, guid: 926252c2568700e41889a97b5e7cb332, type: 2}
   tile_collider: {fileID: 1100584728326599429}
   tile_crackSetter: {fileID: 8823102362757290823}
   _particleSpawner: {fileID: 4522299868000715601}

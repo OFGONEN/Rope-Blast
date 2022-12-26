@@ -16,6 +16,8 @@ public class Tile : MonoBehaviour
     [ LabelText( "Tile Hit Currency" ), SerializeField ] Vector2 tile_currency_hit;
     [ LabelText( "Tile Count" ), SerializeField ] SharedIntNotifier notif_tile_count;
     [ LabelText( "Currency" ), SerializeField ] Currency notif_currency;
+    [ LabelText( "Particle Tile Crumble" ), SerializeField ] ParticleEffectPool pool_particle_tile_crumble;
+    [ LabelText( "Material" ), SerializeField ] Material tile_material;
 
   [ Title( "Components" ) ]
     [ LabelText( "Tile Collider" ), SerializeField ] Collider tile_collider;
@@ -88,7 +90,13 @@ public class Tile : MonoBehaviour
 
     public void OnLaunchTableCollide()
     {
-		_particleSpawner.Spawn( 2 ); // Currency
+		var particle = pool_particle_tile_crumble.GetEntity();
+
+		var renderer = particle.ParticleSystem.GetComponent< ParticleSystemRenderer >();
+		renderer.sharedMaterial = tile_material;
+
+		particle.PlayParticle( transform.position, 1 );
+
 
 		gameObject.SetActive( false );
 		transform.SetParent( null );
