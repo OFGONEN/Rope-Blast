@@ -55,6 +55,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].eventListener.gameEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].eventListener.gameEvents.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: efef06bf257ee27438d6c2aab4936226, type: 2}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1842458569579337846}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLevelStarted
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SlotLaunch, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: eventPairs.Array.data[1].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7824262912242017581, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: _component
       value: 
@@ -88,6 +128,8 @@ MonoBehaviour:
   pool_ropeBox: {fileID: 11400000, guid: 7c874ef05acfcec4193b3f70e455078e, type: 2}
   slot_dragged_transform: {fileID: 2167176385993530686}
   slot_collider: {fileID: 7326506245304151736}
+  slot_index: 0
+  slot_rope: {fileID: 0}
 --- !u!65 &7326506245304151736 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 2623721815910743762, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}

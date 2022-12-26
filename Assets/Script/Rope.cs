@@ -62,6 +62,17 @@ public class Rope : MonoBehaviour
 		Launch();
 	}
 
+	public void SpawnWithoutLaunch( RopeData ropeData )
+	{
+		UpdateRope( ropeData );
+
+		rope_collider.enabled = true;
+		rope_renderer.enabled = true;
+		rope_hook_renderer.enabled = true;
+
+		rope_end.position = rope_end_position_default;
+	}
+
 	public void UpdateRope( RopeData ropeData )
 	{
 		rope_data = ropeData;
@@ -94,6 +105,22 @@ public class Rope : MonoBehaviour
         else
             DamageTile( tile );
 	}
+
+    public void Launch()
+    {
+		rope_tile_list.Clear();
+		rope_collider.enabled = true;
+
+		var launchDelta = ( rope_data.RopeLength - 1 ) * GameSettings.Instance.rope_launch_length_delta + GameSettings.Instance.rope_launch_delta;
+
+		var launchPosition = transform.position + transform.forward * launchDelta;
+		var duration = Vector3.Distance( rope_end.position, launchPosition ) / rope_data.RopeLaunchSpeed;
+
+		var sequence = recycledSequence.Recycle( Return );
+		sequence.AppendInterval( rope_data.RopeLaunchDelay );
+		sequence.Append( rope_end.DOMove( launchPosition, duration )
+		.SetEase( rope_data.RopeLaunchEase ) );
+	}
 #endregion
 
 #region Implementation
@@ -113,22 +140,6 @@ public class Rope : MonoBehaviour
 	{
 		for( var i = 0; i < rope_tile_list.Count; i++ )
 			rope_tile_list[ i ].GetAttached( rope_end );
-	}
-
-    void Launch()
-    {
-		rope_tile_list.Clear();
-		rope_collider.enabled = true;
-
-		var launchDelta = ( rope_data.RopeLength - 1 ) * GameSettings.Instance.rope_launch_length_delta + GameSettings.Instance.rope_launch_delta;
-
-		var launchPosition = transform.position + transform.forward * launchDelta;
-		var duration = Vector3.Distance( rope_end.position, launchPosition ) / rope_data.RopeLaunchSpeed;
-
-		var sequence = recycledSequence.Recycle( Return );
-		sequence.AppendInterval( rope_data.RopeLaunchDelay );
-		sequence.Append( rope_end.DOMove( launchPosition, duration )
-		.SetEase( rope_data.RopeLaunchEase ) );
 	}
 
     void Return()

@@ -47,7 +47,13 @@ public class SlotLaunch : Slot
 		slot_ropeBoxData = ropeBoxData;
 		slot_ropeBox = null;
 
-		slot_rope.Spawn( slot_ropeBoxData.RopeData );
+		FFLogger.Log( "Spawn Without Launch" );
+		slot_rope.SpawnWithoutLaunch( slot_ropeBoxData.RopeData );
+	}
+
+	public void OnLevelStarted()
+	{
+		if( !slot_isEmpty ) slot_rope.Launch();
 	}
 #endregion
 
