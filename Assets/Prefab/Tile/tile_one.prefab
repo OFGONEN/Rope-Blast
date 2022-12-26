@@ -133,9 +133,21 @@ PrefabInstance:
       propertyPath: renderer_
       value: 
       objectReference: {fileID: 6293038732323096730}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.b
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.g
+      value: 0.3647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_health
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_currency.x
@@ -143,8 +155,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_currency.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tile_currency_hit.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tile_currency_hit.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: pool_particle_tile_crumble
+      value: 
+      objectReference: {fileID: 11400000, guid: 7867365624c465945b9cbb40b780f544, type: 2}
     - target: {fileID: 8821219247679884033, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: m_Name
       value: tile_one

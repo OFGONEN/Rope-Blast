@@ -117,17 +117,41 @@ PrefabInstance:
       propertyPath: renderer_
       value: 
       objectReference: {fileID: 3951589583560874187}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.b
+      value: 0.20392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.g
+      value: 0.28627452
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644684444650539560, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: managedReferences[6300959540747436032].data.r
+      value: 0.32941177
+      objectReference: {fileID: 0}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_health
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tile_material
+      value: 
+      objectReference: {fileID: 2100000, guid: 925ed28ae563f1c4c96ac1bb09a51a85, type: 2}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_currency.x
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: tile_currency.y
-      value: 2
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tile_currency_hit.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212855068499654153, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
+      propertyPath: tile_currency_hit.y
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8821219247679884033, guid: 305d9f48fa9a3af44a9253a700ee71fc, type: 3}
       propertyPath: m_Name
