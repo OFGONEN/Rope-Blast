@@ -41,6 +41,8 @@ public class SlotLaunch : Slot
 	{
 		slot_collider.enabled = true;
 		slot_isBusy = false;
+		slot_isEmpty = false;
+		slot_pair = null;
 
 		slot_ropeBoxData = ropeBoxData;
 		slot_ropeBox = null;
