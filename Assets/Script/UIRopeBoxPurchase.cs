@@ -76,7 +76,7 @@ public class UIRopeBoxPurchase : UIEntity
 #region Implementation
 	void UpdatePurchaseText()
 	{
-		text_purchase_cost.text  = currency.sharedValue.ToString( "F" );
+		text_purchase_cost.text  = currency.sharedValue.ToString( "F1" );
 		text_purchase_count.text = system_purchase.PurchaseCount + " / " + system_purchase.PurchaseCeil;
 	}
 #endregion
