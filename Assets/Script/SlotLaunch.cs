@@ -41,11 +41,18 @@ public class SlotLaunch : Slot
 	{
 		slot_collider.enabled = true;
 		slot_isBusy = false;
+		slot_isEmpty = false;
+		slot_pair = null;
 
 		slot_ropeBoxData = ropeBoxData;
 		slot_ropeBox = null;
 
-		slot_rope.Spawn( slot_ropeBoxData.RopeData );
+		slot_rope.SpawnWithoutLaunch( slot_ropeBoxData.RopeData );
+	}
+
+	public void OnLevelStarted()
+	{
+		if( !slot_isEmpty ) slot_rope.Launch();
 	}
 #endregion
 
@@ -91,6 +98,8 @@ public class SlotLaunch : Slot
 
 		slot_ropeBox.DeSpawn();
 		slot_ropeBox = null;
+
+		_particleSpawner.Spawn( 0 );
 	}
 
 	protected override void OnCacheRopeBoxDone()

@@ -17,6 +17,7 @@ public abstract class Slot : MonoBehaviour
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot's Dragged Transform" ) ] protected Transform slot_dragged_transform;
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Selection Collider" ) ] protected Collider slot_collider;
     [ BoxGroup( "Components" ), SerializeField, LabelText( "Slot Index" ) ] protected int slot_index;
+    [ BoxGroup( "Components" ), SerializeField, LabelText( "Particle Spawner" ) ] protected ParticleSpawner _particleSpawner;
 
     public int SlotIndex                   => slot_index;
     public virtual bool IsBusy             => slot_isBusy;

@@ -12,6 +12,8 @@ namespace FFStudio
 	[ Title( "Setup" ) ]
 		public string alias;
 
+		public ParticleSystem ParticleSystem => particles;
+
 		ParticleEffectPool particle_pool;
 		ParticleEffectStopped particleEffectStopped;
 		ParticleSystem particles;

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dda4d38786faa47bc9a024540d1517, type: 3}
   m_Name: pool_pfx_tile_crumble
   m_EditorClassIdentifier: 
-  stackSize: 1
+  stackSize: 15
   pool_entity: {fileID: 1131750550050978563, guid: 8f58bf342346581438a3b44f340ff770, type: 3}

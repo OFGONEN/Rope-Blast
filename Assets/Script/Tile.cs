@@ -16,11 +16,13 @@ public class Tile : MonoBehaviour
     [ LabelText( "Tile Hit Currency" ), SerializeField ] Vector2 tile_currency_hit;
     [ LabelText( "Tile Count" ), SerializeField ] SharedIntNotifier notif_tile_count;
     [ LabelText( "Currency" ), SerializeField ] Currency notif_currency;
+    [ LabelText( "Particle Tile Crumble" ), SerializeField ] ParticleEffectPool pool_particle_tile_crumble;
+    [ LabelText( "Material" ), SerializeField ] Material tile_material;
 
   [ Title( "Components" ) ]
     [ LabelText( "Tile Collider" ), SerializeField ] Collider tile_collider;
     [ LabelText( "Tile CrackSetter" ), SerializeField ] CrackSetter tile_crackSetter;
-    // [ LabelText( "ParticleSpawnner" ), SerializeField ] ParticleSpawner _particleSpawner;
+    [ LabelText( "ParticleSpawnner" ), SerializeField ] ParticleSpawner _particleSpawner;
 
 // Property
     public float Health => tile_health_current;
@@ -68,10 +70,18 @@ public class Tile : MonoBehaviour
 
 		notif_currency.SharedValue += tile_currency_hit.ReturnRandom();
 
-		//todo: Spawn a Particle effect ?
+		_particleSpawner.Spawn( 0 ); // Damage
 		tile_crackSetter.SetCrackProgress( crackedProgress );
 
 		return cracked;
+	}
+	
+	public void GetPierced()
+	{
+		_particleSpawner.Spawn( 1 ); // Pierced
+
+		transform.localScale -= Vector3.one * GameSettings.Instance.tile_crumble_size_offset.ReturnRandom();
+		transform.RotateAround( transform.position, Vector3.forward, GameSettings.Instance.tile_crumble_rotation_offset.ReturnRandom() );
 	}
 
     public void GetAttached( Transform parent )
@@ -83,8 +93,13 @@ public class Tile : MonoBehaviour
 
     public void OnLaunchTableCollide()
     {
-		// _particleSpawner.Spawn( 0 );
-        //todo: Spawn a UI Particle effect ?
+		var particle = pool_particle_tile_crumble.GetEntity();
+
+		var renderer = particle.ParticleSystem.GetComponent< ParticleSystemRenderer >();
+		renderer.sharedMaterial = tile_material;
+
+		particle.PlayParticle( transform.position, 1 );
+
 
 		gameObject.SetActive( false );
 		transform.SetParent( null );

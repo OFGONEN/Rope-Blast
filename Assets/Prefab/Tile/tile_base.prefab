@@ -198,6 +198,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _component: {fileID: 8212855068499654153}
+--- !u!1 &5528414251708488124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3211308055221057328}
+  - component: {fileID: 4522299868000715601}
+  m_Layer: 30
+  m_Name: logic_pfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3211308055221057328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5528414251708488124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3529192911513729948}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4522299868000715601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5528414251708488124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753b2c2b78147c181c65650f11a67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleDatas:
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: harpoon_hit
+    parent: 0
+    offset: {x: 0, y: -0.75, z: 0}
+    size: 1
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: pierce_success
+    parent: 0
+    offset: {x: 0, y: 0, z: -1.5}
+    size: 1
+  - particle_event: {fileID: 11400000, guid: fe240f220ab36cc44923227184f9c2a7, type: 2}
+    alias: tile_crumble
+    parent: 0
+    offset: {x: 0, y: 0, z: 0}
+    size: 1
 --- !u!1 &8821219247679884033
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +290,7 @@ Transform:
   - {fileID: 2025344128490473351}
   - {fileID: 5859385722233000624}
   - {fileID: 7811290013629363894}
+  - {fileID: 3211308055221057328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,5 +311,8 @@ MonoBehaviour:
   tile_currency_hit: {x: 0, y: 0}
   notif_tile_count: {fileID: 11400000, guid: ce3c21e1f839d214d97239bab627c762, type: 2}
   notif_currency: {fileID: 11400000, guid: 536e5f6e9f5d41446b6afa66af635385, type: 2}
+  pool_particle_tile_crumble: {fileID: 11400000, guid: 7867365624c465945b9cbb40b780f544, type: 2}
+  tile_material: {fileID: 2100000, guid: 926252c2568700e41889a97b5e7cb332, type: 2}
   tile_collider: {fileID: 1100584728326599429}
   tile_crackSetter: {fileID: 8823102362757290823}
+  _particleSpawner: {fileID: 4522299868000715601}

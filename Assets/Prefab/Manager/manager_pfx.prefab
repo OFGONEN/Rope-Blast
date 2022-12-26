@@ -129,7 +129,6 @@ MonoBehaviour:
   pools_pfx:
   - {fileID: 11400000, guid: b85aa4c2e58c3884f80b4e24613da816, type: 2}
   - {fileID: 11400000, guid: b650f62d5b344b04c9d54843819a89c2, type: 2}
-  - {fileID: 11400000, guid: b8d6da39709485642a8226b728e85283, type: 2}
   - {fileID: 11400000, guid: 9b312e5c6e405664e8d9fc8cfb814a96, type: 2}
   - {fileID: 11400000, guid: 64b85fbbfbff18f49b66b1622a0834aa, type: 2}
   - {fileID: 11400000, guid: 7867365624c465945b9cbb40b780f544, type: 2}

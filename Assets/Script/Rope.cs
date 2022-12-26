@@ -62,6 +62,17 @@ public class Rope : MonoBehaviour
 		Launch();
 	}
 
+	public void SpawnWithoutLaunch( RopeData ropeData )
+	{
+		UpdateRope( ropeData );
+
+		rope_collider.enabled = true;
+		rope_renderer.enabled = true;
+		rope_hook_renderer.enabled = true;
+
+		rope_end.position = rope_end_position_default;
+	}
+
 	public void UpdateRope( RopeData ropeData )
 	{
 		rope_data = ropeData;
@@ -94,28 +105,8 @@ public class Rope : MonoBehaviour
         else
             DamageTile( tile );
 	}
-#endregion
 
-#region Implementation
-    void PierceTile( Tile tile )
-    {
-		//todo: spawn pierced pfx ?
-		rope_tile_list.Add( tile );
-	}
-
-    void DamageTile( Tile tile )
-    {
-		//todo: spawn can't pierce pfx ?
-		Return();
-	}
-
-	void AttachAllTiles()
-	{
-		for( var i = 0; i < rope_tile_list.Count; i++ )
-			rope_tile_list[ i ].GetAttached( rope_end );
-	}
-
-    void Launch()
+    public void Launch()
     {
 		rope_tile_list.Clear();
 		rope_collider.enabled = true;
@@ -129,6 +120,27 @@ public class Rope : MonoBehaviour
 		sequence.AppendInterval( rope_data.RopeLaunchDelay );
 		sequence.Append( rope_end.DOMove( launchPosition, duration )
 		.SetEase( rope_data.RopeLaunchEase ) );
+	}
+#endregion
+
+#region Implementation
+    void PierceTile( Tile tile )
+    {
+		//todo: spawn pierced pfx ?
+		tile.GetPierced();
+		rope_tile_list.Add( tile );
+	}
+
+    void DamageTile( Tile tile )
+    {
+		//todo: spawn can't pierce pfx ?
+		Return();
+	}
+
+	void AttachAllTiles()
+	{
+		for( var i = 0; i < rope_tile_list.Count; i++ )
+			rope_tile_list[ i ].GetAttached( rope_end );
 	}
 
     void Return()
