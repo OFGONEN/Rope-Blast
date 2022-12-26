@@ -467,6 +467,14 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0.1882353
       objectReference: {fileID: 0}
+    - target: {fileID: 1601059609566994057, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190297607890890291, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3747325266785291020, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -515,6 +523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: camera_main
       objectReference: {fileID: 0}
+    - target: {fileID: 5758242301112245975, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6766668944113034241, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -522,4 +534,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8030943687935788788, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
     - {fileID: 7857897603248437443, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
+    - {fileID: 4287011935184127540, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
+    - {fileID: 8432334040894578156, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed4a75596492d5941b007d11e01ab28a, type: 3}
