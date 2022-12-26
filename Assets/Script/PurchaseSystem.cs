@@ -69,7 +69,7 @@ public class PurchaseSystem : ScriptableObject
 
 		for( var i = purchase_level_range.Length - 1; i >= 0; i-- )
         {
-            if( purchase_count > purchase_level_range[ i ] )
+            if( purchase_count >= purchase_level_range[ i ] )
             {
 				purchase_index = i + 1;
 				break;
