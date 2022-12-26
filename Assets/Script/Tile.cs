@@ -80,6 +80,7 @@ public class Tile : MonoBehaviour
 	{
 		_particleSpawner.Spawn( 1 ); // Pierced
 
+		transform.position += Vector3.back * 1f;
 		transform.localScale -= Vector3.one * GameSettings.Instance.tile_crumble_size_offset.ReturnRandom();
 		transform.RotateAround( transform.position, Vector3.forward, GameSettings.Instance.tile_crumble_rotation_offset.ReturnRandom() );
 	}
