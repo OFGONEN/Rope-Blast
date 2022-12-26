@@ -79,6 +79,9 @@ public class Tile : MonoBehaviour
 	public void GetPierced()
 	{
 		_particleSpawner.Spawn( 1 ); // Pierced
+
+		transform.localScale -= Vector3.one * GameSettings.Instance.tile_crumble_size_offset.ReturnRandom();
+		transform.RotateAround( transform.position, Vector3.forward, GameSettings.Instance.tile_crumble_rotation_offset.ReturnRandom() );
 	}
 
     public void GetAttached( Transform parent )

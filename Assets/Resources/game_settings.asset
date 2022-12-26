@@ -44,6 +44,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   rope_launch_delta: 3
   rope_launch_length_delta: 1.5
+  tile_crumble_size_offset: {x: 0.15, y: 0.3}
+  tile_crumble_rotation_offset: {x: -15, y: 15}
   ropeBox_jump_power: 1
   ropeBox_jump_duration: 0.65
   ropeBox_jump_ease: 6
