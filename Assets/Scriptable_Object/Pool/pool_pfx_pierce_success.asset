@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dda4d38786faa47bc9a024540d1517, type: 3}
   m_Name: pool_pfx_pierce_success
   m_EditorClassIdentifier: 
-  stackSize: 1
+  stackSize: 15
   pool_entity: {fileID: 6201454054411840801, guid: 142c8d473c4c51446aa33620c6edf337, type: 3}
