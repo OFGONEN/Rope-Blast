@@ -99,6 +99,8 @@ public class SlotLaunch : Slot
 
 		slot_ropeBox.DeSpawn();
 		slot_ropeBox = null;
+
+		_particleSpawner.Spawn( 0 );
 	}
 
 	protected override void OnCacheRopeBoxDone()
