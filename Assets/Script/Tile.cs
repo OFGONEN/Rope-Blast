@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour
   [ Title( "Components" ) ]
     [ LabelText( "Tile Collider" ), SerializeField ] Collider tile_collider;
     [ LabelText( "Tile CrackSetter" ), SerializeField ] CrackSetter tile_crackSetter;
-    // [ LabelText( "ParticleSpawnner" ), SerializeField ] ParticleSpawner _particleSpawner;
+    [ LabelText( "ParticleSpawnner" ), SerializeField ] ParticleSpawner _particleSpawner;
 
 // Property
     public float Health => tile_health_current;
@@ -68,10 +68,15 @@ public class Tile : MonoBehaviour
 
 		notif_currency.SharedValue += tile_currency_hit.ReturnRandom();
 
-		//todo: Spawn a Particle effect ?
+		_particleSpawner.Spawn( 0 ); // Damage
 		tile_crackSetter.SetCrackProgress( crackedProgress );
 
 		return cracked;
+	}
+	
+	public void GetPierced()
+	{
+		_particleSpawner.Spawn( 1 ); // Pierced
 	}
 
     public void GetAttached( Transform parent )
@@ -83,8 +88,7 @@ public class Tile : MonoBehaviour
 
     public void OnLaunchTableCollide()
     {
-		// _particleSpawner.Spawn( 0 );
-        //todo: Spawn a UI Particle effect ?
+		_particleSpawner.Spawn( 2 ); // Currency
 
 		gameObject.SetActive( false );
 		transform.SetParent( null );
