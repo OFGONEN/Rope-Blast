@@ -161,10 +161,8 @@ namespace Imphenzia
         /// Creates a MeshRenderer disable shadows and occlusion.
         /// </summary>
         /// <param name="_gameObject"></param>
-        protected virtual void CreateMeshRenderer(Transform _transform = null)
+        protected virtual void CreateMeshRenderer( Transform _transform = null )
         {
-            if (_transform == null)
-                _transform = transform;
             MeshRenderer _meshRenderer = _transform.GetComponent<MeshRenderer>();
 #if UNITY_2017_2_OR_NEWER
             _meshRenderer.allowOcclusionWhenDynamic = false;
