@@ -1501,8 +1501,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -2036,6 +2036,7 @@ MonoBehaviour:
   notif_table_empty: {fileID: 11400000, guid: 621d7cad185950f4796d3eb574182f6c, type: 2}
   event_purchase: {fileID: 11400000, guid: fd0808789efcce2499c3498db212978a, type: 2}
   button_purchase: {fileID: 2593785470010077117}
+  image_purchase_icon: {fileID: 198729161019382720}
   image_purchase_icon_active: {fileID: 4455239133858598081}
   image_purchase_icon_deactive: {fileID: 62523329074490276}
   text_purchase_cost: {fileID: 6391816128126843176}

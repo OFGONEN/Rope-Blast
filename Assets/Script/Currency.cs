@@ -20,7 +20,7 @@ public class Currency : SharedFloatNotifier
 #region API
     public void Load()
     {
-		SetValue_NotifyAlways( PlayerPrefsUtility.Instance.GetFloat( ExtensionMethods.Key_Currency, 0 ) );
+		SetValue_NotifyAlways( PlayerPrefsUtility.Instance.GetFloat( ExtensionMethods.Key_Currency, GameSettings.Instance.game_currency_start ) );
 	}
 
     public void Save()

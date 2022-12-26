@@ -44,6 +44,7 @@ namespace FFStudio
     
     [ Title( "Project Setup", "These settings should not be edited by Level Designer(s).", TitleAlignments.Centered ) ]
         [ LabelText( "Game's Forward" ) ] public Vector3 game_forward;
+        [ LabelText( "Starting Currency" ) ] public float game_currency_start;
         public int maxLevelCount;
         
         // Info: 3 groups below (coming from template project) are foldout by design: They should remain hidden.
