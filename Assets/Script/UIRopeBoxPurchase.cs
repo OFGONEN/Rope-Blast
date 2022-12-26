@@ -19,6 +19,7 @@ public class UIRopeBoxPurchase : UIEntity
 
   [ Title( "Components" ) ]
     [ SerializeField ] Button button_purchase;
+    [ SerializeField ] Image image_purchase_icon;
     [ SerializeField ] Image image_purchase_icon_active;
     [ SerializeField ] Image image_purchase_icon_deactive;
     [ SerializeField ] TextMeshProUGUI text_purchase_cost; // This is actually currency
@@ -35,6 +36,8 @@ public class UIRopeBoxPurchase : UIEntity
     public void OnLevelStarted()
     {
 		OnCurrencyUpdate();
+
+		image_purchase_icon.sprite = system_purchase.GetPurchaseContext();
 		GoToTarget();
 	}
 
@@ -51,6 +54,7 @@ public class UIRopeBoxPurchase : UIEntity
 		system_purchase.IncreasePurchaseCount();
 
 		currency.SharedValue -= cost;
+		image_purchase_icon.sprite = system_purchase.GetPurchaseContext();
 	}
 
 	public void OnCurrencyUpdate()
