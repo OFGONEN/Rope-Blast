@@ -6,11 +6,14 @@ using UnityEngine;
 using FFStudio;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using UnityEngine.UI;
 
 public class SlotLaunch : Slot
 {
 #region Fields
 	[ BoxGroup( "Components" ), LabelText( "Rope" ), SerializeField ] Rope slot_rope;
+	[ BoxGroup( "Components" ), LabelText( "Rope Level Icon" ), SerializeField ] Image slot_rope_icon;
+	[ BoxGroup( "Shared" ), LabelText( "Purchase System" ), SerializeField ] PurchaseSystem system_purchase;
 
     public override bool IsBusy => slot_isBusy || slot_rope.IsBusy;
     public override RopeBoxData RopeBoxData => slot_ropeBoxData;
@@ -35,6 +38,8 @@ public class SlotLaunch : Slot
 		slot_ropeBox.transform.SetParent( slot_dragged_transform );
 
 		slot_ropeBox.Spawn( slot_ropeBoxData, slot_dragged_transform.position );
+
+		slot_rope_icon.enabled = false;
 	}
 
 	public void SpawnRope( RopeBoxData ropeBoxData )
@@ -47,8 +52,10 @@ public class SlotLaunch : Slot
 		slot_ropeBoxData = ropeBoxData;
 		slot_ropeBox = null;
 
-		FFLogger.Log( "Spawn Without Launch" );
 		slot_rope.SpawnWithoutLaunch( slot_ropeBoxData.RopeData );
+
+		slot_rope_icon.enabled = true;
+		slot_rope_icon.sprite  = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
 	}
 
 	public void OnLevelStarted()
@@ -99,6 +106,10 @@ public class SlotLaunch : Slot
 
 		slot_ropeBox.DeSpawn();
 		slot_ropeBox = null;
+
+		_particleSpawner.Spawn( 0 );
+		
+		slot_rope_icon.sprite = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
 	}
 
 	protected override void OnCacheRopeBoxDone()
@@ -111,6 +122,10 @@ public class SlotLaunch : Slot
 		slot_ropeBox = null;
 
 		slot_rope.Spawn( slot_ropeBoxData.RopeData );
+
+
+		slot_rope_icon.enabled = true;
+		slot_rope_icon.sprite = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
 	}
 #endregion
 

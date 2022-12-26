@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dda4d38786faa47bc9a024540d1517, type: 3}
   m_Name: pool_pfx_harpoon_hit
   m_EditorClassIdentifier: 
-  stackSize: 1
+  stackSize: 15
   pool_entity: {fileID: -1714617348915893500, guid: 56ad2658101cc6046877febbb89b6fc7, type: 3}

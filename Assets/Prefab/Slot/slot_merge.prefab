@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1657132517293281009, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: particleDatas.Array.data[0].size
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657132517293281009, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: particleDatas.Array.data[0].alias
+      value: mergeTable_merge
+      objectReference: {fileID: 0}
     - target: {fileID: 2559523268309117047, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: m_Name
       value: slot_merge
@@ -66,6 +74,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6905976438064139604, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
   m_PrefabInstance: {fileID: 4739387198686990442}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6285616284931874459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1657132517293281009, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+  m_PrefabInstance: {fileID: 4739387198686990442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079921749678946333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f753b2c2b78147c181c65650f11a67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7079921749678946333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2559523268309117047, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
@@ -88,6 +107,8 @@ MonoBehaviour:
   pool_ropeBox: {fileID: 11400000, guid: 7c874ef05acfcec4193b3f70e455078e, type: 2}
   slot_dragged_transform: {fileID: 2167176385993530686}
   slot_collider: {fileID: 7326506245304151736}
+  slot_index: 0
+  _particleSpawner: {fileID: 6285616284931874459}
   notif_table_empty: {fileID: 11400000, guid: 621d7cad185950f4796d3eb574182f6c, type: 2}
 --- !u!65 &7326506245304151736 stripped
 BoxCollider:

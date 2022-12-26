@@ -75,6 +75,8 @@ public class SlotMerge : Slot
 		slot_ropeBox.DeSpawn();
 
 		SpawnRopeBox( data );
+
+		_particleSpawner.Spawn( 0 );
 	}
 
 	void CheckIfTableIsFull()

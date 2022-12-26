@@ -17,10 +17,10 @@ MonoBehaviour:
   rope_hook_mesh: {fileID: -1401307434828405694, guid: b8c70e59b8518ab45a19cbcc4cb9da28, type: 3}
   rope_hook_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
   rope_length: 1
-  rope_damage: 2
+  rope_damage: 3
   rope_launch_delay: 0.2
-  rope_launch_speed: 10
+  rope_launch_speed: 3
   rope_launch_ease: 11
   rope_return_delay: 0.1
-  rope_return_speed: 2
-  rope_return_ease: 0
+  rope_return_speed: 6
+  rope_return_ease: 15

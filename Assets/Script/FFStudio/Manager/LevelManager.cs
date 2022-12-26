@@ -96,9 +96,6 @@ namespace FFStudio
 
 			var data = JsonUtility.FromJson< SaveData >( notif_save.sharedValue );
 
-			FFLogger.Log( "SaveData Loaded: " + data );
-			FFLogger.Log( "Merge List: " + shared_list_slot_merge.itemList.Count );
-
 			int counter = 0;
 			foreach( var slot in shared_list_slot_merge.itemList )
             {

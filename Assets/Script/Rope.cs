@@ -127,6 +127,7 @@ public class Rope : MonoBehaviour
     void PierceTile( Tile tile )
     {
 		//todo: spawn pierced pfx ?
+		tile.GetPierced();
 		rope_tile_list.Add( tile );
 	}
 
