@@ -48,7 +48,7 @@ public class SlotMerge : Slot
 	}
 	protected override void OnDropSameSlot()
 	{
-		slot_dragged_transform.localPosition = Vector3.zero;
+		slot_dragged_transform.localPosition = slot_dragged_transform_position;
 		slot_collider.enabled                = true;
 		slot_pair                            = null;
 	}

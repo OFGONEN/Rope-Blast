@@ -30,6 +30,7 @@ public abstract class Slot : MonoBehaviour
     [ ShowInInspector, ReadOnly ] protected bool slot_isEmpty = true;
 	[ ShowInInspector, ReadOnly ] protected Slot slot_pair;
 	[ ShowInInspector, ReadOnly ] protected RopeBox slot_ropeBox;
+	protected Vector3 slot_dragged_transform_position;
 #endregion
 
 #region Properties
@@ -50,6 +51,11 @@ public abstract class Slot : MonoBehaviour
 		shared_list_slot_custom.RemoveList( this );
 
 		shared_list_slot_custom.RemoveDictionary( slot_index );
+	}
+
+	private void Awake()
+	{
+		slot_dragged_transform_position = slot_dragged_transform.localPosition;
 	}
 #endregion
 
@@ -138,7 +144,7 @@ public abstract class Slot : MonoBehaviour
 		slot_ropeBox = null;
 		slot_pair    = null;
 
-		slot_dragged_transform.localPosition = Vector3.zero;
+		slot_dragged_transform.localPosition = slot_dragged_transform_position;
 		slot_collider.enabled = true;
 	}
 
