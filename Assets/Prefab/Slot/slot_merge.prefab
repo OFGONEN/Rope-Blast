@@ -19,6 +19,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: slot_merge
       objectReference: {fileID: 0}
+    - target: {fileID: 2623721815910743762, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623721815910743762, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623721815910743762, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: m_Size.z
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623721815910743762, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: m_Center.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4441906086607311094, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: m_RootOrder
       value: 0
