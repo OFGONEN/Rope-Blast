@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notif_camera_reference: {fileID: 11400000, guid: 488e798dd6f140e4a84fa7485b885dd3, type: 2}
   shared_finger: {fileID: 11400000, guid: c78ddd18f735746aead207595ad2bcb1, type: 2}
-  event_slot_deselected: {fileID: 11400000, guid: c38d114d998014adeb5caa16b4a96831, type: 2}
-  event_slot_selected: {fileID: 11400000, guid: 32958aea2615244bfa0cf824d3462e29, type: 2}
+  event_slot_deselected: {fileID: 11400000, guid: 32958aea2615244bfa0cf824d3462e29, type: 2}
+  event_slot_selected: {fileID: 11400000, guid: c38d114d998014adeb5caa16b4a96831, type: 2}
