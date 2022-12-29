@@ -123,6 +123,111 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!1 &953647171451117489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4555940039457465061}
+  - component: {fileID: 6047527272457101634}
+  - component: {fileID: 228561442379305173}
+  m_Layer: 28
+  m_Name: logic_respond_advanced
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4555940039457465061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953647171451117489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4441906086607311094}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6047527272457101634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953647171451117489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa1f021c399944afb705e81a336c658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respond_data_array:
+  - rid: 3020115016443756549
+  references:
+    version: 2
+    RefIds:
+    - rid: 3020115016443756549
+      type: {class: BasicGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        gameEvent: {fileID: 11400000, guid: 32958aea2615244bfa0cf824d3462e29, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 0}
+              m_TargetAssemblyTypeName: 
+              m_MethodName: 
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+--- !u!114 &228561442379305173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953647171451117489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa1f021c399944afb705e81a336c658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respond_data_array:
+  - rid: 3020115016443756554
+  references:
+    version: 2
+    RefIds:
+    - rid: 3020115016443756554
+      type: {class: IntGameEventResponse, ns: FFStudio, asm: Assembly-CSharp}
+      data:
+        gameEvent: {fileID: 11400000, guid: c38d114d998014adeb5caa16b4a96831, type: 2}
+        unityEvent:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 0}
+              m_TargetAssemblyTypeName: 
+              m_MethodName: 
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
 --- !u!1 &2559523268309117047
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +260,7 @@ Transform:
   - {fileID: 4672568986070104634}
   - {fileID: 6905976438064139604}
   - {fileID: 2474109977553765068}
+  - {fileID: 4555940039457465061}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

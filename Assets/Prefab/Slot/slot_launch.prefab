@@ -243,6 +243,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1842458569579337846}
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOtherSlotSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SlotLaunch, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1657132517293281009, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: particleDatas.Array.data[0].size
       value: 1.5
@@ -298,6 +318,30 @@ PrefabInstance:
     - target: {fileID: 4441906086607311094, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555940039457465061, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1842458569579337846}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOtherSlotDeSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SlotLaunch, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6193678835881016083, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: eventPairs.Array.size
@@ -386,6 +430,7 @@ MonoBehaviour:
   slot_index: 0
   _particleSpawner: {fileID: 6285616284931874459}
   slot_rope: {fileID: 0}
+  slot_rope_selection: {fileID: 533247521151738717}
   slot_rope_icon: {fileID: 3434410308653888774}
   system_purchase: {fileID: 11400000, guid: 3267c7088c4305e409b80108ed0170cf, type: 2}
 --- !u!65 &7326506245304151736 stripped

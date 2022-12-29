@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4112191728424838793}
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOtherSlotSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SlotMerge, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 228561442379305173, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756554].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1657132517293281009, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: particleDatas.Array.data[0].size
       value: 1.5
@@ -78,6 +98,26 @@ PrefabInstance:
     - target: {fileID: 4441906086607311094, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4112191728424838793}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOtherSlotDeSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SlotMerge, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047527272457101634, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
+      propertyPath: managedReferences[3020115016443756549].unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6905976438064139604, guid: a7c59795cd76f1843a9f80312724fff8, type: 3}
       propertyPath: m_LocalPosition.z
