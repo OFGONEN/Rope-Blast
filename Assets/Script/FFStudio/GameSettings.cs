@@ -18,6 +18,14 @@ namespace FFStudio
 		[ LabelText( "Rope Launch Delta" ) ] public float rope_launch_delta;
 		[ LabelText( "Rope Launch Length Delta" ) ] public float rope_launch_length_delta;
 
+    [ Title( "Launch Slot" ) ]
+		[ LabelText( "Default Color" ) ] public Color slot_launch_selectionColor_default;
+		[ LabelText( "Positive Color" ) ] public Color slot_launch_selectionColor_positive;
+
+    [ Title( "Merge Slot" ) ]
+		[ LabelText( "Default Color" ) ] public Color slot_merge_selectionColor_default;
+		[ LabelText( "Positive Color" ) ] public Color slot_merge_selectionColor_positive;
+
     [ Title( "Tile" ) ]
 		[ LabelText( "Tile Crumble Size" ) ] public Vector2 tile_crumble_size_offset;
 		[ LabelText( "Tile Crumble Rotation" ) ] public Vector2 tile_crumble_rotation_offset;
