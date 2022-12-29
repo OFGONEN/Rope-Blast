@@ -170,12 +170,12 @@ public abstract class Slot : MonoBehaviour
 		slot_isBusy = false;
 	}
 
-	protected virtual void OnOtherSlotDeSelected()
+	public virtual void OnOtherSlotDeSelected()
 	{
 		onOtherSlotSelected = OnOtherSlotSelected;
 	}
 
-	protected abstract void OnOtherSlotSelected( int slotLevel );
+	public abstract void OnOtherSlotSelected( int slotLevel );
 	protected abstract void OnDropSameSlot();
 	protected abstract void MergeRopeBox( RopeBox incoming );
 	protected abstract void OnMergeRopeBoxDone();

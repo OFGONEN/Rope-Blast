@@ -131,14 +131,14 @@ public class SlotLaunch : Slot
 		slot_rope_icon.sprite = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
 	}
 
-	protected override void OnOtherSlotSelected( int slotLevel )
+	public override void OnOtherSlotSelected( int slotLevel )
 	{
-		if( slot_isEmpty || RopeBoxData.RopeLevel != slotLevel ) return;
+		if( !slot_isEmpty && RopeBoxData.RopeLevel != slotLevel ) return;
 
 		slot_rope_selection.color = GameSettings.Instance.slot_launch_selectionColor_positive;
 	}
 
-	protected override void OnOtherSlotDeSelected()
+	public override void OnOtherSlotDeSelected()
 	{
 		slot_rope_selection.color = GameSettings.Instance.slot_launch_selectionColor_default;
 	}
