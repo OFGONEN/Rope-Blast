@@ -40,12 +40,12 @@ public class UIRopeBoxPurchase : UIEntity
     {
 		OnCurrencyUpdate();
 		UpdatePurchaseContext();
-		GoToTarget();
+		GoToTarget( EnableInteraction );
 	}
 
     public void OnLevelFinished()
     {
-		GoToStart();
+		GoToStart( DisableInteraction );
 	}
 
     public void OnButtonPress()
@@ -90,6 +90,16 @@ public class UIRopeBoxPurchase : UIEntity
 	{
 		image_purchase_icon_current.sprite = system_purchase.GetPurchaseContext();
 		image_purchase_icon_next.sprite    = system_purchase.GetNextPurchaseContext();
+	}
+
+	void EnableInteraction()
+	{
+		button_purchase.interactable = true;
+	}
+
+	void DisableInteraction()
+	{
+		button_purchase.interactable = false;
 	}
 #endregion
 
