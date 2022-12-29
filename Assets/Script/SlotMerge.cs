@@ -12,7 +12,7 @@ public class SlotMerge : Slot
 {
 #region Fields
     [ BoxGroup( "Shared" ), SerializeField, LabelText( "Merge Table Is Empty" ) ] protected SharedBoolNotifier notif_table_empty;
-    [ BoxGroup( "Components" ), SerializeField, LabelText( "Selectable Shape Renderer" ) ] protected Disc _disc;
+    [ BoxGroup( "Components" ), SerializeField, LabelText( "Selectable Shape Renderer" ) ] protected Rectangle _rectrange;
 #endregion
 
 #region Properties
@@ -85,14 +85,14 @@ public class SlotMerge : Slot
 	{
 		if( slot_isEmpty || RopeBoxData.RopeLevel != slotLevel ) return;
 
-		_disc.enabled = true;
-		_disc.Color   = GameSettings.Instance.slot_merge_selectionColor_positive;
+		_rectrange.enabled = true;
+		_rectrange.Color   = GameSettings.Instance.slot_merge_selectionColor_positive;
 	}
 
 	public override void OnOtherSlotDeSelected()
 	{
 		base.OnOtherSlotDeSelected();
-		_disc.enabled = false;
+		_rectrange.enabled = false;
 	}
 
 	void CheckIfTableIsFull()
