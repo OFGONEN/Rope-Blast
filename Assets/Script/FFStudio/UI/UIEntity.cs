@@ -43,6 +43,16 @@ namespace FFStudio
 			uiTransform.DOMove( startPosition, GameSettings.Instance.ui_Entity_Fade_TweenDuration );
 		}
 
+		public virtual void GoToTarget( TweenCallback onComplete )
+		{
+			uiTransform.DOMove( destinationTransform.position, GameSettings.Instance.ui_Entity_Fade_TweenDuration ).OnComplete( onComplete );
+		}
+
+		public virtual void GoToStart( TweenCallback onComplete )
+		{
+			uiTransform.DOMove( startPosition, GameSettings.Instance.ui_Entity_Fade_TweenDuration ).OnComplete( onComplete );
+		}
+
 		public virtual void TeleportToTarget()
 		{
 			uiTransform.position = destinationTransform.position;
