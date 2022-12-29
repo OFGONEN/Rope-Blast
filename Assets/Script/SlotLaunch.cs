@@ -28,7 +28,7 @@ public class SlotLaunch : Slot
 #endregion
 
 #region API
-    public override void OnSnatch()
+    public override int OnSnatch()
 	{
 		base.OnSnatch();
 
@@ -40,6 +40,8 @@ public class SlotLaunch : Slot
 		slot_ropeBox.Spawn( slot_ropeBoxData, slot_dragged_transform.position );
 
 		slot_rope_icon.enabled = false;
+
+		return RopeBoxData.RopeLevel;
 	}
 
 	public void SpawnRope( RopeBoxData ropeBoxData )

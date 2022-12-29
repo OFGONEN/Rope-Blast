@@ -73,13 +73,14 @@ public abstract class Slot : MonoBehaviour
 			OnDropSameSlot();
 		else
 			OnDropDifferentSlot();
-		
 	}
 
-    public virtual void OnSnatch()
+    public virtual int OnSnatch()
 	{
 		slot_collider.enabled = false;
 		slot_pair             = this;
+
+		return RopeBoxData.RopeLevel;
 	}
 
     public void OnDragUpdate( Vector3 position )
