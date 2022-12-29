@@ -31,6 +31,8 @@ public abstract class Slot : MonoBehaviour
 	[ ShowInInspector, ReadOnly ] protected Slot slot_pair;
 	[ ShowInInspector, ReadOnly ] protected RopeBox slot_ropeBox;
 	protected Vector3 slot_dragged_transform_position;
+
+	IntMessage onOtherSlotSelected;
 #endregion
 
 #region Properties
@@ -56,6 +58,8 @@ public abstract class Slot : MonoBehaviour
 	private void Awake()
 	{
 		slot_dragged_transform_position = slot_dragged_transform.localPosition;
+
+		onOtherSlotSelected = OnOtherSlotSelected;
 	}
 #endregion
 
@@ -79,6 +83,8 @@ public abstract class Slot : MonoBehaviour
 	{
 		slot_collider.enabled = false;
 		slot_pair             = this;
+
+		onOtherSlotSelected = ExtensionMethods.EmptyMethod;
 
 		return RopeBoxData.RopeLevel;
 	}
@@ -164,6 +170,12 @@ public abstract class Slot : MonoBehaviour
 		slot_isBusy = false;
 	}
 
+	protected virtual void OnOtherSlotDeSelected()
+	{
+		onOtherSlotSelected = OnOtherSlotSelected;
+	}
+
+	protected abstract void OnOtherSlotSelected( int slotLevel );
 	protected abstract void OnDropSameSlot();
 	protected abstract void MergeRopeBox( RopeBox incoming );
 	protected abstract void OnMergeRopeBoxDone();
