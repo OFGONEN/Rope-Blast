@@ -99,6 +99,13 @@ public class SlotLaunch : Slot
 			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
 	}
 
+	protected override void CacheRopeBox( RopeBox incoming )
+	{
+		base.CacheRopeBox( incoming );
+
+		slot_ropeBoxData = incoming.RopeBoxData;
+	}
+
 	protected override void OnMergeRopeBoxDone()
 	{
 		slot_collider.enabled = true;
