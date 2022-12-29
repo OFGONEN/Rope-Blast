@@ -55,7 +55,7 @@ public class SlotLaunch : Slot
 		slot_rope.SpawnWithoutLaunch( slot_ropeBoxData.RopeData );
 
 		slot_rope_icon.enabled = true;
-		slot_rope_icon.sprite  = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
+		slot_rope_icon.sprite  = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
 	}
 
 	public void OnLevelStarted()
@@ -109,7 +109,7 @@ public class SlotLaunch : Slot
 
 		_particleSpawner.Spawn( 0 );
 		
-		slot_rope_icon.sprite = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
+		slot_rope_icon.sprite = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
 	}
 
 	protected override void OnCacheRopeBoxDone()
@@ -125,7 +125,7 @@ public class SlotLaunch : Slot
 
 
 		slot_rope_icon.enabled = true;
-		slot_rope_icon.sprite = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
+		slot_rope_icon.sprite = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
 	}
 #endregion
 

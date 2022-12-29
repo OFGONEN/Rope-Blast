@@ -16,12 +16,15 @@ public class UIRopeBoxPurchase : UIEntity
 	[ SerializeField ] Currency currency;
 	[ SerializeField ] SharedBoolNotifier notif_table_empty;
 	[ SerializeField ] GameEvent event_purchase;
+	[ SerializeField ] Sprite sprite_purchase_button_active;
+	[ SerializeField ] Sprite sprite_purchase_button_deactive;
 
   [ Title( "Components" ) ]
     [ SerializeField ] Button button_purchase;
-    [ SerializeField ] Image image_purchase_icon;
-    [ SerializeField ] Image image_purchase_icon_active;
-    [ SerializeField ] Image image_purchase_icon_deactive;
+    [ SerializeField ] Image button_purchase_image;
+    [ SerializeField ] Image image_purchase_icon_current;
+    [ SerializeField ] Image image_purchase_icon_next;
+    [ SerializeField ] Image image_purchase_progress;
     [ SerializeField ] TextMeshProUGUI text_purchase_cost; // This is actually currency
     [ SerializeField ] TextMeshProUGUI text_purchase_count;
 #endregion
@@ -36,8 +39,7 @@ public class UIRopeBoxPurchase : UIEntity
     public void OnLevelStarted()
     {
 		OnCurrencyUpdate();
-
-		image_purchase_icon.sprite = system_purchase.GetPurchaseContext();
+		UpdatePurchaseContext();
 		GoToTarget();
 	}
 
@@ -54,7 +56,7 @@ public class UIRopeBoxPurchase : UIEntity
 		system_purchase.IncreasePurchaseCount();
 
 		currency.SharedValue -= cost;
-		image_purchase_icon.sprite = system_purchase.GetPurchaseContext();
+		UpdatePurchaseContext();
 	}
 
 	public void OnCurrencyUpdate()
@@ -67,17 +69,27 @@ public class UIRopeBoxPurchase : UIEntity
 	{
 		var enabled = notif_table_empty.sharedValue && system_purchase.GetPurchaseCost() <= currency.sharedValue;
 
-		button_purchase.interactable         = enabled;
-		image_purchase_icon_active.enabled   = enabled;
-		image_purchase_icon_deactive.enabled = !enabled;
+		button_purchase.interactable = enabled;
+
+		if( enabled )
+			button_purchase_image.sprite = sprite_purchase_button_active;
+		else
+			button_purchase_image.sprite = sprite_purchase_button_deactive;
 	}
 #endregion
 
 #region Implementation
 	void UpdatePurchaseText()
 	{
-		text_purchase_cost.text  = currency.sharedValue.ToString( "F1" );
-		text_purchase_count.text = system_purchase.PurchaseCount + " / " + system_purchase.PurchaseCeil;
+		text_purchase_cost.text            = currency.sharedValue.ToString( "F1" );
+		text_purchase_count.text           = system_purchase.PurchaseCount + " / " + system_purchase.PurchaseCeil;
+		image_purchase_progress.fillAmount = Mathf.InverseLerp( system_purchase.GetPurchaseFloor(), system_purchase.PurchaseCeil, system_purchase.PurchaseCount );
+	}
+
+	void UpdatePurchaseContext()
+	{
+		image_purchase_icon_current.sprite = system_purchase.GetPurchaseContext();
+		image_purchase_icon_next.sprite    = system_purchase.GetNextPurchaseContext();
 	}
 #endregion
 

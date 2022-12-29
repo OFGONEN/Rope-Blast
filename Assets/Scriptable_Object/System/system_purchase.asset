@@ -15,6 +15,17 @@ MonoBehaviour:
   purchase_cost_base: 5
   purchase_level_range: 280000002c010000f4010000bc020000
   purchase_context_array:
+  - {fileID: 21300000, guid: 8835ada347b2cad468093e3955b3bba8, type: 3}
+  - {fileID: 21300000, guid: 56aeb56ea2b608744aad1f3c9f1289fe, type: 3}
+  - {fileID: 21300000, guid: 3789a8529df2f8947bbf1038ac3ed6ef, type: 3}
+  - {fileID: 21300000, guid: cf5da17ed4435e0469dab8d433b32f6f, type: 3}
+  - {fileID: 21300000, guid: 8e577ce06e1f94d4abbc969f346f64a3, type: 3}
+  - {fileID: 21300000, guid: 1a96d9becf328d94b89123fe846187f3, type: 3}
+  - {fileID: 21300000, guid: 123bbcb56a4ac9144bd0d3b9b0594a6a, type: 3}
+  - {fileID: 21300000, guid: 279da02b56a7f15498078aca4313bc20, type: 3}
+  - {fileID: 21300000, guid: 7679751f71b43394b970bf59da4d2a9a, type: 3}
+  - {fileID: 21300000, guid: fb11c9a47038a744e80c146ea1653fd8, type: 3}
+  purchase_level_array:
   - {fileID: 21300000, guid: 9ff6183693b118e45a5675fd10e0d61f, type: 3}
   - {fileID: 21300000, guid: a42d3e8a4a10723489bcaf8f7dcf450a, type: 3}
   - {fileID: 21300000, guid: 5b9dcfe559a8b2140a43bd1ff6d0c8da, type: 3}
