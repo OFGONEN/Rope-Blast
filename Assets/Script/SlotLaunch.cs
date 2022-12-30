@@ -87,6 +87,9 @@ public class SlotLaunch : Slot
 
 		slot_ropeBox.DeSpawn();
 		slot_ropeBox = null;
+
+		slot_rope_icon.enabled = true;
+		slot_rope_icon.sprite = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
 	}
 
 	protected override void MergeRopeBox( RopeBox incoming )
@@ -132,7 +135,6 @@ public class SlotLaunch : Slot
 		slot_ropeBox = null;
 
 		slot_rope.Spawn( slot_ropeBoxData.RopeData );
-
 
 		slot_rope_icon.enabled = true;
 		slot_rope_icon.sprite = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
