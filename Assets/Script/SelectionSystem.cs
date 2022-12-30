@@ -13,6 +13,8 @@ public class SelectionSystem : ScriptableObject
   [ Title( "Setup" ) ]
     [ LabelText( "Main Camera Reference" ), SerializeField ] SharedReferenceNotifier notif_camera_reference;
     [ LabelText( "Shared Finger" ), SerializeField ] SharedLeanFinger shared_finger;
+    [ LabelText( "Slot Deselected Event" ), SerializeField ] GameEvent event_slot_deselected;
+    [ LabelText( "Slot Selected Event" ), SerializeField ] IntGameEvent event_slot_selected;
 
 	Vector2 finger_position;
 	Slot _slot;
@@ -87,7 +89,8 @@ public class SelectionSystem : ScriptableObject
 
 		if( _slot.OnSelect() )
 		{
-			_slot.OnSnatch();
+			var slotLevel = _slot.OnSnatch();
+			event_slot_selected.Raise( slotLevel );
 
 			SetLayerMaskToSelectionTable();
 			DragSlot();
@@ -102,6 +105,8 @@ public class SelectionSystem : ScriptableObject
 	{
 		EmptyDelegates();
 		onFingerDown = TryToSelectSlot;
+
+		event_slot_deselected.Raise();
 
 		_slot.OnDeSelect();
 		SetLayerMaskToSlot();

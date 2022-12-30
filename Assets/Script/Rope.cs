@@ -18,7 +18,7 @@ public class Rope : MonoBehaviour
     [ LabelText( "Rope Renderer" ), SerializeField ] Renderer rope_renderer;
     [ LabelText( "Rope Hook's Mesh Filter" ), SerializeField ] MeshFilter rope_hook_meshFilter;
     [ LabelText( "Rope Hook's Renderer" ), SerializeField ] Renderer rope_hook_renderer;
-    // [ LabelText( "Particle Spawner" ), SerializeField ] ParticleSpawner particle_spawner; //todo: Enable This ?
+    [ LabelText( "Rope End's Renderer" ), SerializeField ] Renderer rope_end_renderer;
 
 	public RopeData RopeData => rope_data;
 	public bool IsBusy       => rope_tile_list.Count > 0;
@@ -83,6 +83,7 @@ public class Rope : MonoBehaviour
 		rope_renderer.sharedMaterial      = ropeData.RopeMaterial;
 		rope_hook_meshFilter.mesh         = ropeData.RopeHookMesh;
 		rope_hook_renderer.sharedMaterial = ropeData.RopeHookMaterial;
+		rope_end_renderer.sharedMaterial  = ropeData.RopeMaterial;
 	}
 
 	public void DeSpawn()
@@ -171,6 +172,14 @@ public class Rope : MonoBehaviour
 		Handles.DrawDottedLine( launchPosition, secondLaunchPosition, 1f );
 		Handles.Label( ( secondLaunchPosition + launchPosition ) / 2f, "Rope Launch Position" );
 
+	}
+
+	[ Button() ]
+	private void CacheRopeEndRenderer()
+	{
+		UnityEditor.EditorUtility.SetDirty( gameObject );
+
+		rope_end_renderer = transform.Find( "rope_start" ).GetComponentInChildren< Renderer >();
 	}
 #endif
 #endregion
