@@ -18,6 +18,7 @@ public class Tutorial : MonoBehaviour
     [ SerializeField ] int tile_explode_count;
     [ SerializeField ] List_Slot shared_list_slot_launch;
     [ SerializeField ] float hand_movement_offset_vertical;
+    [ SerializeField ] float hand_movement_offset_forward;
     [ SerializeField ] float hand_movement_speed_lateral;
     [ SerializeField ] Ease hand_movement_ease_lateral;
     [ SerializeField ] Ease hand_movement_ease_vertical;
@@ -136,7 +137,7 @@ public class Tutorial : MonoBehaviour
 
 	void SetHandPosition()
 	{
-		tutorial_hand_transform.position = slot_launch_occupied.transform.position;
+		tutorial_hand_transform.position = slot_launch_occupied.transform.position.OffsetZ( hand_movement_offset_forward );
 	}
 #endregion
 
