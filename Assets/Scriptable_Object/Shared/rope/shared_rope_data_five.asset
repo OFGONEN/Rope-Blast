@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: shared_rope_data_five
   m_EditorClassIdentifier: 
   rope_level: 5
-  rope_material: {fileID: 2100000, guid: 68040d785af911d45867155b8d65663f, type: 2}
+  rope_material: {fileID: 2100000, guid: 0dedd563b8160bc48a5d9f6c79307445, type: 2}
   rope_hook_mesh: {fileID: 3313781622791905895, guid: 06cc897e38a91be42bdde77d5574865e, type: 3}
   rope_hook_material: {fileID: 2100000, guid: a2829df0bfae7214390d3aa9dcc77c64, type: 2}
   rope_length: 2
