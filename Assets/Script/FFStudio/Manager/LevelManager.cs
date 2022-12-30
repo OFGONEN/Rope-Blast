@@ -63,6 +63,25 @@ namespace FFStudio
             }
 		}
 
+		[ Button() ]
+		public void OnPurchase( int index )
+        {
+			slot_list.Clear();
+
+			for( var i = 0; i < shared_list_slot_merge.itemList.Count; i++ )
+            {
+				var slot = shared_list_slot_merge.itemList[ i ];
+
+                if( slot.IsEmpty )
+                {
+					slot_list.Add( slot );
+				}
+			}
+
+            if( slot_list.Count > 0 )
+                ( slot_list.ReturnRandom() as SlotMerge ).SpawnRopeBox( ropeBoxData_array[ index ] );
+		}
+
         public void OnPurchase()
         {
 			var index = system_purchase.PurchaseIndex;
