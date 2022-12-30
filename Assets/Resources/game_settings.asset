@@ -91,7 +91,7 @@ MonoBehaviour:
   selection_pair_distance: 0
   camera_follow_speed_depth: 2.8
   game_forward: {x: 0, y: 0, z: 0}
-  game_currency_start: 17
+  game_currency_start: 12
   maxLevelCount: 15
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
