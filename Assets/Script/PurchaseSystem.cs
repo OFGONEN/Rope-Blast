@@ -14,10 +14,11 @@ public class PurchaseSystem : ScriptableObject
     [ SerializeField, LabelText( "Base Purchase Cost" ) ] float purchase_cost_base;
     [ SerializeField, LabelText( "Purchase Level Range" ) ] int[] purchase_level_range; //Info: This array's length must be 1 less then total RopeBoxData count
     [ SerializeField, LabelText( "Purchase Context" ) ] Sprite[] purchase_context_array; 
+    [ SerializeField, LabelText( "Purchase Level" ) ] Sprite[] purchase_level_array; 
 
 	public int PurchaseCount => purchase_count;
 	public int PurchaseIndex => purchase_index;
-	public int PurchaseCeil => purchase_level_range[ Mathf.Min( purchase_index, purchase_level_range.Length - 1 ) ];
+	public int PurchaseCeil  => purchase_level_range[ Mathf.Min( purchase_index, purchase_level_range.Length - 1 ) ];
 
 	[ ShowInInspector ] int purchase_count;
     [ ShowInInspector ] int purchase_index;
@@ -48,14 +49,32 @@ public class PurchaseSystem : ScriptableObject
 		return purchase_cost_base + Mathf.Pow( purchase_count, 1.25f ) - purchase_count;
 	}
 
+	public int GetPurchaseFloor()
+	{
+		if( purchase_index <= 0 )
+			return 0;
+		else
+			return purchase_level_range[ Mathf.Max( 0, purchase_index - 1 ) ];
+	}
+
 	public Sprite GetPurchaseContext()
 	{
 		return purchase_context_array[ purchase_index ];
 	}
 
+	public Sprite GetNextPurchaseContext()
+	{
+		return purchase_context_array[ Mathf.Min( purchase_context_array.Length - 1, purchase_index + 1 ) ];
+	}
+
 	public Sprite GetPurchaseContext( int index )
 	{
 		return purchase_context_array[ index ];
+	}
+
+	public Sprite GetPurchaseLevel( int index )
+	{
+		return purchase_level_array[ index ];
 	}
 
     public void IncreasePurchaseCount()

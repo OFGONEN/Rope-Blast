@@ -12,6 +12,7 @@ public class SlotLaunch : Slot
 {
 #region Fields
 	[ BoxGroup( "Components" ), LabelText( "Rope" ), SerializeField ] Rope slot_rope;
+	[ BoxGroup( "Components" ), LabelText( "Rope Selection Icon" ), SerializeField ] Image slot_rope_selection;
 	[ BoxGroup( "Components" ), LabelText( "Rope Level Icon" ), SerializeField ] Image slot_rope_icon;
 	[ BoxGroup( "Shared" ), LabelText( "Purchase System" ), SerializeField ] PurchaseSystem system_purchase;
 
@@ -28,7 +29,7 @@ public class SlotLaunch : Slot
 #endregion
 
 #region API
-    public override void OnSnatch()
+    public override int OnSnatch()
 	{
 		base.OnSnatch();
 
@@ -40,6 +41,8 @@ public class SlotLaunch : Slot
 		slot_ropeBox.Spawn( slot_ropeBoxData, slot_dragged_transform.position );
 
 		slot_rope_icon.enabled = false;
+
+		return RopeBoxData.RopeLevel;
 	}
 
 	public void SpawnRope( RopeBoxData ropeBoxData )
@@ -55,7 +58,7 @@ public class SlotLaunch : Slot
 		slot_rope.SpawnWithoutLaunch( slot_ropeBoxData.RopeData );
 
 		slot_rope_icon.enabled = true;
-		slot_rope_icon.sprite  = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
+		slot_rope_icon.sprite  = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
 	}
 
 	public void OnLevelStarted()
@@ -96,6 +99,13 @@ public class SlotLaunch : Slot
 			.SetEase( GameSettings.Instance.ropeBox_jump_ease ) );
 	}
 
+	protected override void CacheRopeBox( RopeBox incoming )
+	{
+		base.CacheRopeBox( incoming );
+
+		slot_ropeBoxData = incoming.RopeBoxData;
+	}
+
 	protected override void OnMergeRopeBoxDone()
 	{
 		slot_collider.enabled = true;
@@ -109,7 +119,7 @@ public class SlotLaunch : Slot
 
 		_particleSpawner.Spawn( 0 );
 		
-		slot_rope_icon.sprite = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
+		slot_rope_icon.sprite = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
 	}
 
 	protected override void OnCacheRopeBoxDone()
@@ -125,7 +135,19 @@ public class SlotLaunch : Slot
 
 
 		slot_rope_icon.enabled = true;
-		slot_rope_icon.sprite = system_purchase.GetPurchaseContext( slot_ropeBoxData.RopeLevel - 1 );
+		slot_rope_icon.sprite = system_purchase.GetPurchaseLevel( slot_ropeBoxData.RopeLevel - 1 );
+	}
+
+	public override void OnOtherSlotSelected( int slotLevel )
+	{
+		if( !slot_isEmpty && RopeBoxData.RopeLevel != slotLevel ) return;
+
+		slot_rope_selection.color = GameSettings.Instance.slot_launch_selectionColor_positive;
+	}
+
+	public override void OnOtherSlotDeSelected()
+	{
+		slot_rope_selection.color = GameSettings.Instance.slot_launch_selectionColor_default;
 	}
 #endregion
 

@@ -195,7 +195,7 @@ Material:
     m_Floats:
     - _BackgroundCat: 1
     - _BackgroundCubemapSpace: 0
-    - _BackgroundExposure: 1
+    - _BackgroundExposure: 1.03
     - _BackgroundMode: 0
     - _Banner: 1
     - _BuiltInFog: 1
@@ -203,9 +203,9 @@ Material:
     - _CloudHeight: -0.185
     - _Clouds: 1
     - _CloudsCat: 1
-    - _CloudsHeight: 0.15
+    - _CloudsHeight: 0.287
     - _CloudsLitbySun: 0
-    - _CloudsRotation: 0
+    - _CloudsRotation: 262
     - _CloudsRotationSpeed: 1
     - _ColorsCat: 1
     - _Contrast: 2
@@ -266,7 +266,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PatternCat: 1
-    - _PatternContrast: 0.3
+    - _PatternContrast: 0.386
     - _PatternOverlay: 1
     - _RoatationSpeed: 0.4
     - _Rotation: 0
@@ -286,13 +286,13 @@ Material:
     - _StarsHeightMask: 0.1
     - _StarsHeigntMask: 1
     - _StarsHorizonMask: 1
-    - _StarsIntensity: 5
-    - _StarsLayer: 3
+    - _StarsIntensity: 0
+    - _StarsLayer: 1
     - _StarsMaskPower: 1
     - _StarsRotation: 360
     - _StarsRotationSpeed: 0.5
     - _StarsSize: 0.6
-    - _StarsSunMask: 0.01
+    - _StarsSunMask: 0
     - _SunCat: 1
     - _SunIntensity: 2
     - _SunRadiusB: 0
@@ -322,7 +322,7 @@ Material:
     m_Colors:
     - _CloudLightColor: {r: 0.5620674, g: 0.6149295, b: 0.6764706, a: 1}
     - _CloudShadowColor: {r: 0.03952206, g: 0.12203295, b: 0.31617644, a: 1}
-    - _CloudsLightColor: {r: 0.7065311, g: 0.9378087, b: 0.9705882, a: 1}
+    - _CloudsLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _CloudsShadowColor: {r: 0.7058824, g: 0.93725497, b: 0.9725491, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0, g: 0.5054344, b: 1, a: 0}

@@ -30,6 +30,9 @@ public abstract class Slot : MonoBehaviour
     [ ShowInInspector, ReadOnly ] protected bool slot_isEmpty = true;
 	[ ShowInInspector, ReadOnly ] protected Slot slot_pair;
 	[ ShowInInspector, ReadOnly ] protected RopeBox slot_ropeBox;
+	protected Vector3 slot_dragged_transform_position;
+
+	IntMessage onOtherSlotSelected;
 #endregion
 
 #region Properties
@@ -51,6 +54,13 @@ public abstract class Slot : MonoBehaviour
 
 		shared_list_slot_custom.RemoveDictionary( slot_index );
 	}
+
+	private void Awake()
+	{
+		slot_dragged_transform_position = slot_dragged_transform.localPosition;
+
+		onOtherSlotSelected = OnOtherSlotSelected;
+	}
 #endregion
 
 #region API
@@ -67,13 +77,16 @@ public abstract class Slot : MonoBehaviour
 			OnDropSameSlot();
 		else
 			OnDropDifferentSlot();
-		
 	}
 
-    public virtual void OnSnatch()
+    public virtual int OnSnatch()
 	{
 		slot_collider.enabled = false;
 		slot_pair             = this;
+
+		onOtherSlotSelected = ExtensionMethods.EmptyMethod;
+
+		return RopeBoxData.RopeLevel;
 	}
 
     public void OnDragUpdate( Vector3 position )
@@ -138,7 +151,7 @@ public abstract class Slot : MonoBehaviour
 		slot_ropeBox = null;
 		slot_pair    = null;
 
-		slot_dragged_transform.localPosition = Vector3.zero;
+		slot_dragged_transform.localPosition = slot_dragged_transform_position;
 		slot_collider.enabled = true;
 	}
 
@@ -157,6 +170,12 @@ public abstract class Slot : MonoBehaviour
 		slot_isBusy = false;
 	}
 
+	public virtual void OnOtherSlotDeSelected()
+	{
+		onOtherSlotSelected = OnOtherSlotSelected;
+	}
+
+	public abstract void OnOtherSlotSelected( int slotLevel );
 	protected abstract void OnDropSameSlot();
 	protected abstract void MergeRopeBox( RopeBox incoming );
 	protected abstract void OnMergeRopeBoxDone();

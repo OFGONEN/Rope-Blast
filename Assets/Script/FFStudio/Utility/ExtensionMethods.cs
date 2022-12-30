@@ -163,6 +163,11 @@ namespace FFStudio
 			/* Intentionally empty, by definition. */
 		}
 
+		public static void EmptyMethod( int value )
+		{
+			/* Intentionally empty, by definition. */
+		}
+
 		public static void EmptyMethod( Collider collider )
 		{
 			/* Intentionally empty, by definition. */

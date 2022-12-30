@@ -72,6 +72,10 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   rope_launch_delta: 3
   rope_launch_length_delta: 1.5
+  slot_launch_selectionColor_default: {r: 1, g: 1, b: 1, a: 1}
+  slot_launch_selectionColor_positive: {r: 0, g: 1, b: 0.18643212, a: 1}
+  slot_merge_selectionColor_default: {r: 1, g: 1, b: 1, a: 1}
+  slot_merge_selectionColor_positive: {r: 0, g: 1, b: 0.18643212, a: 1}
   tile_crumble_size_offset: {x: 0.15, y: 0.3}
   tile_crumble_rotation_offset: {x: -15, y: 15}
   ropeBox_jump_power: 1
@@ -87,7 +91,7 @@ MonoBehaviour:
   selection_pair_distance: 0
   camera_follow_speed_depth: 2.8
   game_forward: {x: 0, y: 0, z: 0}
-  game_currency_start: 17
+  game_currency_start: 12
   maxLevelCount: 15
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0

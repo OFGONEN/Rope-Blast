@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
 using DG.Tweening;
+using Shapes;
 using Sirenix.OdinInspector;
 
 public class SlotMerge : Slot
 {
 #region Fields
     [ BoxGroup( "Shared" ), SerializeField, LabelText( "Merge Table Is Empty" ) ] protected SharedBoolNotifier notif_table_empty;
+    [ BoxGroup( "Components" ), SerializeField, LabelText( "Selectable Shape Renderer" ) ] protected Rectangle _rectrange;
 #endregion
 
 #region Properties
@@ -48,7 +50,7 @@ public class SlotMerge : Slot
 	}
 	protected override void OnDropSameSlot()
 	{
-		slot_dragged_transform.localPosition = Vector3.zero;
+		slot_dragged_transform.localPosition = slot_dragged_transform_position;
 		slot_collider.enabled                = true;
 		slot_pair                            = null;
 	}
@@ -77,6 +79,20 @@ public class SlotMerge : Slot
 		SpawnRopeBox( data );
 
 		_particleSpawner.Spawn( 0 );
+	}
+
+	public override void OnOtherSlotSelected( int slotLevel )
+	{
+		if( slot_isEmpty || RopeBoxData.RopeLevel != slotLevel ) return;
+
+		_rectrange.enabled = true;
+		_rectrange.Color   = GameSettings.Instance.slot_merge_selectionColor_positive;
+	}
+
+	public override void OnOtherSlotDeSelected()
+	{
+		base.OnOtherSlotDeSelected();
+		_rectrange.enabled = false;
 	}
 
 	void CheckIfTableIsFull()
