@@ -12,9 +12,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a385bd3b4416492409284c9a366cb52a, type: 3}
   m_Name: game_settings
   m_EditorClassIdentifier: 
+  sky_gradient_size: 1.3
+  sky_gradient_array:
+  - serializedVersion: 2
+    key0: {r: 0.6509804, g: 0.972549, b: 0.3372549, a: 1}
+    key1: {r: 0.003921569, g: 0.5686275, b: 0.30588236, a: 1}
+    key2: {r: 0.003921569, g: 0.5686275, b: 0.30588236, a: 0}
+    key3: {r: 0.003921569, g: 0.5686275, b: 0.30588236, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 65535
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 0.5019608, g: 0.92941177, b: 0.99607843, a: 1}
+    key1: {r: 0, g: 0.5764706, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  rope_launch_delta: 3
+  rope_launch_length_delta: 1.5
+  slot_launch_selectionColor_default: {r: 1, g: 1, b: 1, a: 1}
+  slot_launch_selectionColor_positive: {r: 0, g: 1, b: 0.18643212, a: 1}
+  slot_merge_selectionColor_default: {r: 1, g: 1, b: 1, a: 1}
+  slot_merge_selectionColor_positive: {r: 0, g: 1, b: 0.18643212, a: 1}
+  tile_crumble_size_offset: {x: 0.15, y: 0.3}
+  tile_crumble_rotation_offset: {x: -15, y: 15}
+  ropeBox_jump_power: 1
+  ropeBox_jump_duration: 0.65
+  ropeBox_jump_ease: 6
+  tile_table_movement_delta: 1.5
+  tile_table_movement_duration: 0.15
+  tile_table_movement_ease: 6
+  selection_layer_slot: 28
+  selection_layer_table: 27
+  selection_distance: 1000
+  selection_height: 0.2
+  selection_pair_distance: 0
+  camera_follow_speed_depth: 2.8
+  game_forward: {x: 0, y: 0, z: 0}
+  game_currency_start: 12
+  maxLevelCount: 15
   useRemoteConfig_GameSettings: 0
   useRemoteConfig_Components: 0
-  maxLevelCount: 1
   ui_Entity_Move_TweenDuration: 0.5
   ui_Entity_Fade_TweenDuration: 0.5
   ui_Entity_Scale_TweenDuration: 0.5
@@ -22,6 +102,20 @@ MonoBehaviour:
   ui_Entity_JoyStick_Gap: 50
   ui_PopUp_height: 1
   ui_PopUp_duration: 0.75
+  ui_particle_spawn_width: 10
+  ui_particle_spawn_duration: 0.1
+  ui_particle_spawn_ease: 1
+  ui_particle_target_waitTime: 0.16
+  ui_particle_target_duration: 0.4
+  ui_particle_target_ease: 1
   swipeThreshold: 2
+  ui_safeArea_offset_top: 88
+  uiParticle_spawn_width_percentage: 10
+  uiParticle_spawn_duration: 0.1
+  uiParticle_spawn_ease: 1
+  uiParticle_target_waitDuration: 0.16
+  uiParticle_target_duration: 0.4
+  uiParticle_target_duration_reward: 0.85
+  uiParticle_target_ease: 1
   debug_ui_text_float_height: 1
   debug_ui_text_float_duration: 1

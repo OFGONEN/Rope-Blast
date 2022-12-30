@@ -4,6 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 using FFStudio;
+using DG.Tweening;
 using System.Reflection;
 
 namespace FFEditor
@@ -11,6 +12,7 @@ namespace FFEditor
 	public static class FFShortcutUtility
 	{
 		static private TransformData currentTransformData;
+		static private string path_playerPrefsTracker = "Assets/Editor/tracker_playerPrefs.asset";
 
 		[ MenuItem( "FFShortcut/TakeScreenShot #F12" ) ]
 		public static void TakeScreenShot()
@@ -29,11 +31,34 @@ namespace FFEditor
 
 			Debug.Log( "ScreenShot Taken: " + "ScreenShot_" + counter + ".png" );
 		}
+		
+		[ MenuItem( "FFShortcut/Select PlayerPrefsTracker _F7" ) ]
+		static private void SelectPlayerPrefsTracker()
+		{
+			var tracker = AssetDatabase.LoadAssetAtPath( path_playerPrefsTracker, typeof( ScriptableObject ) );
+			( tracker as PlayerPrefsTracker ).Refresh();
+			Selection.SetActiveObjectWithContext( tracker, tracker );
+		}
+
+		[MenuItem( "FFShortcut/Delete Save File _F8" )]
+		static void DeleteSaveFile()
+		{
+			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) )
+			{
+				FFStudio.FFLogger.Log( "SaveSystem: Found save file. Deleting it." );
+				File.Delete( ExtensionMethods.SAVE_PATH + "save.txt" );
+			}
+
+			if( File.Exists( ExtensionMethods.SAVE_PATH + "save.txt" ) )
+				FFStudio.FFLogger.LogError( "SaveSystem: Failed to delete save file." );
+			else
+				FFStudio.FFLogger.Log( "SaveSystem: Successfully deleted save file." );
+		}
 
 		[ MenuItem( "FFShortcut/Delete PlayerPrefs _F9" ) ]
 		static private void ResetPlayerPrefs()
 		{
-			PlayerPrefs.DeleteAll();
+			PlayerPrefsUtility.Instance.DeleteAll();
 			Debug.Log( "PlayerPrefs Deleted" );
 		}
 
@@ -69,7 +94,11 @@ namespace FFEditor
 			Debug.Log( "AssetDatabase Saved" );
 		}
 
+#if UNITY_EDITOR_WIN
 		[ MenuItem( "FFShortcut/Select Game Settings &1" ) ]
+#elif UNITY_EDITOR_OSX
+		[ MenuItem( "FFShortcut/Select Game Settings %1" ) ]
+#endif
 		static private void SelectGameSettings()
 		{
 			var gameSettings = Resources.Load( "game_settings" );
@@ -77,7 +106,11 @@ namespace FFEditor
 			Selection.SetActiveObjectWithContext( gameSettings, gameSettings );
 		}
 
+#if UNITY_EDITOR_WIN
 		[ MenuItem( "FFShortcut/Select Level Data &2" ) ]
+#elif UNITY_EDITOR_OSX
+		[ MenuItem( "FFShortcut/Select Level Data %2" ) ]
+#endif
 		static private void SelectLevelData()
 		{
 			var levelData = Resources.Load( "level_data_1" );
@@ -85,7 +118,11 @@ namespace FFEditor
 			Selection.SetActiveObjectWithContext( levelData, levelData );
 		}
 
+#if UNITY_EDITOR_WIN
 		[ MenuItem( "FFShortcut/Select App Scene &3" ) ]
+#elif UNITY_EDITOR_OSX
+		[ MenuItem( "FFShortcut/Select App Scene %3" ) ]
+#endif
 		static private void SelectAppScene()
 		{
 			var appScene = AssetDatabase.LoadAssetAtPath( "Assets/Scenes/app.unity", typeof( SceneAsset ) );
@@ -93,7 +130,11 @@ namespace FFEditor
 			Selection.SetActiveObjectWithContext( appScene, appScene );
 		}
 
+#if UNITY_EDITOR_WIN
 		[ MenuItem( "FFShortcut/Select Play Mode Settings &4" ) ]
+#elif UNITY_EDITOR_OSX
+		[ MenuItem( "FFShortcut/Select Play Mode Settings %4" ) ]
+#endif
 		static private void SelectPlayModeSettings()
 		{
 			var playModeSettings = AssetDatabase.LoadAssetAtPath( "Assets/Editor/PlayModeUtilitySettings.asset", typeof( ScriptableObject ) );
@@ -101,20 +142,45 @@ namespace FFEditor
 			Selection.SetActiveObjectWithContext( playModeSettings, playModeSettings );
 		}
 
+#if UNITY_EDITOR_WIN
 		[ MenuItem( "FFShortcut/Copy Global Transform &c" ) ]
+#elif UNITY_EDITOR_OSX
+		[ MenuItem( "FFShortcut/Copy Global Transform %c" ) ]
+#endif
 		static private void CopyTransform()
 		{
 			currentTransformData = Selection.activeGameObject.transform.GetTransformData();
 		}
 
+#if UNITY_EDITOR_WIN
 		[ MenuItem( "FFShortcut/Paste Global Transform &v" ) ]
+#elif UNITY_EDITOR_OSX
+		[ MenuItem( "FFShortcut/Paste Global Transform %v" ) ]
+#endif
 		static private void PasteTransform()
 		{
 			var gameObject = Selection.activeGameObject.transform;
+			EditorUtility.SetDirty( gameObject );
+
 			gameObject.SetTransformData( currentTransformData );
 		}
 
+#if UNITY_EDITOR_WIN
+		[ MenuItem( "FFShortcut/Kill All Tweens %#t" ) ]
+#elif UNITY_EDITOR_OSX
+		[ MenuItem( "FFShortcut/Kill All Tweens ^#t" ) ]
+#endif
+		private static void KillAllTweens()
+		{
+			DOTween.KillAll();
+			FFLogger.Log( "[FF] DOTween: Kill All" );
+		}
+
+#if UNITY_EDITOR_WIN
 		[ MenuItem( "FFShortcut/Clear Console %#x" ) ]
+#elif UNITY_EDITOR_OSX
+		[ MenuItem( "FFShortcut/Clear Console ^#x" ) ]
+#endif
 		private static void ClearLog()
 		{
 			var assembly = Assembly.GetAssembly( typeof( UnityEditor.Editor ) );
